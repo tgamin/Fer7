@@ -1,0 +1,174 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Qui Sommes nous
+{% endblock %}
+
+{% block body %}
+{{parent()}}
+<div class="green-screen">
+	<div class="container">
+		<div class="row row-first-backround align-center">
+			<div class="col-xl-12">
+				<div class="content">
+					<h2 class="h2-slide d-flex align-items-center justify-content-center"
+						style="margin-top:15%;color: #FFF;text-align: center;font-family: Lexend;font-size: 44px;font-style: normal;font-weight: 700;line-height: 80px;letter-spacing: -0.5px;">
+						Qui sommes nous?
+					</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="about-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-md-6 d-flex flex-column align-items-center align-items-md-start">
+				<span class="green-divider mb-3"></span>
+				<h2 class="fondateur-sec-h2">
+					Mot du fondateur
+				</h2>
+				<p style="color:#9d9d9d;">Propos recueillis le 01/10/2024 à 10:30</p>
+				<p class="fondateur-p text-center text-md-left mt-2">
+					Forte de 30 années d'expérience et d'expertise dans le domaine du TCE, Fer7 Diffusion s'est bâti une
+					réputation solide grâce à son engagement envers l'excellence. L’excellence, la qualité et
+					l’attention aux détails sont les maîtres mots qui guident nos opérations. Nous offrons un
+					accompagnement complet qui vous permet de concrétiser votre vision et de répondre aux besoins
+					uniques de vos clients et de vos collaborateurs Notre équipe pluridisciplinaire excelle dans tous
+					les aspects de la construction seconds œuvres, de la conception à la réalisation. Après avoir
+					fièrement accompagné des entreprises et des institutionnels de toutes tailles, nos références
+					témoignent de notre capacité à livrer des projets de haute qualité, dans le respect des délais et
+					des budgets, tout en garantissant la satisfaction de nos clients. En capitalisant sur le
+					développement des infrastructures au Maroc, nous voyons de vastes opportunités pour innover et
+					repousser les frontières de notre savoir-faire. Nous nous engageons à renforcer notre présence dans
+					les secteurs en pleine expansion tout en continuant à offrir des solutions de haute qualité qui
+					répondent aux besoins évolutifs de nos clients. Ensemble, donnons vie à vos projets.
+				</p>
+				<h3 class="fondateur-p">
+					<span>Ahmed Benmoussa – </span><small>CEO &amp; Fondateur FER7 DIFFUSION</small>
+				</h3>
+			</div>
+			<div class="col-12 col-md-6 d-flex flex-column align-items-center">
+				<img class="imagecard" src="/front/img/Group42.png" alt="fer7 image">
+				<a href="{{path('quisommesnous')}}" class="btn btn-success davantage d-md-none">
+					Lire davantage
+					<i class="fa-solid fa-arrow-right-long ml-4"></i>
+				</a>
+			</div>
+		</div>
+
+		<div class="container symbols-container mt-4">
+			<div class="row justify-content-center">
+				<div class="col-4 col-md-2 symbols">
+					<img src="/front/img/gg_check-o.png" alt="">
+					<p class="titleicone">Qualité &amp; Excellence</p>
+				</div>
+				<div class="col-4 col-md-2 symbols">
+					<img src="/front/img/icon-park-outline_good-two.png" alt="">
+					<p class="titleicone">Solutions sur mesure &amp; innovantes</p>
+				</div>
+				<div class="col-4 col-md-2 symbols">
+					<img src="/front/img/wi_time-5.png" alt="">
+					<p class="titleicone">Respect des délais &amp; des budgets</p>
+				</div>
+				<div class="col-4 col-md-2 symbols">
+					<img src="/front/img/oui_app-security.png" alt="">
+					<p class="titleicone">Sécurité &amp; Conformité</p>
+				</div>
+				<div class="col-4 col-md-2 symbols">
+					<img src="/front/img/mdi_partnership-outline.png" alt="">
+					<p class="titleicone">Partenariats long terme</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="collab-sec d-flex flex-column align-items-center py-4">
+	<span class="green-divider mb-4"></span>
+	<h2 class="section-title mb-2">Ils nous font confiance</h2>
+	<small class="section-text w-75 mt-3">
+		Découvrez une liste non exhaustive de nos références. Nous sommes fiers d’avoir collaboré avec des
+		entreprises marocaines de toutes tailles et à travers tout type d’industrie.
+	</small>
+
+	<div class="partenaire-container w-100 d-flex flex-column align-items-center mt-5">
+		<div class="symbols-container container">
+			<div class="row justify-content-center">
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="{{ asset('/front/img/pp-1.png') }}" alt="Naciri & Associés A&O Shearman">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="{{ asset('/front/img/pp-2.png') }}" alt="PORTNET">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="{{ asset('/front/img/pp-3.png') }}" alt="Afriquia Gaz">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="{{ asset('/front/img/pp-4.png') }}" alt="FIGES MERNISSI">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="{{ asset('/front/img/pp-21.png') }}" alt="Distribio">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="{{ asset('/front/img/pp-6.png') }}" alt="ESCA">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="{{ asset('/front/img/pp-7.png') }}" alt="Neuroclinique de casablanca">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="{{ asset('/front/img/pp-22.png') }}" alt="FARMAPROM">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="{{ asset('/front/img/pp-23.png') }}" alt="Forafric maroc">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="{{ asset('/front/img/pp-10.png') }}" alt="Kenz up logo">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="{{ asset('/front/img/pp-24.png') }}" alt="Alf Mabrouk">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="{{ asset('/front/img/pp-12.png') }}" alt="Alpha assurances">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="{{ asset('/front/img/pp-13.png') }}" alt="Maghreb Gaz">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="{{ asset('/front/img/pp-14.png') }}" alt="EIGSI">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="{{ asset('/front/img/pp-15.png') }}" alt="TAQA MOROCCO">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="{{ asset('/front/img/pp-16.png') }}" alt="Accuracy">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="{{ asset('/front/img/pp-17.png') }}" alt="Capgemini">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="{{ asset('/front/img/pp-18.png') }}" alt="IDEMIA">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="{{ asset('/front/img/pp-19.png') }}" alt="Société Générale">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="{{ asset('/front/img/pp-20.png') }}" alt="FREEDOM PROPERTY FUND">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img class="w-75" src="{{ asset('/front/img/pp-5.png') }}" alt="CGEM">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img class="w-75" src="{{ asset('/front/img/pp-8.png') }}" alt="Maredic">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img class="w-75" src="{{ asset('/front/img/pp-9.png') }}" alt="AXA">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img class="w-75" src="{{ asset('/front/img/pp-11.png') }}" alt="El Yacoubi clinique veterinaire">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

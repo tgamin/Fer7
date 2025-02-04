@@ -1,0 +1,47 @@
+# Symfony specific
+/var/
+/vendor/
+
+# Logs
+/var/log/
+/var/cache/
+/var/sessions/
+
+# Composer
+/composer.lock
+
+# PHPStorm
+.idea/
+
+# .env files (sensitive environment variables)
+.env
+.env.local
+.env.*.local
+
+# MacOS
+.DS_Store
+
+# Node.js
+/node_modules/
+
+# Symfony specific: Ignore custom and system log files
+/var/log/*.log
+/var/cache/*
+
+# Symfony build artifacts
+/public/bundles/
+/public/build/
+/public/uploads/
+
+# Ignore Symfony secrets (if using Symfony secrets management)
+/var/secrets/
+
+# Ignore generated files from PHPUnit
+phpunit.xml.dist
+phpunit.xml
+
+# Ignore Composer and PHPUnit vendor directories
+/vendor/
+
+# Ignore SQL file
+gebcloud_fer7.sql

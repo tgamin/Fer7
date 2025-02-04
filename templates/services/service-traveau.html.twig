@@ -1,0 +1,768 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Travaux d’aménagement
+{% endblock %}
+
+{% block body %}
+{{parent()}}
+<style>
+    div.col-sm-2 {
+        width: 203.58px !important;
+        height: 160px !important;
+    }
+</style>
+
+<div class="green-screen"></div>
+{# <div class="traveau-screen text-center">
+    <h1 class="header-services mb-5">Travaux d’aménagement Tous Corps D’Etat</h1>
+    <a href="{{path('contact')}}" class="btn btn-demande-devise mb-5" style="font-weight: 300;font-size: 13px;">Demander
+        un devis</a>
+</div> #}
+<div class="laptop-version">
+    <div class="container-service traveau">
+        <div class="text-center pt-4">
+            <h1 class="header-services mb-3 mb-lg-5">Travaux d’aménagement Tous Corps D’Etat</h1>
+            <span class="green-divider"></span>
+            <p class="header-p mt-5">
+                Nous aménageons annuellement jusqu’à 10 000m² de
+                surface à usage professionnel (plateaux de bureaux, sièges sociaux, administrations, show room, usines,
+                établissements médicaux, magasins grand public, hôtels, etc.) Nous disposons d’équipes mobiles pouvant
+                intervenir sur l’ensemble du territoire marocain
+            </p>
+        </div>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-4 img-container">
+                    <span class="green-divider d-md-none"></span>
+                    <h3 class="d-md-none" style="font-family: 'Lexend';width: 100%;margin-bottom: 20px;">Contractant
+                        général</h3>
+                    {# <h3 class="titleConceptionMobile d-md-none"
+                        style="font-family: 'Lexend';width: 100%;margin-bottom: 20px;">LA VISION DE VOTRE PROJET
+                    </h3> #}
+                    <img src="{{asset('front/img/Contractant.png')}}" width="100%" style="border-radius:20px">
+                </div>
+                <div class="col-md-8 dropdown-container">
+                    <span class="green-divider d-none d-md-inline-block" style="margin-top: 40px;"></span>
+                    <h3 class="d-none d-md-block" style="font-family: 'Lexend';width: 50%;">Contractant général</h3>
+                    <p class="mt-2 mt-lg-0">
+                        Interlocutrice unique du maître d’ouvrage et de l’architecte, notre structure dispose de
+                        compétences dans la maitrise d’œuvre pour faire aboutir tout projet d’aménagement d’espace à
+                        usage professionnel.<br>
+
+                        Notre équipe vous accompagne, à travers une approche clef en main, tout au long de vos projets :
+                        de la phase de conceptualisation et planification jusqu’à la livraison de vos espaces prêts à
+                        l’emploi.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-4 img-container">
+                    <span class="green-divider d-md-none"></span>
+                    <h3 class="d-md-none" style="font-family: 'Lexend';width: 100%;margin-bottom: 20px;">Entreprise
+                        générale</h3>
+                    <img src="{{asset('front/img/Entreprise.png')}}" width="100%" style="border-radius:20px">
+                </div>
+                <div class="col-md-8">
+                    {#<div class="head-title2 row">#}
+                        {# <div class="col-sm-6"></div>#}
+                        {# <div class="col-sm-6">#}
+                            {# <span class="green-divider" style="margin-top: 40px;"></span>#}
+                            {# <h3 style="font-family: 'Lexend';">Entreprise générale</h3>#}
+                            {# </div>#}
+                        {#</div>#}
+
+                    <span class="green-divider d-none d-md-inline-block" style="margin-top: 40px;"></span>
+                    <h3 class="d-none d-md-block" style="font-family: 'Lexend';">Entreprise générale</h3>
+
+                    <p class="mt-2 mt-lg-0">
+                        Selon les besoins de nos clients et des situations, nous pouvons nous charger d’un, de plusieurs
+                        ou de l’ensemble des lots d’un chantier. Notre structure et notre expertise nous permettent de
+                        garantir un rendu d’excellence dans les temps et le budget impartis.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-speacilite mt-5">
+            {# tarik #}
+            <div class="d-flex flex-column align-items-center">
+                <span class="green-divider mt-5"></span>
+                {#<h3 style="font-family: 'Lexend';">Nos corps de métier </h3>#}
+                <h3 style="font-family: 'Lexend';">Lots techniques</h3>
+            </div>
+
+            <div class="container specialite text-center mt-5">
+                <div class="lots row d-flex align-items-center justify-content-center">
+                    <div class="card-container col-6 col-md-4">
+                        <div class="card">
+                            <img src="{{asset('front/img/electricite.png')}}"
+                                style="border-radius:20px;width: 60px;height: 60px;">
+                            <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;"> Electricité </h6>
+                        </div>
+                    </div>
+                    <div class="card-container col-6 col-md-4">
+                        <div class="card">
+                            <img src="{{asset('front/img/climatisation.png')}}"
+                                style="border-radius:20px;width: 60px;height: 60px;">
+                            <h6 style="padding:20px; font-family: 'Lexend';     font-size: 13px;"> Climatisation </h6>
+                        </div>
+                    </div>
+                    <div class="card-container col-6 col-md-4">
+                        <div class="card">
+                            <img src="{{asset('front/img/plomberie.png')}}"
+                                style="border-radius:20px;width: 60px;height: 60px;">
+                            <h6 style="padding:20px; font-family: 'Lexend';     font-size: 13px;"> Plomberie </h6>
+                        </div>
+                    </div>
+                    <div class="card-container col-6 col-md-4">
+                        <div class="card">
+                            <img src="{{asset('front/img/audio-visuel.png')}}"
+                                style="border-radius:20px;width: 60px;height: 60px;">
+                            <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;">Audiovisuel</h6>
+                        </div>
+                    </div>
+                    <div class="card-container col-6 col-md-4">
+                        <div class="card">
+                            <img src="{{asset('front/img/electricite.png')}}"
+                                style="border-radius:20px;width: 60px;height: 60px;">
+                            <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;">Pré câblage informatique
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="card-container col-6 col-md-4">
+                        <div class="card">
+                            <img src="{{asset('front/img/climatisation.png')}}"
+                                style="border-radius:20px;width: 60px;height: 60px;">
+                            <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;"> Détection intrusion 
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="card-container col-6 col-md-4">
+                        <div class="card">
+                            <img src="{{asset('front/img/plomberie.png')}}"
+                                style="border-radius:20px;width: 60px;height: 60px;">
+                            <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;">Contrôle d'accès</h6>
+                        </div>
+                    </div>
+                    <div class="card-container col-6 col-md-4">
+                        <div class="card">
+                            <img src="{{asset('front/img/audio-visuel.png')}}"
+                                style="border-radius:20px;width: 60px;height: 60px;">
+                            <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;"> Vidéo-surveillance</h6>
+                        </div>
+                    </div>
+                    <div class="card-container col-6 col-md-4">
+                        <div class="card">
+                            <img src="{{asset('front/img/security.png')}}"
+                                style="border-radius:20px;width: 60px;height: 60px;">
+                            <h6 style="padding:20px; font-size: 15px;font-family: 'Lexend';    font-size: 13px;">
+                                Protection & Sécurité Incendie </h6>
+                        </div>
+                    </div>
+                </div>
+                {# end tarik #}
+
+                {# <div class="row mt-5 d-flex align-items-center justify-content-center">
+                    <div class="col-sm-2"
+                        style="background: linear-gradient(90deg, rgba(176, 203, 50, 1) 0%, rgba(123, 142, 33, 1) 100%);border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;height: 160px;box-shadow: 0px 0px 7px -2px gray;">
+                        <img src="{{asset('front/img/audio-visuel.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;"> Audiovisuel </h6>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2"
+                        style="background: linear-gradient(90deg, rgba(176, 203, 50, 1) 0%, rgba(123, 142, 33, 1) 100%);border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;height: 160px;box-shadow: 0px 0px 7px -2px gray;">
+                        <img src="{{asset('front/img/electricite.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;"> Pré câblage informatique 
+                        </h6>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2"
+                        style="background: linear-gradient(90deg, rgba(176, 203, 50, 1) 0%, rgba(123, 142, 33, 1) 100%);border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;height: 160px;box-shadow: 0px 0px 7px -2px gray;">
+                        <img src="{{asset('front/img/climatisation.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-family: 'Lexend';     font-size: 13px;"> Détection intrusion </h6>
+                    </div>
+                </div>
+                <div class="row mt-5 d-flex align-items-center justify-content-center">
+                    <div class="col-sm-2"
+                        style="background: linear-gradient(90deg, rgba(176, 203, 50, 1) 0%, rgba(123, 142, 33, 1) 100%);border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;height: 160px;box-shadow: 0px 0px 7px -2px gray;">
+                        <img src="{{asset('front/img/plomberie.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;">Contrôle d'accès</h6>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2"
+                        style="background: linear-gradient(90deg, rgba(176, 203, 50, 1) 0%, rgba(123, 142, 33, 1) 100%);border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;height: 160px;box-shadow: 0px 0px 7px -2px gray;">
+                        <img src="{{asset('front/img/audio-visuel.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;"> Vidéo-surveillance </h6>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2"
+                        style="background: linear-gradient(90deg, rgba(176, 203, 50, 1) 0%, rgba(123, 142, 33, 1) 100%);border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;height: 160px;box-shadow: 0px 0px 7px -2px gray;">
+                        <img src="{{asset('front/img/security.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-size: 15px;font-family: 'Lexend';    font-size: 13px;"> Protection
+                            & Sécurité Incendie </h6>
+                    </div>
+                </div> #}
+            </div>
+            {# <div style="margin-left:3%;">
+                <span class="green-divider"></span>
+                <h3 style="font-family: 'Lexend';">Lots Architecturaux</h3>
+            </div> #}
+            <div class="d-flex flex-column align-items-center">
+                <span class="green-divider mt-5"></span>
+                <h3 style="font-family: 'Lexend';">Lots Architecturaux</h3>
+            </div>
+
+
+            {#<div class="row mt-5 d-flex align-items-center justify-content-center">#}
+
+
+                {# <div class="col-sm-2"
+                    style="border-radius: 40px;background-color: white;   text-align: center;   padding-top: 20px;padding-bottom: 20px;height: 160px;box-shadow: 0px 0px 7px -2px gray;">
+                    #}
+                    {# <img src="{{asset('front/img/oeuvre.png')}}"
+                        style="border-radius:20px;width: 60px;height: 60px;">#}
+                    {# <h6
+                        style="padding:20px; color: rgba(123, 142, 33, 1);font-family: 'Lexend';    font-size: 13px;">
+                        Gros œuvres </h6>#}
+                    {# </div>#}
+                {# <div class="col-sm-1"></div>#}
+                {# <div class="col-sm-2"
+                    style="border-radius: 40px;color: white;   text-align: center;   padding-top: 20px;padding-bottom: 20px;height: 160px;background: white;box-shadow: 0px 0px 7px -2px gray;">
+                    #}
+                    {# <img src="{{asset('front/img/wall.png')}}"
+                        style="border-radius:20px;width: 60px;height: 60px;">#}
+                    {# <h6
+                        style="padding:20px; color: rgba(123, 142, 33, 1); font-family: 'Lexend';    font-size: 13px;">
+                        Revêtements sols/murs </h6>#}
+                    {# </div>#}
+                {# <div class="col-sm-1"></div>#}
+                {# <div class="col-sm-2"
+                    style="border-radius: 40px;color: white;   text-align: center;   padding-top: 20px;padding-bottom: 20px;height: 160px;background: white;box-shadow: 0px 0px 7px -2px gray;">
+                    #}
+                    {# <img src="{{asset('front/img/platre.png')}}"
+                        style="border-radius:20px;width: 60px;height: 60px;">#}
+                    {# <h6
+                        style="padding:20px; color: rgba(123, 142, 33, 1); font-family: 'Lexend';    font-size: 13px;">
+                        Faux Plafond </h6>#}
+                    {# </div>#}
+                {# </div>#}
+
+
+            {#<div class="row mt-5 d-flex align-items-center justify-content-center">#}
+
+                {# <div class="col-sm-2"
+                    style="background: white;border-radius: 40px;color: white;text-align: center;  padding-top: 20px;padding-bottom: 20px;height: 160px;box-shadow: 0px 0px 7px -2px gray;">
+                    #}
+                    {# <img src="{{asset('front/img/cloisonnements.png')}}"
+                        style="border-radius:20px;width: 60px;height: 60px;">#}
+                    {# <h6
+                        style="padding:20px; font-size: 15px;color: rgba(123, 142, 33, 1); font-family: 'Lexend';font-size: 13px;">
+                        Cloisonnements </h6>#}
+                    {# </div>#}
+                {# <div class="col-sm-1"></div>#}
+                {# <div class="col-sm-2"
+                    style="border-radius: 40px;background: white; text-align: center;   padding-top: 20px;padding-bottom: 20px;height: 160px;box-shadow: 0px 0px 7px -2px gray;">
+                    #}
+                    {# <img src="{{asset('front/img/menuiserie.png')}}"
+                        style="border-radius:20px;width: 60px;height: 60px;">#}
+                    {# <h6
+                        style="padding:20px; color: rgba(123, 142, 33, 1);font-family: 'Lexend';    font-size: 13px;">
+                        Menuiserie bois </h6>#}
+                    {# </div>#}
+                {# <div class="col-sm-1"></div>#}
+                {# <div class="col-sm-2"
+                    style="border-radius: 40px;color: white;     text-align: center;   padding-top: 20px;padding-bottom: 20px;height: 160px;background: white;box-shadow: 0px 0px 7px -2px gray;">
+                    #}
+                    {# <img src="{{asset('front/img/metallique.png')}}"
+                        style="border-radius:20px;width: 60px;height: 60px;">#}
+                    {# <h6
+                        style="padding:20px; color: rgba(123, 142, 33, 1);font-family: 'Lexend';    font-size: 13px;">
+                        Menuiserie Métallique </h6>#}
+                    {# </div>#}
+                {#<div class="col-sm-1"></div>#}
+
+                {# </div>#}
+
+
+            {# <div class="row mt-5 d-flex align-items-center justify-content-center">#}
+
+                {# <div class="col-sm-2"
+                    style="background: white;border-radius: 40px;color: white;text-align: center; padding-top: 20px;padding-bottom: 20px;height: 160px;box-shadow: 0px 0px 7px -2px gray;">
+                    #}
+                    {# <img src="{{asset('front/img/houseIcon.png')}}"
+                        style="border-radius:20px;width: 60px;height: 60px;">#}
+                    {# <h6
+                        style="padding:20px; font-size: 15px;color: rgba(123, 142, 33, 1); font-family: 'Lexend';font-size: 13px;">
+                        Peinture </h6>#}
+                    {# </div>#}
+                {# <div class="col-sm-1"></div>#}
+                {# <div class="col-sm-2"
+                    style="border-radius: 40px;background: white;text-align: center;  padding-top: 20px;padding-bottom: 20px;height: 160px;box-shadow: 0px 0px 7px -2px gray;">
+                    #}
+                    {# <img src="{{asset('front/img/shutter.png')}}" style="width: 60px;height: 60px;">#}
+                    {# <h6
+                        style="padding:20px; color: rgba(123, 142, 33, 1);font-family: 'Lexend';    font-size: 13px;">
+                        Stores </h6>#}
+                    {# </div>#}
+                {# <div class="col-sm-1"></div>#}
+                {# <div class="col-sm-2"
+                    style="border-radius: 40px;color: white;     text-align: center;   padding-top: 20px;padding-bottom: 20px;height: 160px;background: white;box-shadow: 0px 0px 7px -2px gray;">
+                    #}
+                    {# <img src="{{asset('front/img/aluminium.png')}}"
+                        style="border-radius:20px;width: 60px;height: 60px;">#}
+                    {# <h6
+                        style="padding:20px; color: rgba(123, 142, 33, 1);font-family: 'Lexend';    font-size: 11px; font-wight:600;">
+                        Menuiserie Aluminium  </h6>#}
+                    {# </div>#}
+
+                {#<div class="col-sm-2"
+                    style="border-radius: 40px;color: white; text-align: center;   padding-top: 20px;padding-bottom: 20px;height: 160px;background: white;box-shadow: 0px 0px 7px -2px gray;">
+                    #}
+                    {# <img src="{{asset('front/img/metallique.png')}}" width="40%" style="border-radius:20px">#}
+                    {# <h6
+                        style="padding:20px; color: rgba(123, 142, 33, 1);font-family: 'Lexend';    font-size: 13px;">
+                        Faux Plafond  </h6>#}
+                    {#</div>#}
+                {#<div class="col-sm-1"></div>#}
+
+                {# </div>#}
+
+            {#<div class="row mt-5 d-flex align-items-center justify-content-center">#}
+                {# <div class="col-sm-1"></div>#}
+
+                {# <div class="col-sm-1"></div>#}
+                {#<div class="col-sm-2"
+                    style="border-radius: 40px;color: white;     text-align: center;   padding-top: 20px;padding-bottom: 20px;height: 160px;background: white;box-shadow: 0px 0px 7px -2px gray;">
+                    #}
+                    {# <img src="{{asset('front/img/aluminium.png')}}" width="40%" style="border-radius:20px">#}
+                    {# <h6
+                        style="padding:20px; color: rgba(123, 142, 33, 1);font-family: 'Lexend';    font-size: 13px;">
+                        Aluminium </h6>#}
+                    {#</div>#}
+                {#</div>#}
+            <div class="container specialite text-center mt-5">
+                <div class="lots row d-flex align-items-center justify-content-center">
+                    <div class="card-container col-6 col-md-4">
+                        <div class="card white-cards">
+                            <img src="{{asset('front/img/oeuvre.png')}}"
+                                style="border-radius:20px;width: 60px;height: 60px;">
+                            <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;"> Gros œuvres </h6>
+                        </div>
+                    </div>
+                    <div class="card-container col-6 col-md-4">
+                        <div class="card white-cards">
+                            <img src="{{asset('front/img/wall.png')}}"
+                                style="border-radius:20px;width: 60px;height: 60px;">
+                            <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;"> Revêtements sols/murs
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="card-container col-6 col-md-4">
+                        <div class="card white-cards">
+                            <img src="{{asset('front/img/platre.png')}}"
+                                style="border-radius:20px;width: 60px;height: 60px;">
+                            <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;"> Faux Plafond </h6>
+                        </div>
+                    </div>
+                    <div class="card-container col-6 col-md-4">
+                        <div class="card white-cards">
+                            <img src="{{asset('front/img/cloisonnements.png')}}"
+                                style="border-radius:20px;width: 60px;height: 60px;">
+                            <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;"> Cloisonnements </h6>
+                        </div>
+                    </div>
+                    <div class="card-container col-6 col-md-4">
+                        <div class="card white-cards">
+                            <img src="{{asset('front/img/menuiserie.png')}}"
+                                style="border-radius:20px;width: 60px;height: 60px;">
+                            <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;"> Menuiserie bois </h6>
+                        </div>
+                    </div>
+                    <div class="card-container col-6 col-md-4">
+                        <div class="card white-cards">
+                            <img src="{{asset('front/img/metallique.png')}}"
+                                style="border-radius:20px;width: 60px;height: 60px;">
+                            <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;"> Menuiserie Métallique
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="card-container col-6 col-md-4">
+                        <div class="card white-cards">
+                            <img src="{{asset('front/img/houseIcon.png')}}"
+                                style="border-radius:20px;width: 60px;height: 60px;">
+                            <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;"> Peinture </h6>
+                        </div>
+                    </div>
+                    <div class="card-container col-6 col-md-4">
+                        <div class="card white-cards">
+                            <img src="{{asset('front/img/shutter.png')}}" style="width: 60px;height: 60px;">
+                            <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;"> Stores </h6>
+                        </div>
+                    </div>
+                    <div class="card-container col-6 col-md-4">
+                        <div class="card white-cards">
+                            <img src="{{asset('front/img/aluminium.png')}}" style="width: 60px;height: 60px;">
+                            <h6 style="padding:20px; font-size: 15px;font-family: 'Lexend'; font-size: 13px;">
+                                Menuiserie
+                                Aluminium </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            {# start code hakimi#}
+            {# <div class="container specialite text-center mt-5">
+                <div class="row d-flex align-items-center justify-content-center">
+                    <div class="col-sm-2"
+                        style="background:white;border-radius: 40px;color: rgba(123, 142, 33, 1);text-align: center;  padding-top: 20px;padding-bottom: 20px;height: 160px;box-shadow: 0px 0px 7px -2px gray;">
+                        <img src="{{asset('front/img/oeuvre.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;"> Gros œuvres </h6>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2"
+                        style="background:white;border-radius: 40px;color: rgba(123, 142, 33, 1);text-align: center;   padding-top: 20px;padding-bottom: 20px;height: 160px;box-shadow: 0px 0px 7px -2px gray;">
+                        <img src="{{asset('front/img/wall.png')}}" style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-family: 'Lexend';     font-size: 13px;"> Revêtements sols/murs
+                        </h6>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2"
+                        style=" background:white;border-radius: 40px;color: rgba(123, 142, 33, 1);text-align: center;   padding-top: 20px;padding-bottom: 20px;height: 160px;box-shadow: 0px 0px 7px -2px gray;">
+                        <img src="{{asset('front/img/platre.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-family: 'Lexend';     font-size: 13px;"> Faux Plafond </h6>
+                    </div>
+                </div>
+
+                <div class="row mt-5 d-flex align-items-center justify-content-center">
+                    <div class="col-sm-2"
+                        style="background:white;border-radius: 40px;color: rgba(123, 142, 33, 1);    padding-top: 20px;padding-bottom: 20px;height: 160px;box-shadow: 0px 0px 7px -2px gray;">
+                        <img src="{{asset('front/img/cloisonnements.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;"> Cloisonnements </h6>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2"
+                        style="background:white;border-radius: 40px;color: rgba(123, 142, 33, 1);   padding-top: 20px;padding-bottom: 20px;height: 160px;box-shadow: 0px 0px 7px -2px gray;">
+                        <img src="{{asset('front/img/menuiserie.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;"> Menuiserie bois </h6>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2"
+                        style="background:white;border-radius: 40px;color: rgba(123, 142, 33, 1); padding-top: 20px;padding-bottom: 20px;height: 160px;box-shadow: 0px 0px 7px -2px gray;">
+                        <img src="{{asset('front/img/metallique.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-family: 'Lexend';     font-size: 13px;"> Menuiserie Métallique
+                        </h6>
+                    </div>
+                </div>
+
+                <div class="row mt-5 d-flex align-items-center justify-content-center">
+                    <div class="col-sm-2"
+                        style="background:white;border-radius: 40px;color: rgba(123, 142, 33, 1);   padding-top: 20px;padding-bottom: 20px;height: 160px;box-shadow: 0px 0px 7px -2px gray;">
+                        <img src="{{asset('front/img/houseIcon.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-family: 'Lexend';     font-size: 13px;"> Peinture </h6>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2"
+                        style="background:white;border-radius: 40px;color: rgba(123, 142, 33, 1);   padding-top: 20px;padding-bottom: 20px;height: 160px;box-shadow: 0px 0px 7px -2px gray;">
+                        <img src="{{asset('front/img/shutter.png')}}" style="width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;"> Stores </h6>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2"
+                        style="background:white;border-radius: 40px;color: rgba(123, 142, 33, 1);   padding-top: 20px;padding-bottom: 20px;height: 160px;box-shadow: 0px 0px 7px -2px gray;">
+                        <img src="{{asset('front/img/aluminium.png')}}" style="width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-size: 15px;font-family: 'Lexend';    font-size: 13px;"> Menuiserie
+                            Aluminium </h6>
+                    </div>
+                </div>
+            </div> #}
+            {# end code hakimi #}
+        </div>
+    </div>
+</div>
+
+{# <div class="mobile-version mt-5">
+
+    <div class="container-service traveau mt-5">
+        <div class="text-center">
+            <h3 class="header-services mb-3" style="color:black">Travaux d’aménagement Tous Corps D’Etat</h3>
+            <span class="green-divider"></span>
+            <p style="width:70%; margin:auto" class="mt-5">Nous aménageons annuellement jusqu’à 10 000m² de surface à
+                usage professionnel (plateaux de bureaux, sièges sociaux, administrations, show room, usines,
+                établissements médicaux, magasins grand public, hôtels, etc.) Nous disposons d’équipes mobiles pouvant
+                intervenir sur l’ensemble du territoire marocain</p>
+        </div>
+        <div class="container mt-5">
+            <div class="row">
+
+                <div class="col-sm-12">
+                    <span class="green-divider" style="margin-top: 40px;"></span>
+                    <h3 class="pargraphstyl" style="font-family: 'Lexend';width: 100%; fontsize:29px;">Contractant
+                        général</h3>
+                    <img src="{{asset('front/img/Contractant.png')}}" width="100%" style="border-radius:20px"
+                        class="mt-5 mb-5">
+                    <p>
+                        Interlocutrice unique du maître d’ouvrage et de l’architecte, notre structure dispose de
+                        compétences dans la maitrise d’œuvre pour faire aboutir tout projet d’aménagement d’espace à
+                        usage professionnel.
+                        Notre équipe vous accompagne, à travers une approche clef en main, tout au long de vos projets :
+                        de la phase de conceptualisation et planification jusqu’à la livraison de vos espaces prêts à
+                        l’emploi.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="row mt-5">
+
+                <div class="col-sm-8">
+                    <div class="head-title2 row">
+
+                        <div class="col-sm-12">
+                            <span class="green-divider" style="margin-top: 40px;"></span>
+                            <h3 style="font-family: 'Lexend';">Entreprise générale</h3>
+                            <img src="{{asset('front/img/Entreprise.png')}}" width="100%" style="border-radius:20px"
+                                class="mt-5 mb-5">
+                        </div>
+                    </div>
+                    <p>
+                        Selon les besoins de nos clients et des situations, nous pouvons nous charger d’un, de plusieurs
+                        ou de l’ensemble des lots d’un chantier. Notre structure et nos capacités en interne nous
+                        permettent de garantir un rendu d’excellence dans les temps et le budget impartis.
+                    </p>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="container-speacilite mt-5" style="background: #F8F8F9;padding-top: 3%;padding-bottom: 5%;">
+            <div class="container specialite text-center mt-5">
+                <div class="col-sm-12">
+                    <span class="green-divider" style="margin-top: 40px;"></span>
+                    <h3 style="font-family: 'Lexend';">Lots techniques</h3>
+                </div>
+                <div class="row mt-3">
+
+                    <div class="col-sm-4"
+                        style="background: linear-gradient(90deg, rgba(176, 203, 50, 1) 0%, rgba(123, 142, 33, 1) 100%);border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 7px -2px gray;margin-left: 10px;width: 166.72px;height: 179.19px;">
+                        <img src="{{asset('front/img/electricite.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;"> Electricité </h6>
+                    </div>
+
+                    <div class="col-sm-4"
+                        style="background: linear-gradient(90deg, rgba(176, 203, 50, 1) 0%, rgba(123, 142, 33, 1) 100%);border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 7px -2px gray;margin-left: 10px;width: 166.72px;height: 179.19px;">
+                        <img src="{{asset('front/img/climatisation.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-family: 'Lexend';     font-size: 13px;"> Climatisation </h6>
+                    </div>
+
+                    <div class="col-sm-4 mt-3"
+                        style="background: linear-gradient(90deg, rgba(176, 203, 50, 1) 0%, rgba(123, 142, 33, 1) 100%);border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 7px -2px gray;margin-left: 10px;width: 166.72px;height: 179.19 px!important;">
+                        <img src="{{asset('front/img/plomberie.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-family: 'Lexend';     font-size: 13px;"> Plomberie </h6>
+                    </div>
+
+                    <div class="col-sm-4 mt-3"
+                        style="background: linear-gradient(90deg, rgba(176, 203, 50, 1) 0%, rgba(123, 142, 33, 1) 100%);border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 7px -2px gray;margin-left: 10px;width: 166.72px;height: 179.19px;">
+                        <img src="{{asset('front/img/audio-visuel.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;"> Audiovisuel </h6>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+
+                    <div class="col-sm-4"
+                        style="background: linear-gradient(90deg, rgba(176, 203, 50, 1) 0%, rgba(123, 142, 33, 1) 100%);border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 7px -2px gray;height: 179.19;margin-left: 10px;width: 166.72px;height: 179.19px;">
+                        <img src="{{asset('front/img/climatisation.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;"> Détection intrusion </h6>
+                    </div>
+
+                    <div class="col-sm-4"
+                        style="background: linear-gradient(90deg, rgba(176, 203, 50, 1) 0%, rgba(123, 142, 33, 1) 100%);border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 7px -2px gray;margin-left: 10px;width: 166.72px;height: 179.19px;">
+                        <img src="{{asset('front/img/plomberie.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-family: 'Lexend';     font-size: 13px;"> Contrôle d'accès </h6>
+                    </div>
+
+                    <div class="col-sm-4 mt-3"
+                        style="background: linear-gradient(90deg, rgba(176, 203, 50, 1) 0%, rgba(123, 142, 33, 1) 100%);border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 7px -2px gray;margin-left: 10px;width: 166.72px;height: 179.19px;">
+                        <img src="{{asset('front/img/audio-visuel.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-family: 'Lexend';     font-size: 13px;"> Vidéo-surveillance </h6>
+                    </div>
+
+                    <div class="col-sm-4 mt-3"
+                        style="background: linear-gradient(90deg, rgba(176, 203, 50, 1) 0%, rgba(123, 142, 33, 1) 100%);border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 7px -2px gray;margin-left: 10px;width: 166.72px;height: 179.19px;">
+                        <img src="{{asset('front/img/security.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;"> Protection & Sécurité
+                            Incendie </h6>
+                    </div>
+
+                    <div class="col-sm-4 mt-3"
+                        style="background: linear-gradient(90deg, rgba(176, 203, 50, 1) 0%, rgba(123, 142, 33, 1) 100%);border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 7px -2px gray;margin-left: 10px;width: 166.72px;height: 179.19px;">
+                        <img src="{{asset('front/img/electricite.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-family: 'Lexend'; font-size: 13px;"> Pré câblage informatique
+                        </h6>
+                    </div>
+                </div>
+
+                hadi kant commented
+                <div class="row mt-5">
+                    <div class="col-sm-4"
+                        style="background: linear-gradient(90deg, rgba(176, 203, 50, 1) 0%, rgba(123, 142, 33, 1) 100%);border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;height: auto;box-shadow: 0px 0px 7px -2px gray;width: 45%;margin-left: 10px;">
+                        <img src="{{asset('front/img/climatisation.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-size: 15px;font-family: 'Lexend';    font-size: 13px;">
+                            Détection intrusion </h6>
+                    </div>
+                    <div class="col-sm-4"
+                        style="background: linear-gradient(90deg, rgba(176, 203, 50, 1) 0%, rgba(123, 142, 33, 1) 100%);border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;height: auto;box-shadow: 0px 0px 7px -2px gray;width: 45%;margin-left: 10px;">
+                        <img src="{{asset('front/img/plomberie.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-size: 15px;font-family: 'Lexend';    font-size: 13px;">
+                            Contrôle d'accès</h6>
+                    </div>
+                    <div class="col-sm-4 mt-3"
+                        style="background: linear-gradient(90deg, rgba(176, 203, 50, 1) 0%, rgba(123, 142, 33, 1) 100%);border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;height: auto;box-shadow: 0px 0px 7px -2px gray;width: 45%;margin-left: 10px;">
+                        <img src="{{asset('front/img/audio-visuel.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-size: 15px;font-family: 'Lexend';    font-size: 13px;">
+                            Vidéo-surveillance </h6>
+                    </div>
+                    <div class="col-sm-4 mt-3"
+                        style="background: linear-gradient(90deg, rgba(176, 203, 50, 1) 0%, rgba(123, 142, 33, 1) 100%);border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;height: auto;box-shadow: 0px 0px 7px -2px gray;width: 45%;margin-left: 10px;">
+                        <img src="{{asset('front/img/security.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-size: 15px;font-family: 'Lexend';    font-size: 13px;">
+                            Protection & Sécurité Incendie </h6>
+                    </div>
+                    <div class="col-sm-4 mt-3"
+                        style="background: linear-gradient(90deg, rgba(176, 203, 50, 1) 0%, rgba(123, 142, 33, 1) 100%);border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;height: auto;box-shadow: 0px 0px 7px -2px gray;width: 45%;margin-left: 10px;">
+                        <img src="{{asset('front/img/electricite.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6 style="padding:20px; font-size: 15px;font-family: 'Lexend';    font-size: 13px;"> Pré
+                            câblage informatique </h6>
+                    </div>
+                </div>
+                salat l comment
+
+                <div class="col-sm-12">
+                    <span class="green-divider" style="margin-top: 40px;"></span>
+                    <h3 style="font-family: 'Lexend';">Lots Architecturaux</h3>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-sm-4 mt-3"
+                        style="border-radius: 40px;background-color: white;    padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 7px -2px gray;margin-left: 10px;width: 166.72px;height: 179.19px;">
+                        <img src="{{asset('front/img/oeuvre.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6
+                            style="padding:20px; color: rgba(123, 142, 33, 1);font-family: 'Lexend';    font-size: 13px;">
+                            Gros œuvres </h6>
+                    </div>
+
+                    <div class="col-sm-4 mt-3"
+                        style="border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;background: white;box-shadow: 0px 0px 7px -2px gray;margin-left: 10px;width: 166.72px;height: 179.19px;">
+                        <img src="{{asset('front/img/wall.png')}}" style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6
+                            style="padding:20px; color: rgba(123, 142, 33, 1); font-family: 'Lexend';    font-size: 13px;">
+                            Revêtements sols/murs </h6>
+                    </div>
+
+                    <div class="col-sm-4 mt-3"
+                        style="border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;background: white;box-shadow: 0px 0px 7px -2px gray;margin-left: 10px;width: 166.72px;height: 179.19px;;">
+                        <img src="{{asset('front/img/platre.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6
+                            style="padding:20px; color: rgba(123, 142, 33, 1); font-family: 'Lexend';    font-size: 13px;">
+                            Faux Plafond </h6>
+                    </div>
+
+                    <div class="col-sm-4 mt-3"
+                        style="background: white;border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 7px -2px gray;margin-left: 10px;width: 166.72px;height: 179.19px;">
+                        <img src="{{asset('front/img/cloisonnements.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6
+                            style="padding:20px; font-size: 15px;color: rgba(123, 142, 33, 1); font-family: 'Lexend';font-size: 13px;">
+                            Cloisonnements </h6>
+                    </div>
+
+                    <div class="col-sm-4 mt-3"
+                        style="border-radius: 40px;background: white;    padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 7px -2px gray;margin-left: 10px;width: 166.72px;height: 179.19px;">
+                        <img src="{{asset('front/img/menuiserie.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6
+                            style="padding:20px; color: rgba(123, 142, 33, 1);font-family: 'Lexend';    font-size: 13px;">
+                            Menuiserie bois </h6>
+                    </div>
+
+                    <div class="col-sm-4 mt-3"
+                        style="border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;background: white;box-shadow: 0px 0px 7px -2px gray;margin-left: 10px;width: 166.72px;height: 179.19px;">
+                        <img src="{{asset('front/img/metallique.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6
+                            style="padding:20px; color: rgba(123, 142, 33, 1);font-family: 'Lexend';    font-size: 13px;">
+                            Menuiserie Métallique </h6>
+                    </div>
+
+                    <div class="col-sm-4 mt-3"
+                        style="border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;background: white;box-shadow: 0px 0px 7px -2px gray;margin-left: 10px;width: 166.72px;height: 179.19px;">
+                        <img src="{{asset('front/img/houseIcon.png')}}"
+                            style="border-radius:20px;width: 60px;height: 60px;">
+                        <h6
+                            style="padding:20px; color: rgba(123, 142, 33, 1);font-family: 'Lexend';    font-size: 13px;">
+                            Peinture </h6>
+                    </div>
+
+                    <div class="col-sm-4 mt-3"
+                        style="border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;background: white;box-shadow: 0px 0px 7px -2px gray;margin-left: 10px;width: 166.72px;height: 179.19px;">
+                        <img src="{{asset('front/img/shutter.png')}}" style="width: 60px;height: 60px;">
+                        <h6
+                            style="padding:20px; color: rgba(123, 142, 33, 1);font-family: 'Lexend';    font-size: 13px;">
+                            Stores </h6>
+                    </div>
+
+                    <div class="col-sm-4 mt-3"
+                        style="border-radius: 40px;color: white;    padding-top: 20px;padding-bottom: 20px;background: white;box-shadow: 0px 0px 7px -2px gray;margin-left: 10px;width: 166.72px;height: 179.19px;">
+                        <img src="{{asset('front/img/aluminium.png')}}" style="width: 60px;height: 60px;">
+                        <h6
+                            style="padding:20px; color: rgba(123, 142, 33, 1);font-family: 'Lexend';    font-size: 13px;">
+                            Menuiserie Aluminium </h6>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+</div> #}
+
+{% endblock %}

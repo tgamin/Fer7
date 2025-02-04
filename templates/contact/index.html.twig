@@ -1,0 +1,214 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Contact
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<style>
+  /*.first-slide-laptop-contact {
+    position: relative;
+    background-image: url('/front/img/green-screen.png');
+    width: 100%;
+    height: 600px;
+    top: -98px;
+    z-index: -1;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 400;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 510px !important;
+    top: -150px;
+  }*/
+
+  p#mt-2 {
+    margin-top: 2%;
+  }
+
+  label.block.text-sm {
+    color: #000;
+    font-family: Lexend;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  select#country {
+    border-radius: 10px;
+    border: 1px solid var(--Grey-Grey-20, #e5e7eb);
+    background: #f8f8f8;
+    display: inline-flex;
+    padding: 19px 27px 18px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 322px;
+    width: 100%;
+  }
+
+  textarea#message {
+    border-radius: 10px;
+    border: 1px solid var(--Grey-Grey-20, #e5e7eb);
+    background: #f8f8f8;
+    display: flex;
+    width: 654px;
+    height: 142px;
+    padding: 19px 18px 24px;
+    align-items: center;
+    flex-shrink: 0;
+    width: 100%;
+  }
+
+  .btn.btn-demande.mb-5 {
+    border: 1px solid white;
+    background: #B0CB32;
+    color: white;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 30px;
+    float: right;
+    border: 1px solid #839527;
+  }
+
+  #contactmobil {
+    display: none;
+  }
+
+  @media only screen and (max-width: 600px) {
+    /*.first-slide-laptop-contact {
+      position: relative;
+      background-image: url('/front/img/green-screen.png');
+      width: 100%;
+      height: 350px;
+      top: -130px !important;
+      z-index: -1;
+      font-family: 'Lexend', sans-serif;
+      font-weight: 400;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }*/
+
+    .btn.btn-demande.mb-5 {
+      float: none;
+      border: 1px solid #687333;
+    }
+
+    /*.first-slide-laptop-contact {
+      height: 350px !important;
+    }*/
+
+    .row.mt-4.rounded-left {
+      box-shadow: none !important;
+    }
+  }
+
+  /*.first-slide-laptop-contact {
+    width: 100% !important;
+    height: 510px;
+    top: -150px !important;
+  }*/
+</style>
+{% endblock %}
+
+{% block body %}
+
+<div class="green-screen d-flex justify-content-center align-items-center">
+  <h3 class="blog-title">Contactez nous</h3>
+</div>
+
+<div class="container-service p-4">
+  <div class="container">
+    <div>
+      <span class="green-divider"></span>
+      <h5 class="actualite-title">Contactez-nous</h5>
+    </div>
+    <form action="{{ path('contact') }}" method="POST">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-lg-6">
+              <label for="societe" class="block text-sm">Société</label>
+              <input type="text" name="first-name" class="block w-full contact-inputs" id="societe"
+                autocomplete="given-name" placeholder="Nom de votre société" />
+
+              <label for="first-name" class="block text-sm">Nom</label>
+              <input type="text" name="first-name" class="block w-full contact-inputs" id="first-name"
+                autocomplete="given-name" placeholder="Votre nom" required />
+            </div>
+
+            <div class="col-lg-6">
+              <label for="secteur" class="block text-sm">Secteur d’activité</label>
+              <select id="secteur" name="country" class="h-full contact-inputs rounded-md">
+                <option>Sélectionner secteur </option>
+                <option>Agroalimentaire</option>
+                <option>Banque / Assurance</option>
+                <option>Bois / Papier / Carton / Imprimerie</option>
+                <option>BTP / Matériaux de construction</option>
+                <option>Chimie / Parachimie</option>
+                <option>Commerce / Négoce / Distribution</option>
+                <option>Édition / Communication / Multimédia</option>
+                <option>Électronique / Électricité</option>
+                <option>Études et conseils</option>
+                <option>Industrie pharmaceutique</option>
+                <option>Informatique / Télécoms</option>
+                <option>Machines et équipements / Automobile</option>
+                <option>Métallurgie / Travail du métal</option>
+                <option>Plastique / Caoutchouc</option>
+                <option>Services aux entreprises</option>
+                <option>Textile / Habillement / Chaussure</option>
+                <option>Transports / Logistique</option>
+              </select>
+
+              <label for="last-name" class="block text-sm">Prénom</label>
+              <input type="text" name="first-name" id="last-name" class="block contact-inputs w-full"
+                autocomplete="given-name" placeholder="Votre prénom" required />
+            </div>
+
+            <div class="col-12">
+              <label for="country" class="block text-sm">Votre projet</label>
+              <select id="country" name="country" class="h-full rounded-md">
+                <option> Votre projet...</option>
+                <option>Conception et études</option>
+                <option>Travaux d’aménagement TCE</option>
+                <option>Mobilier de bureau et espaces commerciaux</option>
+                <option>Petits travaux et maintenance</option>
+              </select>
+            </div>
+
+            <div class="col-12">
+              <label for="message" class="block text-sm font-semibold">Votre demande</label>
+              <textarea name="message" id="message" class="block-test contact-inputs"
+                placeholder="Décrivez votre demande" required></textarea>
+            </div>
+
+            <div class="col-lg-6">
+              <p>
+                <i class="fa-regular fa-envelope"></i>
+                fer7diffusion@fer7.ma
+              </p>
+            </div>
+
+            <div class="col-lg-6">
+              <p>
+                <i class="fa-solid fa-phone-volume"></i>
+                +212 5 22 22 46 57
+              </p>
+            </div>
+
+            <div class="col-12 d-flex justify-content-center justify-content-md-start">
+              <button type="submit" class="btn btn-success px-4" name="btn_demande_devis">Demander un devis</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 d-flex align-items-center pt-1">
+          <img class="imagecard" src="{{ asset('/front/img/Group42.png') }}" alt="fer7 image"/>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

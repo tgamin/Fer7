@@ -1,0 +1,352 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+  Afriquia
+{% endblock %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  <style>
+    .first-slide-laptop {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      top: -100px;
+      z-index: -1;
+      /* background: transparent !important; */
+      font-family: 'Lexend', sans-serif;
+      font-weight: 400;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .center-projet {
+      color: #fff;
+      font-family: Lexend;
+      font-size: 44px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 80px;
+      letter-spacing: -0.5px;
+    }
+    p.text-center {
+      color: #fff;
+      font-family: Lexend;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px;
+      width: 100%;
+      height: 240px;
+    }
+    
+    #backround-section {
+      border-radius: 40px;
+      background: linear-gradient(0deg, #fff 0%, #fff 100%), linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+      box-shadow: 0px 4px 79.3px 0px rgba(0, 0, 0, 0.15);
+      margin-top: -12%;
+    }
+    
+    .title-projet {
+      color: #242222;
+      font-family: Lexend;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 45px;
+      letter-spacing: -0.5px;
+    }
+    
+    .text-projet {
+      color: #6a6a6a;
+      font-family: Lexend;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px; /* 162.5% */
+    }
+    .icon-projet {
+      color: #000;
+      font-family: Lexend;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 30.6px;
+      margin-left: 5%;
+    }
+    
+    .blog-img {
+      width: 540px;
+      height: 320px;
+      border-radius:11px;
+    }
+    .blog-imgright {
+      width: 100%;
+      border-radius:10px;
+      
+    }
+    #backroundblog {
+      border-radius: 20px;
+      height: 343px;
+      max-width: 580px !important;
+      box-shadow: 0px 4px 47.5px 0px rgba(0, 0, 0, 0.25);
+      padding: 11px;
+    }
+    #backroundblogright {
+      border-radius: 20px;
+      /* border: 3px solid #fff; */
+      box-shadow: 0px 4px 47.5px 0px rgba(0, 0, 0, 0.25);
+      padding: 11px;
+      height: 327px;
+
+    }
+    #backroundbright {
+      padding: 11px;
+      border-radius: 20px;
+      /*border: 16px solid #fff;*/
+      box-shadow: 0px 4px 47.5px 0px rgba(0, 0, 0, 0.25);
+      height: 328px;
+   
+     
+    }
+    
+    #backroundblogleft {
+      border-radius: 20px;
+      /*border: 16px solid #fff;*/
+      box-shadow: 0px 4px 47.5px 0px rgba(0, 0, 0, 0.25);
+      padding: 11px;
+      height: auto;
+      
+    }
+    .blog-imgleft {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+    .blogtext {
+      color: #fff;
+      text-align: center;
+      font-family: 'Lexend';
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 26px;
+      margin-top: -15%;
+    }
+    .blogtextright {
+      color: #fff;
+      text-align: center;
+      font-family: 'Lexend';
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 26px;
+      margin-top: -20%;
+    }
+    .blogsection {
+      color: #fff;
+      text-align: center;
+      font-family: Lexend;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 26px;
+      margin-top: -24%;
+    }
+    .blogsectionright {
+      color: #fff;
+      text-align: center;
+      font-family: Lexend;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 26px;
+      margin-top: -24%;
+    }
+    .balistitle {
+      color: #242222;
+      font-family: Lexend;
+      font-size: 34px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 45px;
+      letter-spacing: -0.5px;
+      margin-left: 2%;
+    }
+    
+    .balistext {
+      color: #9d9d9d;
+      font-family: Lexend;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px;
+      margin-left: 2%;
+    }
+    
+    div#mb-5-row {
+      margin-left: 10px;
+    }
+    
+    .carousel-inner {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      height: 400px;
+      
+    }
+
+    .carousel-inner .carousel-item img {
+        height: 400px;
+        object-fit: cover;
+        width: 100%;
+    }
+    img.img-info {
+      height: 22px;
+    }
+     div#carouselExampleControls
+     {
+      border: 1px solid white;
+      box-shadow: 0px 4px 79.3px 0px rgba(0, 0, 0, 0.15);
+      border-radius: 23px;
+      padding: 11px;
+    }  
+    
+    .img-link{
+      margin-left:-3%;
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .text-projet,.icon-projet {
+        font-size: 10px !important;  
+      }
+      .information-projet{
+        margin-top:0px !important;
+        margin-bottom:10px;
+      }
+      .img-link{
+        margin-left:-10% !important;
+      }
+    }
+  </style>
+{% endblock %}
+
+{% block body %}
+
+  <div class="first-backround" style="background-image:url(/front/img/{{projet.image}}); background-size: cover;">
+    <div class="container">
+      <div class="row row-first-backround align-center">
+        <div class="col-xl-12">
+          <div class="content">
+            <h2 class="h2-slider" style="margin-top:15%;color: #FFF;text-align: center;font-family: Lexend;font-size: 44px;font-style: normal;font-weight: 700;line-height: 80px;letter-spacing: -0.5px;">{{projet.title}}</h2>
+            <div class="row">
+              {# <div class="col-1"></div> #}
+              <div class="col-12">
+                <center id="text-mobil">
+                  <span style="text-align:center;font-family: 'Lexend';font-size: 11px;font-style: normal;font-weight: 400;line-height: 23.6px;color:white;">{{projet.description}}</span>
+                </center>
+              </div>
+              {# <div class="col-1"></div> #}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{# 
+  <div class="first-slide-laptop" >
+    <div class="container">
+      <div class="text-center row-first-slide align-center">
+        <h3 class="center-projet"></h3>
+        <p class="text-white"></p>
+      </div>
+    </div>
+  </div> #}
+  <div class="container" style="max-width: 700px;" id="backround-section">
+    <div class="section">
+      <div class="row" id="mb-5-row">
+        <div class="col-lg-6 col-sm-12 mt-5">
+          <h2 class="title-projet">{{projet.title}}</h2>
+          <p class="text-projet">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse potentiVestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse potenti</p>
+        </div>
+        <div class="col-lg-6 mt-5 col-sm-12 information-projet">
+          <div class="mt-2">
+            <img src="{{ asset('/front/img/Symbol.png') }}" alt=""  class="img-info"/><span class="icon-projet">Casablanca</span>
+          </div>
+          <div class="mt-2">
+            <img src="{{ asset('/front/img/iconsdatetoday.png') }}"  class="img-info" alt="" /><span class="icon-projet">Mardi 01 Janvier 2024</span>
+          </div>
+          <div class="mt-2">
+            <img src="{{ asset('/front/img/letsiconstime.png') }}" class="img-info" alt="" /><span class="icon-projet">Lorem ipsum dolor</span>
+          </div>
+          <div class="mt-2">
+            <img src="{{ asset('/front/img/mdisurfacearea.png') }}"  class="img-info" alt="" /><span class="icon-projet">300m2</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container project-name">
+    <div class="section-projet">
+      <img src="{{ asset('/front/img/link.png') }}" class="img-link" alt="" />
+      <h2 style="font-family: 'Lexend';font-weight: bold;">{{projet.title}}</h2>
+      <p>{{projet.description}}</p>
+    </div>
+    <div class="section-image">
+      <div class="row">
+        <div class="col-sm-5" id="backroundblog">
+          <img class="blog-img" src="/front/img/{{projet.images[0].upload}}" alt="" />
+          <p class="blogtext">{{projet.images[0].titleImage}}</p>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-5" id="backroundblogright">
+          <img class="blog-imgright" src="/front/img/{{projet.images[1].upload}}"  alt="" />
+          <p class="blogtextright">{{projet.images[1].titleImage}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="section-image mt-5">
+      <div class="row">
+        <div class="col-sm-5" id="backroundblogleft">
+          <img class="blog-imgleft" src="/front/img/{{projet.images[2].upload}}"  alt="" />
+          <p class="blogsection">{{projet.images[2].titleImage}}</p>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-5" id="backroundbright">
+          <img class="blog-imgright" src="/front/img/{{projet.images[3].upload}}"  alt="" />
+          <p class="blogsectionright">{{projet.images[3].titleImage}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section slider">
+      <img src="{{ asset('/front/img/link.png') }}" class="img-link" style="margin-left:0%" alt="" />
+      <h3 class="balistitle">Galerie</h3>
+      <p class="balistext">Vestibulum ante ipsum primis in faucibus orci luctus</p>
+    </div>
+  </div>
+  <div class="container mb-5">
+    <div id="carouselExampleControls" style="max-width: 1450px;" class="container carousel slide" data-ride="carousel">
+    <div class="carousel-inner" style="width: 100%; max-width: 100%;">
+        {% for imagesSlider in projet.images %}
+            <div class="carousel-item {% if loop.first %}active{% endif %}">
+                <img class="d-block w-100" src="/front/img/{{ imagesSlider.upload }}" alt="Slide {{ loop.index }}" style="width: 100%;" />
+            </div>
+        {% endfor %}
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+  </div>
+  </div>
+
+
+
+{% endblock %}

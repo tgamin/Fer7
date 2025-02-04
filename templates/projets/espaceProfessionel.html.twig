@@ -1,0 +1,481 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+  Espace Professionnel
+{% endblock %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  <style>
+    .col-2.border-cols {
+        background: #F3F3F3;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 4px;
+        color: #8A8A8A;
+        font-weight: 300;
+        max-width: 14%;
+    }
+    .col-6.border-cols-mobile{
+        display:none !important;
+    }
+    .first-slide-laptop {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      top: -100px;
+      z-index: -1;
+      /* background: transparent !important; */
+      font-family: 'Lexend', sans-serif;
+      font-weight: 400;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .center-projet {
+      color: #fff;
+      font-family: Lexend;
+      font-size: 44px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 80px;
+      letter-spacing: -0.5px;
+    }
+    p.text-center {
+      color: #fff;
+      font-family: Lexend;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px;
+      width: 100%;
+      height: 240px;
+    }
+    
+    #backround-section {
+      border-radius: 40px;
+      background: linear-gradient(0deg, #fff 0%, #fff 100%), linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+      box-shadow: 0px 4px 79.3px 0px rgba(0, 0, 0, 0.15);
+      margin-top: -12%;
+    }
+    
+    .title-projet {
+      color: #242222;
+      font-family: Lexend;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 45px;
+      letter-spacing: -0.5px;
+    }
+    
+    .text-projet {
+      color: #6a6a6a;
+      font-family: Lexend;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px; /* 162.5% */
+    }
+    .icon-projet {
+      color: #000;
+      font-family: Lexend;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 30.6px;
+      margin-left: 5%;
+    }
+    
+    .blog-img {
+      width: 540px;
+      height: 320px;
+      border-radius:11px;
+    }
+    .blog-imgright {
+      width: 100%;
+      border-radius:10px;
+      
+    }
+    #backroundblog {
+      border-radius: 20px;
+      height: 343px;
+      max-width: 580px !important;
+      box-shadow: 0px 4px 47.5px 0px rgba(0, 0, 0, 0.25);
+      padding: 11px;
+    }
+    #backroundblogright {
+      border-radius: 20px;
+      /* border: 3px solid #fff; */
+      box-shadow: 0px 4px 47.5px 0px rgba(0, 0, 0, 0.25);
+      padding: 11px;
+      height: 327px;
+
+    }
+    #backroundbright {
+      padding: 11px;
+      border-radius: 20px;
+      /*border: 16px solid #fff;*/
+      box-shadow: 0px 4px 47.5px 0px rgba(0, 0, 0, 0.25);
+      height: 328px;
+   
+     
+    }
+    
+    #backroundblogleft {
+      border-radius: 20px;
+      /*border: 16px solid #fff;*/
+      box-shadow: 0px 4px 47.5px 0px rgba(0, 0, 0, 0.25);
+      padding: 11px;
+      height: auto;
+      
+    }
+    .blog-imgleft {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+    .blogtext {
+      color: #fff;
+      text-align: center;
+      font-family: 'Lexend';
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 26px;
+      margin-top: -15%;
+    }
+    .blogtextright {
+      color: #fff;
+      text-align: center;
+      font-family: 'Lexend';
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 26px;
+      margin-top: -20%;
+    }
+    .blogsection {
+      color: #fff;
+      text-align: center;
+      font-family: Lexend;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 26px;
+      margin-top: -24%;
+    }
+    .blogsectionright {
+      color: #fff;
+      text-align: center;
+      font-family: Lexend;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 26px;
+      margin-top: -24%;
+    }
+    .balistitle {
+      color: #242222;
+      font-family: Lexend;
+      font-size: 34px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 45px;
+      letter-spacing: -0.5px;
+      margin-left: 2%;
+    }
+    
+    .balistext {
+      color: #9d9d9d;
+      font-family: Lexend;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px;
+      margin-left: 2%;
+    }
+    
+    div#mb-5-row {
+      margin-left: 10px;
+    }
+    
+    .carousel-inner {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      height: 400px;
+      
+    }
+
+    .carousel-inner .carousel-item img {
+        height: 400px;
+        object-fit: cover;
+        width: 100%;
+    }
+    img.img-info {
+      height: 22px;
+    }
+     div#carouselExampleControls
+     {
+      border: 1px solid white;
+      box-shadow: 0px 4px 79.3px 0px rgba(0, 0, 0, 0.15);
+      border-radius: 23px;
+      padding: 11px;
+    }  
+    
+    .img-link{
+      margin-left:-3%;
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .text-projet,.icon-projet {
+        font-size: 10px !important;  
+      }
+      .information-projet{
+        margin-top:0px !important;
+        margin-bottom:10px;
+      }
+      .img-link{
+        margin-left:-10% !important;
+      }
+      .col-2.border-cols{
+          display:none !important;
+      }
+      .col-6.border-cols-mobile{
+            display:block !important;
+             background: #F3F3F3;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 4px;
+            color: #8A8A8A;
+            font-weight: 300;
+            max-width: 49% !important;
+            font-size: 13px;
+
+        }
+        .grey-cols .col-1{
+            display:none !important;
+        }
+        .first-header{
+            font-size:23px;
+        }
+        .header-h5{
+            text-align: left;
+            font-size: 17px;
+            font-weight: 900;
+        }
+        .last-cards .col-1{
+            display:none !important;
+        }
+        .card img{
+            border-radius:20px !important;
+        }
+        .first-container{
+            margin-top:-100% !important;
+        }
+        .img-for-mobile{
+            
+            height: auto !important;
+            width: 100% !important;
+        }
+    }
+  </style>
+{% endblock %}
+
+{% block body %}
+
+  <div class="first-backround" style="background-image:url(/front/img/espace.png); background-size: cover;">
+    <div class="container">
+      <div class="row row-first-backround align-center">
+        <div class="col-xl-12">
+          <div class="content">
+            <div class="row">
+              {# <div class="col-1"></div> #}
+              <div class="col-12">
+                <center id="text-mobil">
+                  <span style="text-align:center;font-family: 'Lexend';font-size: 11px;font-style: normal;font-weight: 400;line-height: 23.6px;color:white;"></span>
+                </center>
+              </div>
+              {# <div class="col-1"></div> #}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+ 
+  <div class="container first-container text-center" style="background:white; color:black; margin-top: -30%; height: auto;border-radius: 20px; max-width: 95% !important;box-shadow: 2px 5px 10px 0px gray;
+    margin-bottom: 40px;    padding-bottom: 60px;">
+    <div class="d-flex align-items-center justify-content-center mt-3">
+      <img src="/front/img/Link.png" alt="">
+      <br>
+      
+    </div>
+    <div class="text-center">
+        <h1 class="first-header" style="font-family: 'Lexend'; color: black;font-weight: 800;">Comment optimiser l'acoustique dans<br> un espace professionnel ?</h1>
+        <span class="text-muted"> 13.03.2024 14:30 </span>
+    </div>
+    <div class="row text-center mt-5 text-black grey-cols">
+       <div class="col-1"></div>
+        <div class="col-2 border-cols">Acoustique</div>
+        <div class="col-1"></div>
+        <div class="col-2 border-cols">Isolation sonore</div>
+        <div class="col-1"></div>
+        <div class="col-2 border-cols">Productivité</div>
+        <div class="col-1"></div>
+        <div class="col-2 border-cols">Bien-être au travail</div>
+        <div class="col-1"></div>
+        <div class="col-6 border-cols-mobile mb-3" style="margin-right: 6px;">Acoustique</div>
+        <div class="col-6 border-cols-mobile mb-3">Isolation sonore</div>
+        <div class="col-6 border-cols-mobile" style="margin-right: 6px;">Productivité</div>
+        <div class="col-6 border-cols-mobile">Bien-être au travail</div>
+        
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        
+        <div class="col-10">
+            
+            <img src="/front/img/isolation.jpeg" width="70%" alt="" style="    border-radius: 30px;
+    height: 380px;
+    width: 80%;
+" class="mt-5 img-for-mobile">
+            
+        </div>
+        
+        <div class="col-1"></div>
+    </div>
+    
+    <div class="row mt-5">
+        <div class="col-1"></div>
+         <div class="col-10"  style="text-align: justify; ">
+        <span class="text-muted">L'acoustique est un aspect fondamental dans la conception des espaces professionnels, mais elle est souvent négligée. Une mauvaise acoustique peut avoir des répercussions significatives sur le bien-être des employés, la productivité, et même l'image de l'entreprise. Cet article explore les problèmes acoustiques les plus courants, les solutions pour les éviter, comment intervenir sur des projets déjà livrés, et présente les dernières innovations dans le domaine.</span>
+        <br>
+        <h5 style="margin-top:30px;" class="header-h5">Les Problèmes Acoustiques Courants</h5>
+        <span class="text-muted">
+            
+            Les espaces de travail modernes, souvent caractérisés par des plans ouverts, des surfaces dures et un manque de matériaux absorbants, sont particulièrement sujets aux problèmes acoustiques. Parmi les plus courants, on trouve :<br><br>
+
+            <span style="font-weight:700">Réverbération excessive</span> : Les surfaces dures comme le verre, le béton, et les sols en carrelage, reflètent les ondes sonores, créant un écho qui peut rendre les conversations difficiles et fatiguer les occupants.
+            <br><br>
+            <span style="font-weight:700">Niveau de bruit ambiant élevé</span> : Dans les espaces ouverts, le bruit ambiant provenant des conversations, des équipements (imprimantes, téléphones, ordinateurs), et de la ventilation peut distraire et réduire la concentration.
+            <br><br>
+            <span style="font-weight:700">Manque d'intimité sonore</span> : Les bureaux cloisonnés et les espaces de réunion peuvent manquer d'intimité, permettant aux sons de se propager d'un espace à l'autre, ce qui peut être problématique pour les discussions confidentielles.
+            <br><br>
+            <span style="font-weight:700">Concentration difficile</span> : Le bruit de fond constant peut rendre difficile la concentration sur les tâches importantes, affectant ainsi la productivité.
+                        
+            
+        </span>
+        
+        <h5 style="margin-top:30px;" class="header-h5">Interventions sur des Projets Déjà Livrés</h5>
+        <span class="text-muted">
+        Même si le projet a déjà été livré et est opérationnel, il est possible d'améliorer l'acoustique :
+        </br></br>
+        <span style="font-weight:700">Ajout de panneaux acoustiques</span> : Ces panneaux peuvent être fixés aux murs ou suspendus au plafond pour améliorer l'absorption sonore sans nécessiter de modifications structurelles majeures.
+        </br></br>
+        <span style="font-weight:700">Pose de tapis et moquettes </span>: Les sols durs peuvent être recouverts de tapis ou de moquettes pour réduire la réverbération et absorber les bruits de pas.
+        </br></br>
+        <span style="font-weight:700"> Installation de rideaux acoustiques </span>: Des rideaux lourds et épais peuvent être ajoutés autour des fenêtres ou pour séparer des espaces, ce qui peut à la fois améliorer l'intimité sonore et réduire la réverbération.
+        </br></br>
+        <span style="font-weight:700">Intégration de solutions mobiles</span> : Des cloisons acoustiques mobiles ou des cabines insonorisées peuvent être ajoutées aux espaces de travail existants pour créer des zones plus calmes ou privées sans nécessiter de gros travaux.
+        </span>
+        
+        <h5 style="margin-top:30px;" class="header-h5">Les Dernières Innovations en Matière d'Acoustique</h5>
+        <span class="text-muted">
+        Le domaine de l'acoustique ne cesse d'évoluer, avec de nouvelles technologies et solutions disponibles pour améliorer le confort sonore des espaces professionnels :
+        </br></br>
+        <span style="font-weight:700">Plafonds acoustiques intelligents </span> :Les plafonds acoustiques modulaires intègrent désormais des technologies qui ajustent automatiquement l'absorption sonore en fonction des niveaux de bruit, optimisant ainsi l'acoustique en temps réel.
+
+        </br></br>
+        <span style="font-weight:700">Panneaux acoustiques interactifs </span>: Certains panneaux acoustiques peuvent être intégrés avec des fonctionnalités interactives comme des écrans, des tableaux blancs, ou des systèmes d'éclairage, maximisant ainsi leur utilité dans les environnements de travail.
+        </br></br>
+        <span style="font-weight:700">Matériaux écologiques  </span>: De plus en plus de solutions acoustiques sont fabriquées à partir de matériaux recyclés ou renouvelables, offrant ainsi une option durable sans compromettre la performance acoustique.
+
+        </br></br>
+        <span style="font-weight:700">Sound masking </span>: Ce système diffuse un bruit de fond doux et constant qui masque les bruits indésirables, améliorant ainsi l'intimité sonore sans nécessiter de modifications physiques des espaces.
+        </span>
+        
+        <h5 style="margin-top:30px;" class="header-h5">Conclusion</h5><br>
+        <span class="text-muted"> L'acoustique joue un rôle crucial dans la création d'espaces de travail confortables, productifs, et agréables. Qu'il s'agisse de planifier un nouvel aménagement ou de corriger des problèmes dans un espace existant, il existe des solutions efficaces pour répondre à ces défis. Avec les dernières innovations, il est possible de concevoir des espaces où le son est non seulement contrôlé, mais optimisé pour le bien-être et la performance des occupants.
+        </span>
+        
+        <h3 class="mt-5" style="font-weight:700">Articles connexes</h3>
+        </div>
+        
+        
+        <div class="col-1"></div>
+    </div>
+     <div class="row mt-3 last-cards" style="justify-content: space-between;text-align: left;">
+         <div class="col-1"></div>
+            <div class="col-lg-3 mt-5 col-12 text-black" >
+                <div class="card" id="card-carossel1" style="width: 18rem;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+              <img class="card-img-top" src="/front/img/isolation.jpeg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Comment optimiser l'acoustique dans
+un espace professionnel ?</h5>
+                <p class="card-text" style="margin-bottom:36px !important; font-size:11px">Acoustique, Isolation sonore, Productivité, Bien-être au travail</p>
+                <div class="row">
+                  <div class="col">
+                    <span class="text-muted" style="font-size: 12px;">13.03.2024 14:30</span>
+                  </div>
+                  <div class="col">
+                    <b id="boldid"><a href="https://fer7.gebanalysis.cloud/espace-professionel">Lire plus</a></b>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+            <div class="col-lg-3 mt-5 col-12 text-black">
+                
+                <div class="card" id="card-carossel2" style="width: 18rem;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+              <img class="card-img-top" src="/front/img/eclirage.jpeg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">L'Éclairage : Un Élément Clé pour des Espaces Fonctionnels et Esthétiques</h5>
+                <p class="card-text" style="margin-bottom:18px !important"><span style="text-transform:capitalize; font-size:11px">éclairage,
+</span><span style="text-transform:capitalize; font-size:11px">design d'éclairage,
+</span><span style="text-transform:capitalize; font-size:11px">ambiance lumineuse,
+</span><span style="text-transform:capitalize; font-size:11px">productivité</span></p>
+                <div class="row">
+                  <div class="col">
+                    <span class="text-muted" style="font-size: 12px;">13.03.2024 14:30</span>
+                  </div>
+                  <div class="col">
+                    <b id="boldid"><a href="https://fer7.gebanalysis.cloud/espace-fonctionnel">Lire plus</a></b>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="col-lg-3 mt-5 col-12 text-black">
+                
+                
+                <div class="card" id="card-carossel3" style="width: 18rem;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+              <img class="card-img-top" src="/front/img/gestion.jpeg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Gestion Optimale des Coûts et Délais dans les Projets d'Aménagement : Bonnes Pratiques</h5>
+                <p class="card-text" style="margin-bottom:0px !important"><span style="text-transform:capitalize; font-size:11px">gestion de projet,
+</span><span style="text-transform:capitalize; font-size:11px">coûts,
+</span><span style="text-transform:capitalize; font-size:11px">délais,
+</span><span style="text-transform:capitalize; font-size:11px">aménagement d'intérieur</span></p>
+                <div class="row">
+                  <div class="col">
+                    <span class="text-muted" style="font-size: 12px;">13.03.2024 14:30</span>
+                  </div>
+                  <div class="col">
+                    <b id="boldid"><a href="https://fer7.gebanalysis.cloud/gestion-projet">Lire plus</a></b>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+        <div class="col-1"></div>    
+        </div>
+    
+    
+  </div>
+
+
+
+{% endblock %}

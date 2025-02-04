@@ -1,0 +1,223 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Conception & Etudes
+{% endblock %}
+
+{% block body %}
+{{parent()}}
+
+<div class="green-screen"></div>
+{# <div class="conception-screen text-center">
+	<h1 class="header-services mb-5">Conception & Etudes</h1>
+	<a href="{{path('contact')}}" class="btn btn-demande-devise mb-5" style="font-weight: 300;font-size: 13px;">Demander
+		un devis
+	</a>
+</div> #}
+{# <div class="laptop-version mt-0"> #}
+	<div class="container-service conception pb-5">
+		<div class="text-center">
+			<h1 class="header-services pt-5">Conception & Etudes</h1>
+			<span class="green-divider"></span>
+			<p class="header-p mt-5">Notre mot d’ordre: optimiser chaque coin de vos
+				espaces, où chaque aspect architectural ou technique revêt une importance particulière, et chaque mètre
+				carré est soigneusement mis en valeur. Notre équipe dédiée au conseil et à la conception veillera à ce
+				qu’une vision unique soit développée votre grâce à une analyse complète et approfondie. Notre objectif
+				premier étant de garantir que votre environnement réponde pleinement aux exigences de vos clients et de
+				vos collaborateurs.
+			</p>
+		</div>
+		<div class="container mt-5">
+			<div class="row">
+				<div class="col-md-4 img-container">
+					<span class="green-divider d-md-none"></span>
+					<h3 class="d-md-none"
+						style="font-family: 'Lexend';width: 100%;margin-bottom: 20px;">LA VISION DE VOTRE PROJET
+					</h3>
+					<img src="{{asset('front/img/design.png')}}" width="100%" style="border-radius:20px">
+				</div>
+
+				<div class="col-md-8">
+					<span class="green-divider d-none d-md-inline-block"></span>
+					<h3 class="d-none d-md-block" style="font-family: 'Lexend';width: 100%;">LA VISION DE VOTRE
+						PROJET</h3>
+					<div id="accordion" class="accordion">
+						<div class="mb-0" style="border: none;">
+							<div class="card-header collapsed" data-toggle="collapse" href="#collapseOne">
+								<a class="">
+									Analyse et compréhension des besoins architecturaux & techniques
+								</a>
+							</div>
+
+							<div id="collapseOne" class="p-3 collapse" data-parent="#accordion">
+								<p>Notre point de départ : une exploration approfondie de vos besoins. De la prise
+									de
+									contact aux consultations et entretiens détaillés, nous démarrons par une
+									analyse
+									précise des attentes de votre entreprise. Cette compréhension forme des
+									fondations
+									robustes pour votre projet.
+								</p>
+							</div>
+
+							<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion"
+								href="#collapseTwo">
+								<a class="">
+									Audit et diagnostic de l’existant
+								</a>
+							</div>
+
+							<div id="collapseTwo" class="p-3 collapse" data-parent="#accordion">
+								<p>L’étape d'audit approfondi démarre ensuite par la visite des futurs locaux. Notre
+									but
+									est d'analyser la structure existante et de déterminer les opportunités ainsi
+									que
+									les contraintes inhérentes à cet environnement. Le diagnostic de faisabilité qui
+									en
+									découle nous permet d’évaluer la cohérence entre les espaces et les besoins
+									identifiés.
+								</p>
+							</div>
+
+							<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion"
+								href="#collapseThree">
+								<a class="">
+									La vision du projet
+								</a>
+							</div>
+
+							<div id="collapseThree" class="p-3 collapse" data-parent="#accordion">
+								<div class="p-3">
+									<p>Toutes les parties prenantes se réunissent pour brainstormer, échanger leur
+										point
+										de vue et définir conjointement la direction et les principes qui guideront
+										le
+										projet. C’est une étape cruciale où la créativité rencontre la stratégie, et
+										où
+										la vision du projet commence réellement à prendre forme.
+									</p>
+								</div>
+							</div>
+
+							<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion"
+								href="#collapseFour">
+								<a class="">
+									Définition d’un cahier des charges de conception
+								</a>
+							</div>
+
+							<div id="collapseFour" class="p-3 collapse" data-parent="#accordion">
+								<p>Ce document exhaustif définit les spécifications, les exigences, les directives,
+									et
+									les attentes du projet. Il joue un rôle de référence crucial pour toutes les
+									phases
+									ultérieures de conception et d'exécution, garantissant ainsi que le projet
+									demeure
+									aligné sur la trajectoire souhaitée et respecte les normes de qualité
+									préalablement
+									établies
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mt-5">
+				<div class="col-md-4 img-container">
+					<span class="green-divider d-md-none"></span>
+					<h3 class="d-md-none"
+						style="font-family: 'Lexend';width: 100%;margin-bottom: 20px;">LA CONCEPTION DE VOTRE PROJET
+					</h3>
+					<img src="{{asset('front/img/picSevice.jpg')}}" width="100%" style="border-radius:20px">
+				</div>
+				<div class="col-md-8 dropdown-container">
+					<span class="green-divider d-none d-md-inline-block"></span>
+					<h3 class="d-none d-md-block" style="font-family: 'Lexend';width:100%">LA CONCEPTION DE VOTRE PROJET
+					</h3>
+
+					<div id="accordion" class="accordion">
+						<div class="mb-0" style="border: none;">
+							<div class="card-header collapsed" data-toggle="collapse" href="#collapseOneSecondSection">
+								<a class="">
+									Space planning
+								</a>
+							</div>
+							<div id="collapseOneSecondSection" class="p-3 collapse"
+								data-parent="#accordion">
+								<p>C’est une étape clef dans la gestion de l'environnement de travail au sein d'une
+									entreprise. En effet, elle consiste à concevoir et à organiser les espaces de
+									travail de manière à optimiser l'utilisation des locaux, à favoriser la productivité
+									et les échanges, mais surtout à créer un environnement de travail fonctionnel et
+									agréable pour les salariés de chaque équipe.
+								</p>
+							</div>
+							<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion"
+								href="#collapseTwoSecondSection">
+								<a class="">
+									APS
+								</a>
+							</div>
+							<div id="collapseTwoSecondSection" class="p-3 collapse"
+								data-parent="#accordion">
+								<p>L’APS (avant-projet sommaire), est une étape clé dans un projet de conception en
+									aménagement. Il s'agit d'une phase où les grandes lignes du projet sont définies de
+									manière succincte, incluant les principaux éléments architecturaux, urbains ou
+									paysagers. L'APS permet de visualiser les orientations et les choix stratégiques du
+									projet avant d'entrer dans les détails techniques et financiers plus précis.
+								</p>
+							</div>
+							<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion"
+								href="#collapseThreeSecondSection">
+								<a class="">
+									APD
+								</a>
+							</div>
+							<div id="collapseThreeSecondSection" class="collapse" data-parent="#accordion">
+								<div class="p-3">
+									<p>L’APD (avant-projet détaillé), constitue une phase avancée dans un projet de
+										conception en aménagement. Il se concentre sur le développement approfondi des
+										plans, des schémas et des spécifications techniques du projet, intégrant les
+										aspects architecturaux, structurels et fonctionnels. L'objectif principal de
+										l'APD est de préciser et de formaliser les choix techniques et esthétiques
+										établis lors de l'APS, tout en préparant les documents nécessaires pour lancer
+										la phase de réalisation </p>
+								</div>
+							</div>
+
+							<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion"
+								href="#collapseFourSecondSection">
+								<a class="">
+									Accompagnement dans le choix du mobilier
+								</a>
+							</div>
+							<div id="collapseFourSecondSection" class="p-3 collapse"
+								data-parent="#accordion">
+								<p>Nos équipes vous accompagnent dans le choix de meubles adaptés à vos espaces et à vos
+									besoins. Un large éventail de choix s’offre à vous à travers les produits de nos
+									marques partenaires et nos capabilités de production sur mesure.
+								</p>
+							</div>
+
+							<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion"
+								href="#collapsefiveSecondSection">
+								<a class="">
+									Budget
+								</a>
+							</div>
+							<div id="collapsefiveSecondSection" class="p-3 collapse"
+								data-parent="#accordion">
+								<p>La définition de l’enveloppe financière prévisionnelle intervient en fin d’études et
+									permet de donner de la visibilité sur le coût associé à la réalisation de la vision
+									définie en phase de conception.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+{# </div> #}
+
+{% endblock %}

@@ -1,0 +1,366 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+FER 7 DIFFUSION - Votre partenaire dans l'excellence
+{% endblock %}
+{% block stylesheets %}
+{{parent()}}
+
+{% endblock %}
+
+
+{% block body %}
+
+<div class="hero-section d-flex flex-column justify-content-center align-items-center">
+	<h2 class="hero-title">
+		Donnez <span style="color: #B0CB32;">vie</span> à vos espaces
+	</h2>
+	<h6 class="hero-description mb-3">
+		De la conception à la réalisation, nous vous accompagnons pour penser, créer et maintenir des espaces uniques
+	</h6>
+
+	<div class="hero-btns d-flex align-items-center flex-column flex-md-row">
+		<a href="{{path('realisations')}}" class="btn btn-success mr-md-3">Explorez nos réalisations</a>
+
+		<a href="{{path('contact')}}" class="btn btn-success btn-outline">Nous contacter</a>
+	</div>
+</div>
+
+
+{# Tarik #}
+<div class="card-section">
+	<div class="row">
+		<div class="col-md-6 card-container">
+			<div class="card pb-1 flex-lg-row">
+				<picture>
+					<source media="(max-width: 991px)" srcset="/front/img/etude-mobile.png">
+					<img class="card-img" src="/front/img/conception-etude1.png" alt="Conception-Etudes">
+				</picture>
+				<div class="card-body d-flex flex-column align-items-center align-items-lg-start pl-lg-0">
+					<h5 class="card-title">Conception &amp; Etudes</h5>
+					<p class="card-text">Optimisation et mise en valeur des espaces qui répondent pleinement
+						aux
+						exigences de vos clients et de vos collaborateurs.
+					</p>
+					<a class="btn btn-success explore-btn" href="{{path('serviceConception')}}">
+						Découvrir
+						<i class="fa-solid fa-arrow-right-long"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-6 card-container justify-content-lg-end">
+			<div class="card pb-1 flex-lg-row-reverse">
+				<picture>
+					<source media="(max-width: 991px)" srcset="/front/img/tce-mobile.png">
+					<img class="card-img" src="/front/img/traveaux-tce1.jpg" alt="Travaux d'aménagements TCE">
+				</picture>
+				<div class="card-body d-flex flex-column align-items-center align-items-lg-start pr-lg-0">
+					<h5 class="card-title">Travaux d'aménagements TCE</h5>
+					<p class="card-text">
+						Aménagements tous corps d'état pour surfaces à usage professionnels : plateaux de bureaux,
+						sièges sociaux, administrations, show rooms, usines, établissements de santé, magasins grand
+						public, etc.
+					</p>
+					<a class="btn btn-success explore-btn" href="{{path('serviceTce')}}">
+						Découvrir
+						<i class="fa-solid fa-arrow-right-long"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row mt-4">
+		<div class="col-md-6 card-container">
+			<div class="card pb-1 flex-lg-row">
+				<picture>
+					<source media="(max-width: 991px)" srcset="/front/img/mobile2.png">
+					<img class="card-img bottom-img" src="/front/img/Maskgroup-left2.png"
+						alt="Mobilier bureau - espaces commerciaux">
+				</picture>
+				<div class="card-body d-flex flex-column align-items-center align-items-lg-start pl-lg-0">
+					<h5 class="card-title">Mobilier de bureau & espaces commerciaux</h5>
+					<p class="card-text">
+						Nous proposons une gamme de produits variée à travers nos capacités de production locales
+						ainsi
+						que nos partenariats avec des marques internationales de grande renommée.
+					</p>
+					<a class="btn btn-success explore-btn" href="{{path('espacesCommerciaux')}}">
+						Découvrir
+						<i class="fa-solid fa-arrow-right-long"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-6 card-container justify-content-lg-end">
+			<div class="card pb-1 flex-lg-row-reverse">
+				<picture>
+					<source media="(max-width: 991px)" srcset="/front/img/mintenance-mobile.png">
+					<img class="card-img bottom-img" src="/front/img/mintenance.png" alt="Petits travaux - Maintenance">
+				</picture>
+				<div class="card-body d-flex flex-column align-items-center align-items-lg-start pr-lg-0">
+					<h5 class="card-title">Petits travaux & Maintenance</h5>
+					<p class="card-text">
+						De la réponse à des besoins ponctuels à la mise en place de contrats de maintenance, nous
+						vous
+						accompagnons après la livraison du chantier pour répondre à vos besoins durant toute la
+						durée de
+						vie de vos bâtiments
+					</p>
+					<a class="btn btn-success explore-btn" href="{{path('serviceMaintenance')}}">
+						Découvrir
+						<i class="fa-solid fa-arrow-right-long"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container fondateur-sec p-md-3">
+	<div class="row">
+		<div class="col-12 col-md-6 d-flex flex-column align-items-center align-items-md-start">
+			<span class="green-divider"></span>
+			<h2 class="fondateur-sec-h2">
+				Mot du fondateur
+			</h2>
+			<p class="fondateur-p text-center text-md-left mt-4">
+				«Forte de 30 années d'expérience et d'expertise dans le domaine du TCE, Fer7 Diffusion s'est bâti
+				une réputation solide grâce à son engagement envers l'excellence. L’excellence, la qualité et
+				l’attention aux détails sont les maîtres mots qui guident nos opérations. Nous offrons un
+				accompagnement complet qui vous permet de concrétiser votre vision et de répondre aux besoins
+				uniques de vos clients et de vos collaborateurs Notre équipe pluridisciplinaire excelle dans tous
+				les aspects de la construction seconds œuvres, de la conception à la réalisation.
+			</p>
+			<h3 class="fondateur-p">
+				<span>Ahmed Benmoussa – </span><small>CEO &amp; Fondateur FER7 DIFFUSION</small>
+			</h3>
+
+			<a href="{{path('quisommesnous')}}" class="btn btn-success davantage d-none d-md-block">
+				Lire davantage
+				<i class="fa-solid fa-arrow-right-long ml-4"></i>
+			</a>
+		</div>
+		<div class="col-12 col-md-6 d-flex flex-column align-items-center">
+			<img class="imagecard" src="/front/img/Group42.png" alt="fer7 image">
+			<a href="{{path('quisommesnous')}}" class="btn btn-success davantage d-md-none">
+				Lire davantage
+				<i class="fa-solid fa-arrow-right-long ml-4"></i>
+			</a>
+		</div>
+	</div>
+	<div class="container symbols-container mt-4">
+		<div class="row justify-content-center">
+			<div class="col-4 col-md-2 symbols">
+				<img src="/front/img/gg_check-o.png" alt="">
+				<p class="titleicone">Qualité &amp; Excellence</p>
+			</div>
+			<div class="col-4 col-md-2 symbols">
+				<img src="/front/img/icon-park-outline_good-two.png" alt="">
+				<p class="titleicone">Solutions sur mesure &amp; innovantes</p>
+			</div>
+			<div class="col-4 col-md-2 symbols">
+				<img src="/front/img/wi_time-5.png" alt="">
+				<p class="titleicone">Respect des délais &amp; des budgets</p>
+			</div>
+			<div class="col-4 col-md-2 symbols">
+				<img src="/front/img/oui_app-security.png" alt="">
+				<p class="titleicone">Sécurité &amp; Conformité</p>
+			</div>
+			<div class="col-4 col-md-2 symbols">
+				<img src="/front/img/mdi_partnership-outline.png" alt="">
+				<p class="titleicone">Partenariats long terme</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="collab-sec d-flex flex-column align-items-center py-4">
+	<span class="green-divider mb-4"></span>
+	<h2 class="section-title mb-2">
+		Ils nous font confiance
+	</h2>
+	<small class="section-text w-75 mt-3">
+		Découvrez une liste non exhaustive de nos références. Nous sommes fiers d’avoir collaboré avec des
+		entreprises marocaines de toutes tailles et à travers tout type d’industrie.
+	</small>
+
+	<div class="partenaire-container w-100 d-flex flex-column align-items-center mt-5">
+		<div class="symbols-container container">
+			<div class="row justify-content-center">
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="/front/img/pp-1.png" alt="Naciri & Associés A&O Shearman">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="/front/img/pp-2.png" alt="PORTNET">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="/front/img/pp-3.png" alt="Afriquia Gaz">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="/front/img/pp-4.png" alt="FIGES MERNISSI">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="/front/img/pp-21.png" alt="Distribio">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="/front/img/pp-6.png" alt="ESCA">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="/front/img/pp-7.png" alt="Neuroclinique de casablanca">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="/front/img/pp-22.png" alt="FARMAPROM">
+				</div>
+				<div class="col-4 col-custom-2 partenaires">
+					<img src="/front/img/pp-23.png" alt="Forafric maroc">
+				</div>
+				<div class="col-4 col-custom-2 partenaires d-none d-lg-block">
+					<img src="/front/img/pp-10.png" alt="Kenz up logo">
+				</div>
+			</div>
+		</div>
+		<a href="/quisommesnous" class="btn btn-success mt-3 mb-4">En savoir plus</a>
+	</div>
+</div>
+
+<div class="collab-sec d-flex flex-column align-items-center py-4">
+	<span class="green-divider mb-4 mt-0"></span>
+	<h2 class="section-title mb-2">
+		Nos réalisations à la Une
+	</h2>
+	<small class="section-text w-75 mt-3">
+		Nos références témoignent de notre capacité à livrer des projets d’excellence. Découvrez une sélection
+		d’image qui reflètent la qualité de nos travaux.
+	</small>
+</div>
+
+<div class="projects-section container d-flex flex-column align-items-center">
+	<div class="row projects-container">
+		<div class="col-12 col-md-6">
+			<div class="project">
+				<img class="project-img" src="/front/img/reaimage1.jpg" width="100%" alt="Projet Projet Afriquia">
+				<h3 class="project-title">Projet Projet Afriquia</h3>
+			</div>
+		</div>
+		<div class="col-12 col-md-6">
+			<div class="project">
+				<img class="project-img" src="/front/img/p-rea.jpg" width="100%" alt="Projet Rabat">
+				<h3 class="project-title">Projet Rabat</h3>
+			</div>
+		</div>
+		<div class="col-12">
+			<div class="project">
+				<img class="project-img" src="/front/img/pp-real.jpg" width="100%" alt="Projet CGEM">
+				<h3 class="project-title">Projet CGEM</h3>
+			</div>
+		</div>
+	</div>
+	<a href="/realisations" class="btn btn-success mt-3 mb-4">Toutes les réalisations<i
+			class="fa-solid fa-arrow-right-long"></i></a>
+</div>
+
+<div class="actualite-section py-4">
+	<div class="container">
+		<div class="row mb-4">
+			<div class="col-md-6 d-flex flex-column justify-content-center align-items-center align-items-md-start">
+				<span class="green-divider mb-4 mt-0"></span>
+				<h5 class="actualite-title">Nos dernières actualités</h5>
+				<p class="actualite-text">Découvrez en exclusivité nos dernières actualités.</p>
+			</div>
+			<div class="col-md-6 d-flex justify-content-md-end align-items-center justify-content-center">
+				<a href="/blog" class="btn btn-success">
+					Actualités
+					<i class="fa-solid fa-arrow-right-long"></i>
+				</a>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-lg-4 d-flex justify-content-center mb-4">
+				<div class="actualite">
+					<img class="actualite-img" src="/front/img/isolation.jpeg" alt="Card image cap">
+					<div class="actualite-body p-3">
+						<h5 class="actualite-title">Comment optimiser l'acoustique dans un espace professionnel ?
+						</h5>
+						<p class="actualite-text">Acoustique, Isolation sonore, Productivité, Bien-être au travail
+						</p>
+						<div class="row">
+							<div class="col">
+								<span class="actualite-text">2024-07-01</span>
+							</div>
+							<div class="col d-flex justify-content-end align-items-center">
+								<b id="boldid">
+									<a class="read-more px-3 py-2" href="/espace-professionel">Lire plus</a>
+								</b>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 d-flex justify-content-center mb-4">
+				<div class="actualite">
+					<img class="actualite-img" src="/front/img/eclirage.jpg" alt="Card image cap">
+					<div class="actualite-body p-3">
+						<h5 class="actualite-title">L'Éclairage : Un Élément Clé pour des Espaces Fonctionnels et
+							Esthétiques</h5>
+						<p class="actualite-text">
+							éclairage, design d'éclairage, ambiance lumineuse, Productivité
+						</p>
+						<div class="row">
+							<div class="col">
+								<span class="actualite-text">2024-07-01</span>
+							</div>
+							<div class="col d-flex justify-content-end align-items-center">
+								<b id="boldid">
+									<a class="read-more px-3 py-2" href="/espace-professionel">Lire plus</a>
+								</b>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 d-flex justify-content-center mb-4">
+				<div class="actualite">
+					<img class="actualite-img" src="/front/img/gestion.jpeg" alt="Card image cap">
+					<div class="actualite-body p-3">
+						<h5 class="actualite-title">Gestion Optimale des Coûts et Délais dans les Projets
+							d'Aménagement : Bonnes Pratiques</h5>
+						<p class="actualite-text">Gestion de Projet, Coûts, Délais, Aménagement D'intérieur </p>
+						<div class="row">
+							<div class="col">
+								<span class="actualite-text">2024-07-01</span>
+							</div>
+							<div class="col d-flex justify-content-end align-items-center">
+								<b id="boldid">
+									<a class="read-more px-3 py-2" href="/espace-professionel">Lire plus</a>
+								</b>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{# end Tarik #}
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const cardTexts = document.querySelectorAll('.card-text');
+
+		cardTexts.forEach(cardText => {
+			const articleTypes = cardText.getAttribute('data-article-types');
+			if (articleTypes) {
+				// Split the titles and join them without a trailing comma
+				const formattedTitles = articleTypes.split(',').join(', ').trim();
+				cardText.textContent = formattedTitles;
+			}
+		});
+	});
+
+</script>
+{% endblock %}

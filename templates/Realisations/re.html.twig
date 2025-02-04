@@ -1,0 +1,567 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Réalisations
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<style>
+  .first-slide-laptop-realisation {
+    position: relative;
+    background-image: url('/front/img/realisationFer7.png');
+    width: 100%;
+    height: 500px;
+    top: -100px;
+    z-index: -1;
+    /*background: transparent !important;*/
+    font-family: 'Lexend', sans-serif;
+    font-weight: 400;
+  }
+
+  .center-div {
+    color: #fff;
+    text-align: center;
+    font-family: Lexend;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 80px;
+    /* 125% */
+    letter-spacing: -0.5px;
+  }
+
+  .center-text {
+    color: #fff;
+    text-align: center;
+    font-family: Lexend;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30.6px;
+    /* 191.25% */
+  }
+
+  #backround-section {
+    border-radius: 64px;
+    background: linear-gradient(0deg, #fff 0%, #fff 100%), linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    box-shadow: 0 4px 79.3px 0 rgba(0, 0, 0, 0.15);
+    margin-top: -10%;
+    height: 1000px;
+    margin-bottom: 5%;
+  }
+
+  .title.ml-2 {
+    color: #242222;
+    font-family: Lexend;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 45px;
+    /* 125% */
+    letter-spacing: -0.5px;
+    margin-top: 9%;
+  }
+
+  .btnTabs {
+    border-radius: 48px;
+    border: 1px solid var(--lin, #b0cb32);
+    background: #fff !important;
+    box-shadow: 0 4px 34px 0 rgba(255, 255, 255, 0.25);
+    display: inline-flex;
+    padding: 12px 5px;
+    justify-content: center;
+    align-items: center;
+    width: 30vh;
+    color: #819719;
+
+  }
+
+  .btnTabs:hover {
+
+    color: #819719 !important;
+    font-weight: 600 !important;
+  }
+
+  .btnTabsmobile {
+    border-radius: 48px;
+    border: 1px solid var(--lin, #b0cb32);
+    background: #fff !important;
+    box-shadow: 0 4px 34px 0 rgba(255, 255, 255, 0.25);
+    display: inline-flex;
+    padding: 12px 5px;
+    justify-content: center;
+    align-items: center;
+    width: 20vh;
+    color: #819719;
+    font-size: 11px;
+  }
+
+  #searchInput {
+    width: 50%;
+    border: 1px solid #000;
+    border-radius: 30px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-24.png');
+    background-position: 10px 7px;
+    background-repeat: no-repeat;
+    padding: 8px 20px 8px 40px;
+    -webkit-transition: width 0.8s ease-in-out;
+    transition: width 0.8s ease-in-out;
+    outline: none;
+    opacity: 0.9;
+    margin-top: 15%;
+    float: right;
+  }
+
+  .sectionall img {
+    width: 100% !important;
+  }
+
+  .card-title.img-overlay {
+    font-size: 20px;
+  }
+
+  span#title-from {
+    font-size: 12px;
+  }
+
+  img#icon-Vector {
+    float: right;
+    margin-right: 44%;
+    width: 14%;
+    margin-top: 2%;
+  }
+
+  h5.card-title.img-overlay {
+    margin-top: 39%;
+    color: white;
+    font-weight: bold;
+  }
+
+  .col-2.tabs {
+    max-width: 19%;
+  }
+
+  @media screen and (max-width: 768px) {
+    #backround-sectionmobil {
+      border-radius: 64px;
+      background: linear-gradient(0deg, #fff 0%, #fff 100%), linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+      box-shadow: 0 4px 79.3px 0 rgba(0, 0, 0, 0.15);
+      margin-top: -10%;
+      margin-bottom: 5%;
+      margin-top: -86% !important;
+
+    }
+
+    div#section_icon {
+      margin-top: -20% !important;
+      margin-left: 17px !important;
+    }
+
+    img#imagearound {
+      border-radius: 10px;
+
+    }
+
+    .btnTabsmobile {
+      width: 18vh !important;
+    }
+
+    .card-img-overlay {
+
+      margin-top: 32%;
+    }
+
+
+    /*start hakimi*/
+
+
+
+
+    /*end hakimi*/
+
+
+
+  }
+
+
+
+
+  /* Modal container */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  /* Modal content (image) */
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 34%;
+    max-height: 60%;
+  }
+
+  /* Caption text */
+  #caption {
+    margin: auto;
+    display: block;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+  }
+
+  /* Close button */
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.3s;
+    user-select: none;
+  }
+
+  .prev {
+    left: 0;
+  }
+
+  .next {
+    right: 0;
+  }
+
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  img#imagearound {
+    width: 100%;
+    border: 10px;
+    border-radius: 10px;
+    height: 280px !important;
+  }
+
+  /*start hakimi*/
+
+
+
+
+  /* end hakimi*/
+</style>
+{% endblock %}
+{% block body %}
+<div id="realisationlaptop">
+  <div class="first-slide-laptop-realisation">
+    <div class="container">
+      <div class="text-center row-first-slide align-center">
+        <h3 class="center-div">Réalisations</h3>
+        {#<p class="center-text">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia</p>#}
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="max-width: 1500px;" id="backround-section">
+    <div class="section container">
+      <div class="row">
+        <div class="col-6">
+          <img src="{{ asset('/front/img/link.png') }}" alt="" />
+          <h2 class="title ml-4" style="margin-top: 13%;font-size: 23px;
+    margin-bottom: 30px;    font-weight: 700;">Projets réalisés pour nos fidèles partenaires</h2>
+          {#<p class="text ml-4">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia</p>#}
+        </div>
+        <div class="col-6">
+          {# <input class="fa-solid fa-magnifying-glass" id="champ-search" type="text" placeholder="search" /> #}
+          <input type="text" id="searchInput" placeholder="Search.." />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 tabs">
+          <a href="{{ path('realisations') }}#content"
+            class="btn btn-success btnTabs {{ app.request.get('_route') == 'realisations' ? 'active-tab' : '' }}">Tous
+            les projets</a>
+        </div>
+        <div class="col-2 tabs">
+          <a href="{{ path('realisations_bureaux') }}"
+            class="btn btn-success btnTabs {{ app.request.get('_route') == 'realisations_bureaux' ? 'active-tab' : '' }}">Bureaux</a>
+        </div>
+        <div class="col-2 tabs">
+          <a href="{{ path('realisations_administrations') }}"
+            class="btn btn-success btnTabs {{ app.request.get('_route') == 'realisations_administrations' ? 'active-tab' : '' }}">Administrations</a>
+        </div>
+        <div class="col-2 tabs">
+          <a href="{{ path('espaces_commerciaux') }}"
+            class="btn btn-success btnTabs {{ app.request.get('_route') == 'espaces_commerciaux' ? 'active-tab' : '' }}">Espaces
+            commerciaux</a>
+        </div>
+        <div class="col-2 tabs">
+          <a href="{{ path('projets_industriels') }}"
+            class="btn btn-success btnTabs {{ app.request.get('_route') == 'projets_industriels' ? 'active-tab' : '' }}">Projets
+            industriels</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5 padding-bottom">
+      {% for realisation in realisations %}
+
+      <div class="col-4 mt-5">
+        <img id="imagearound" src="/front/img/{{ realisation.image }}" alt="" />
+        <div class="card-img-overlay realisation-{{ realisation.id }}"
+          data-images='{% for image in realisation.images %}{{ asset(' /front/img/' ~ image.upload) }}{% if not
+          loop.last %},{% endif %}{% endfor %}' data-title="{{ realisation.title }}" data-city="{{ realisation.city }}"
+          data-description="{{ realisation.description }}" data-superficie="{{ realisation.superficie }}">
+
+          <h5 class="card-title img-overlay">{{ realisation.title }}</h5>
+          <div class="row">
+            <div class="col">
+              <span id="title-from"></span>
+            </div>
+            <div class="col">
+              <img id="icon-Vector" src="{{ asset('/front/img/Vector.png') }}" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+
+
+
+    <!-- Modal structure for the popup -->
+    <div id="imageModal" class="modal" style="padding-top: 35px;">
+      <span class="close">&times;</span>
+      <img id="modalImage" class="modal-content">
+
+      <!-- Add a div to display the information -->
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4" id="modalDetails">
+
+
+          <b>Type de projet : </b> <span id="modalTitle"></span><br>
+          <b>Ville : </b> <span id="modalCity"></span><br>
+          <b>Superficie : </b> <span id="modalSuperficie"></span><br>
+          <b>Description : </b> <span id="modalDescription"> </span> <br>
+
+        </div>
+        <div class="col-4"></div>
+      </div>
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+    </div>
+
+
+  </div>
+</div>
+
+<div id="realisationmobil">
+  <div class="first-slide-laptop-realisation">
+    <div class="container">
+      <div class="text-center row-first-slide align-center">
+        <h3 class="center-div">Réalisations</h3>
+        {#<p class="center-text">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia</p>#}
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="max-width: 1500px;    margin-top: -100%;" id="backround-sectionmobil">
+    <div class="section container">
+      <div class="row">
+        <div class="col-12">
+          <img src="{{ asset('/front/img/link.png') }}" alt="" />
+          <h2 class="title ml-2">Projets réalisés pour nos fidèles partenaires</h2>
+
+        </div>
+        <div class="col-12">
+          {# <input class="fa-solid fa-magnifying-glass" id="champ-search" type="text" placeholder="search" /> #}
+          <input type="text" id="searchInput" placeholder="Search.." />
+        </div>
+      </div>
+      <div class="container" style="margin-left: -8px;">
+        <div class="row">
+
+
+
+
+
+
+          <div class="col-6 mt-4 tabs">
+            <a href="{{ path('realisations') }}"
+              class="btn btn-success btnTabsmobile {{ app.request.get('_route') == 'realisations' ? 'active-tab' : '' }}">Tous
+              les projets</a>
+          </div>
+          <div class="col-6 mt-4 tabs">
+            <a href="{{ path('realisations_bureaux') }}"
+              class="btn btn-success btnTabsmobile {{ app.request.get('_route') == 'realisations_bureaux' ? 'active-tab' : '' }}">Bureaux</a>
+          </div>
+          <div class="col-6 mt-4 tabs">
+            <a href="{{ path('realisations_administrations') }}"
+              class="btn btn-success btnTabsmobile {{ app.request.get('_route') == 'realisations_administrations' ? 'active-tab' : '' }}">Administrations</a>
+          </div>
+          <div class="col-6 mt-4 tabs">
+            <a href="{{ path('espaces_commerciaux') }}"
+              class="btn btn-success btnTabsmobile {{ app.request.get('_route') == 'espaces_commerciaux' ? 'active-tab' : '' }}">Espaces
+              commerciaux</a>
+          </div>
+          <div class="col-6 mt-4 tabs">
+            <a href="{{ path('projets_industriels') }}"
+              class="btn btn-success btnTabsmobile {{ app.request.get('_route') == 'projets_industriels' ? 'active-tab' : '' }}">Projets
+              industriels</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    {#<div class="row mt-5">#}
+      {# {% for realisation in realisations %}#}
+      {# <div class="col-12 mb-4">#}
+        {# <img id="imagearound" src="/front/img/{{ realisation.image }}" alt="" />#}
+        {# <div class="card-img-overlay {{realisation.title}}"
+          data-images='{% for image in realisation.images %} {{ asset(' /front/img/' ~ image.upload) }}{% if not
+          loop.last %},{% endif %}{% endfor %}'>#}
+          {# <h5 class="card-title img-overlay" style="    margin-top: 30%;">{{ realisation.title }}</h5>#}
+          {# </div>#}
+        {# <div class="row">#}
+          {# <div class="col" id="section_icon">#}
+            {# <span style="width: 10%;" id="title-from">{{ realisation.description }}</span>#}
+            {# </div>#}
+          {# <div class="col">#}
+            {# <img id="icon-Vector" src="{{ asset('/front/img/Vector.png') }}" alt="" />#}
+            {# </div>#}
+          {# </div>#}
+        {# </div>#}
+      {# {% endfor %}#}
+      {#</div>#}
+
+
+    {# start hakimi #}
+
+
+    <div class="row mt-5">
+      {% for realisation in realisations %}
+      <div class="col-12 mb-4">
+        <img id="imagearound" src="/front/img/{{ realisation.image }}" alt="" />
+        <div class="card-img-overlay {{realisation.title}}"
+          data-images='[{% for image in realisation.images %}"{{ asset(' /front/img/' ~ image.upload) }}"{% if not
+          loop.last %},{% endif %}{% endfor %}]'>
+          <h5 class="card-title img-overlay" style="margin-top: 30%;">{{ realisation.title }}</h5>
+        </div>
+        <div class="row">
+          <div class="col" id="section_icon">
+            <span style="width: 10%;" id="title-from">{{ realisation.description }}</span>
+          </div>
+          <div class="col">
+            <img id="icon-Vector" src="{{ asset('/front/img/Vector.png') }}" alt="" />
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+
+
+
+
+
+
+    {# end hakimi#}
+  </div>
+</div>
+<script>
+  document.querySelectorAll('.card-img-overlay').forEach(function (overlay) {
+    overlay.addEventListener('click', function () {
+      let images = overlay.getAttribute('data-images').split(',');
+      let currentIndex = 0; // Start with the first image
+
+      // Get additional information from data attributes
+      let title = overlay.getAttribute('data-title');
+      let city = overlay.getAttribute('data-city');
+      let description = overlay.getAttribute('data-description');
+      let superficie = overlay.getAttribute('data-superficie');
+
+      // Set the first image when the modal opens
+      let modalImage = document.getElementById('modalImage');
+      modalImage.src = images[currentIndex];  // Display the first image
+      document.getElementById('imageModal').style.display = 'block';
+
+      // Update the modal with additional information
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalCity').textContent = city;
+      document.getElementById('modalDescription').textContent = description;
+      document.getElementById('modalSuperficie').textContent = superficie;
+
+      // Function to update the image
+      function showImage(index) {
+        currentIndex = index;
+        modalImage.src = images[currentIndex];
+      }
+
+      // Remove previous event listeners to avoid duplicate event handling
+      document.querySelector('.next').removeEventListener('click', nextImage);
+      document.querySelector('.prev').removeEventListener('click', prevImage);
+
+      // Handle next arrow click (right)
+      function nextImage() {
+        if (currentIndex < images.length - 1) {
+          showImage(currentIndex + 1);
+        }
+      }
+
+      // Handle previous arrow click (left)
+      function prevImage() {
+        if (currentIndex > 0) {
+          showImage(currentIndex - 1);
+        }
+      }
+
+      // Add new event listeners for this particular set of images
+      document.querySelector('.next').addEventListener('click', nextImage);
+      document.querySelector('.prev').addEventListener('click', prevImage);
+    });
+  });
+
+  // Close the modal when the close button is clicked
+  document.querySelector('.close').addEventListener('click', function () {
+    document.getElementById('imageModal').style.display = 'none';
+  });
+
+
+  // js hakimi
+
+
+
+
+
+</script>
+{% endblock %}

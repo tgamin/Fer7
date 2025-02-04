@@ -1,0 +1,24 @@
+/* @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .col-2.tabs {
+    max-width: 49% !important;
+    padding: 1%;
+  }
+  h5.card-title.img-overlay {
+    margin-top: 72% !important;
+  }
+  div#projetrealisation {
+    margin-top: 0px !important;
+  }
+  .btnTabs {
+    width: 21vh !important;
+  }
+  .image-right {
+    margin-top: 35%;
+  }
+  h2#blogstylepad {
+    margin-top: -30% !important;
+  }
+  h3.servicestylema {
+    font-size: 23px !important;
+  }
+} */

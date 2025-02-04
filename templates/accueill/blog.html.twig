@@ -1,0 +1,348 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+  blog
+{% endblock %}
+
+{% block body %}
+  <div class="first-slide1">
+    <div class="container">
+      <div class="row row-first-backround align-center">
+        <div class="col-xl-12"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container" id="box-border">
+    <div class="row mt-4">
+      <div class="col-12">
+        <div>
+          <h3 class="title-center" >Blog</h3>
+        </div>
+        <div>
+          <p class="title-center">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia</p>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-6">
+        <img src="/front/img/link.png" alt="" />
+        <h3 class="title-actual">Nos dernières actualités</h3>
+        <p class="paragraph-ipsum">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse potenti</p>
+      </div>
+      <div class="col-6">
+        <div class="position-right">
+          <button id="button-border" type="button" class="btn btn-outline-secondary">Filtrer par date <img src="front/img/1111.png" id="icon-carndrie" alt="" /></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-6">
+        <div id="box-border1">
+          <img id="img-deuxsection" src="/front/img/ezdszd.png" alt="" />
+        </div>
+        <div>
+          <h3 class="h3title-ipsm">Lorem ipsum dolor orm</h3>
+          <p class="paraipsum">Vestibulum ante ipsum primis in faucibus orci Vestibulum ante ipsum primis in faucibus orci</p>
+        </div>
+        <div class="row" id="datelire">
+          <div class="col">13.03.2024 14:30</div>
+          <div class="col">
+            <b>Lire plus</b>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div id="box-border1">
+          <img id="img-deuxsection" src="/front/img/ezdszd.png" alt="" />
+        </div>
+        <div>
+          <h3 class="h3title-ipsm">Lorem ipsum dolor orm</h3>
+          <p class="paraipsum">Vestibulum ante ipsum primis in faucibus orci Vestibulum ante ipsum primis in faucibus orci</p>
+        </div>
+
+        <div class="row" id="datelire">
+          <div class="col">13.03.2024 14:30</div>
+          <div class="col">
+            <b>Lire plus</b>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="section-mt4-blog">
+      <div class="container mt-4">
+        <div id="Desktopshow">
+          <div class="row">
+            <div class="col-3">
+              <div class="card" id="card-carosselblog">
+                <img class="card-img-top" src="{{ asset('/front/img/Scr2023.png') }}" alt="Card image cap" />
+                <div class="card-body">
+                  <h5 class="card-titleblog">Lorem ipsum dolor orm</h5>
+                  <p class="card-textblog">Vestibulum ante ipsum primis in faucibus orci</p>
+                  <div class="row">
+                    <div class="col" id="col-blog">13.03.2024 14:30</div>
+                    <div class="col">
+                      <b id="col-blog">Lire plus</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card" id="card-carosselblog1">
+                <img class="card-img-top" src="{{ asset('/front/img/thisisengi.png') }}" alt="Card image cap" />
+                <div class="card-body">
+                  <h5 class="card-titleblog">Lorem ipsum dolor orm</h5>
+                  <p class="card-textblog">Vestibulum ante ipsum primis in faucibus orci</p>
+                  <div class="row">
+                    <div class="col" id="col-blog">13.03.2024 14:30</div>
+                    <div class="col">
+                      <b id="col-blog">Lire plus</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card" id="card-carosselblog2">
+                <img class="card-img-top" src="{{ asset('/front/img/B87I1450.png') }}" alt="Card image cap" />
+                <div class="card-body">
+                  <h5 class="card-titleblog">Lorem ipsum dolor orm</h5>
+                  <p class="card-textblog">Vestibulum ante ipsum primis in faucibus orci</p>
+                  <div class="row">
+                    <div class="col" id="col-blog">13.03.2024 14:30</div>
+                    <div class="col">
+                      <b id="col-blog">Lire plus</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card" id="card-carosselblog3">
+                <img class="card-img-top" src="{{ asset('/front/img/B87I.png') }}" alt="Card image cap" />
+                <div class="card-body">
+                  <h5 class="card-titleblog">Lorem ipsum dolor orm</h5>
+                  <p class="card-textblog">Vestibulum ante ipsum primis in faucibus orci</p>
+                  <div class="row">
+                    <div class="col" id="col-blog">13.03.2024 14:30</div>
+                    <div class="col">
+                      <b id="col-blog">Lire plus</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {# <div id="mobilshow">
+        <div class="row">
+          <div class="col-12">
+            <div class="card" id="card-carossel" style="width: 18rem;">
+              <img class="card-img-top" src="{{ asset('/front/img/Scr2023.png') }}" alt="Card image cap" />
+              <div class="card-body">
+                <h5 class="card-title">Lorem ipsum dolor orm</h5>
+                <p class="card-text">Vestibulum ante ipsum primis in faucibus orci</p>
+                <div class="row">
+                  <div class="col">13.03.2024 14:30</div>
+                  <div class="col">
+                    <b>Lire plus</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="card" id="card-carossel1" style="width: 18rem;">
+              <img class="card-img-top" src="{{ asset('/front/img/thisisengi.png') }}" alt="Card image cap" />
+              <div class="card-body">
+                <h5 class="card-title">Lorem ipsum dolor orm</h5>
+                <p class="card-text">Vestibulum ante ipsum primis in faucibus orci</p>
+                <div class="row">
+                  <div class="col">13.03.2024 14:30</div>
+                  <div class="col">
+                    <b>Lire plus</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="card" id="card-carossel2" style="width: 18rem;">
+              <img class="card-img-top" src="{{ asset('/front/img/B87I1450.png') }}" alt="Card image cap" />
+              <div class="card-body">
+                <h5 class="card-title">Lorem ipsum dolor orm</h5>
+                <p class="card-text">Vestibulum ante ipsum primis in faucibus orci</p>
+                <div class="row">
+                  <div class="col">13.03.2024 14:30</div>
+                  <div class="col">
+                    <b>Lire plus</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="card" id="card-carossel3" style="width: 18rem;">
+                <img class="card-img-top" src="{{ asset('/front/img/B87I.png') }}" alt="Card image cap" />
+                <div class="card-body">
+                  <h5 class="card-title">Lorem ipsum dolor orm</h5>
+                  <p class="card-text">Vestibulum ante ipsum primis in faucibus orci</p>
+                  <div class="row">
+                    <div class="col">13.03.2024 14:30</div>
+                    <div class="col">
+                      <b>Lire plus</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> #}
+      </div>
+
+      <div class="container mt-4">
+        <div id="Desktopshow">
+          <div class="row">
+            <div class="col-3">
+              <div class="card" id="card-carosselblog">
+                <img class="card-img-top" src="{{ asset('/front/img/Scr2023.png') }}" alt="Card image cap" />
+                <div class="card-body">
+                  <h5 class="card-titleblog">Lorem ipsum dolor orm</h5>
+                  <p class="card-textblog">Vestibulum ante ipsum primis in faucibus orci</p>
+                  <div class="row">
+                    <div class="col" id="col-blog">13.03.2024 14:30</div>
+                    <div class="col">
+                      <b id="col-blog">Lire plus</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card" id="card-carosselblog1">
+                <img class="card-img-top" src="{{ asset('/front/img/thisisengi.png') }}" alt="Card image cap" />
+                <div class="card-body">
+                  <h5 class="card-titleblog">Lorem ipsum dolor orm</h5>
+                  <p class="card-textblog">Vestibulum ante ipsum primis in faucibus orci</p>
+                  <div class="row">
+                    <div class="col" id="col-blog">13.03.2024 14:30</div>
+                    <div class="col">
+                      <b id="col-blog">Lire plus</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card" id="card-carosselblog2">
+                <img class="card-img-top" src="{{ asset('/front/img/B87I1450.png') }}" alt="Card image cap" />
+                <div class="card-body">
+                  <h5 class="card-titleblog">Lorem ipsum dolor orm</h5>
+                  <p class="card-textblog">Vestibulum ante ipsum primis in faucibus orci</p>
+                  <div class="row">
+                    <div class="col" id="col-blog">13.03.2024 14:30</div>
+                    <div class="col">
+                      <b id="col-blog">Lire plus</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card" id="card-carosselblog3">
+                <img class="card-img-top" src="{{ asset('/front/img/B87I.png') }}" alt="Card image cap" />
+                <div class="card-body">
+                  <h5 class="card-titleblog">Lorem ipsum dolor orm</h5>
+                  <p class="card-textblog">Vestibulum ante ipsum primis in faucibus orci</p>
+                  <div class="row">
+                    <div class="col" id="col-blog">13.03.2024 14:30</div>
+                    <div class="col">
+                      <b id="col-blog">Lire plus</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {# <div id="mobilshow">
+        <div class="row">
+          <div class="col-12">
+            <div class="card" id="card-carossel" style="width: 18rem;">
+              <img class="card-img-top" src="{{ asset('/front/img/Scr2023.png') }}" alt="Card image cap" />
+              <div class="card-body">
+                <h5 class="card-title">Lorem ipsum dolor orm</h5>
+                <p class="card-text">Vestibulum ante ipsum primis in faucibus orci</p>
+                <div class="row">
+                  <div class="col">13.03.2024 14:30</div>
+                  <div class="col">
+                    <b>Lire plus</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="card" id="card-carossel1" style="width: 18rem;">
+              <img class="card-img-top" src="{{ asset('/front/img/thisisengi.png') }}" alt="Card image cap" />
+              <div class="card-body">
+                <h5 class="card-title">Lorem ipsum dolor orm</h5>
+                <p class="card-text">Vestibulum ante ipsum primis in faucibus orci</p>
+                <div class="row">
+                  <div class="col">13.03.2024 14:30</div>
+                  <div class="col">
+                    <b>Lire plus</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="card" id="card-carossel2" style="width: 18rem;">
+              <img class="card-img-top" src="{{ asset('/front/img/B87I1450.png') }}" alt="Card image cap" />
+              <div class="card-body">
+                <h5 class="card-title">Lorem ipsum dolor orm</h5>
+                <p class="card-text">Vestibulum ante ipsum primis in faucibus orci</p>
+                <div class="row">
+                  <div class="col">13.03.2024 14:30</div>
+                  <div class="col">
+                    <b>Lire plus</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="card" id="card-carossel3" style="width: 18rem;">
+                <img class="card-img-top" src="{{ asset('/front/img/B87I.png') }}" alt="Card image cap" />
+                <div class="card-body">
+                  <h5 class="card-title">Lorem ipsum dolor orm</h5>
+                  <p class="card-text">Vestibulum ante ipsum primis in faucibus orci</p>
+                  <div class="row">
+                    <div class="col">13.03.2024 14:30</div>
+                    <div class="col">
+                      <b>Lire plus</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> #}
+      </div>
+    </div>
+  </div>
+{% endblock %}

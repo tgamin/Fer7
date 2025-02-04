@@ -1,0 +1,198 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Blog
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<style>
+	.card {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.card-body {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.first-slide-laptopblog {
+		position: relative;
+		/*background-image: url('/front/img/blogFer7.jpg');*/
+		background-image: url('/front/img/green-screen.png');
+		width: 100%;
+		height: 500px;
+		z-index: -1;
+		/*background: transparent !important;*/
+		font-family: "Lexend", sans-serif;
+		font-weight: 400;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	#backroundblog {
+		border-radius: 40px;
+		background: linear-gradient(0deg, #FFF 0%, #FFF 100%), linear-gradient(270deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 100%);
+		box-shadow: 0 4px 79.3px 0 rgba(0, 0, 0, 0.15);
+		margin-top: -10%;
+	}
+
+	#text-centerblog {
+		color: #000;
+		font-family: Lexend;
+		font-size: 44px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 80px;
+		letter-spacing: -0.5px;
+		text-align: center;
+	}
+
+	.paragraph-center {
+		color: #9D9D9D;
+		font-family: Lexend;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 26px;
+		text-align: center;
+	}
+
+	.title-left {
+		color: #242222;
+		font-family: Lexend;
+		font-size: 25px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 45px;
+		/* 125% */
+		letter-spacing: -0.5px;
+
+	}
+
+	.text-left {
+		color: #9D9D9D;
+		font-family: Lexend;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 26px;
+		/* 162.5% */
+	}
+
+	#button-border {
+		border-radius: 100px;
+		border: 1px solid #D8DADF;
+		background: #FFF;
+		float: right;
+		margin-top: 15%;
+		width: 50%;
+	}
+
+	#icon-carndrie {
+		border: 1px solid #D8DADF;
+		background: #FFF;
+		float: right;
+		flex-shrink: 0;
+	}
+
+	b.possition-right {
+		float: right;
+		margin-right: 10%;
+	}
+
+	a.possition-right {
+		float: right;
+		margin-right: 10%;
+		font-weight: 700;
+		color: black;
+
+	}
+
+	#mobilblog {
+		display: none;
+	}
+
+	@media only screen and (max-width: 600px) {
+		.first-slide-laptopblog {
+			height: 350px;
+		}
+
+		.first-slide-laptopblog {
+			top: -130px !important;
+		}
+
+		#backroundblog {
+			margin-top: -100% !important;
+		}
+	}
+
+	.center-div {
+		color: #fff;
+		text-align: center;
+		font-family: Lexend;
+		font-size: 40px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 80px;
+		/* 125% */
+		letter-spacing: -0.5px;
+	}
+</style>
+{% endblock %}
+{% block body %}
+
+{# <div class="first-slide-laptopblog">
+	<div class="container"></div>
+</div> #}
+
+<div class="green-screen d-flex justify-content-center align-items-center">
+	<h3 class="blog-title">Blog</h3>
+</div>
+
+<div class="container container-service py-4">
+	<div class="actualite-section-2 px-3">
+		<div class="container">
+			<div class="row mb-4">
+				<div class="d-flex flex-column justify-content-center align-items-center align-items-md-start col-12">
+					<span class="green-divider mb-4 mt-0"></span>
+					<h5 class="actualite-title">Nos dernières actualités</h5>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				{% for article in articles %}
+				<div class="col-lg-4 d-flex justify-content-center mb-4">
+					<div class="actualite">
+						<img class="actualite-img" src="{{ asset('/front/img/' ~ article.image) }}"
+							alt="Card image cap">
+						<div class="actualite-body p-3">
+							<h5 class="actualite-title">{{article.title}}</h5>
+							<p class="actualite-text">
+								{% for articleType in article.articleTypes %}
+								{{ loop.last ? articleType.title : articleType.title ~ ',' }}
+								{% endfor %}
+							</p>
+							<div class="row">
+								<div class="col">
+									<span class="actualite-text">{{article.date | date('Y-m-d')}}</span>
+								</div>
+								<div class="col d-flex justify-content-end align-items-center">
+									<b id="boldid">
+										<a class="read-more px-3 py-2"
+											href="{{ path('article', {'slug': article.slug}) }}">Lire plus</a>
+									</b>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

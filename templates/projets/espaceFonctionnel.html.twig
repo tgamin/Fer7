@@ -1,0 +1,498 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+  Eclairage
+{% endblock %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  <style>
+    .col-2.border-cols {
+        background: #F3F3F3;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 4px;
+        color: #8A8A8A;
+        font-weight: 300;
+        max-width: 14%;
+    }
+    .col-6.border-cols-mobile{
+        display:none !important;
+    }
+    .first-slide-laptop {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      top: -100px;
+      z-index: -1;
+      /* background: transparent !important; */
+      font-family: 'Lexend', sans-serif;
+      font-weight: 400;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .center-projet {
+      color: #fff;
+      font-family: Lexend;
+      font-size: 44px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 80px;
+      letter-spacing: -0.5px;
+    }
+    p.text-center {
+      color: #fff;
+      font-family: Lexend;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px;
+      width: 100%;
+      height: 240px;
+    }
+    
+    #backround-section {
+      border-radius: 40px;
+      background: linear-gradient(0deg, #fff 0%, #fff 100%), linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+      box-shadow: 0px 4px 79.3px 0px rgba(0, 0, 0, 0.15);
+      margin-top: -12%;
+    }
+    
+    .title-projet {
+      color: #242222;
+      font-family: Lexend;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 45px;
+      letter-spacing: -0.5px;
+    }
+    
+    .text-projet {
+      color: #6a6a6a;
+      font-family: Lexend;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px; /* 162.5% */
+    }
+    .icon-projet {
+      color: #000;
+      font-family: Lexend;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 30.6px;
+      margin-left: 5%;
+    }
+    
+    .blog-img {
+      width: 540px;
+      height: 320px;
+      border-radius:11px;
+    }
+    .blog-imgright {
+      width: 100%;
+      border-radius:10px;
+      
+    }
+    #backroundblog {
+      border-radius: 20px;
+      height: 343px;
+      max-width: 580px !important;
+      box-shadow: 0px 4px 47.5px 0px rgba(0, 0, 0, 0.25);
+      padding: 11px;
+    }
+    #backroundblogright {
+      border-radius: 20px;
+      /* border: 3px solid #fff; */
+      box-shadow: 0px 4px 47.5px 0px rgba(0, 0, 0, 0.25);
+      padding: 11px;
+      height: 327px;
+
+    }
+    #backroundbright {
+      padding: 11px;
+      border-radius: 20px;
+      /*border: 16px solid #fff;*/
+      box-shadow: 0px 4px 47.5px 0px rgba(0, 0, 0, 0.25);
+      height: 328px;
+   
+     
+    }
+    
+    #backroundblogleft {
+      border-radius: 20px;
+      /*border: 16px solid #fff;*/
+      box-shadow: 0px 4px 47.5px 0px rgba(0, 0, 0, 0.25);
+      padding: 11px;
+      height: auto;
+      
+    }
+    .blog-imgleft {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+    .blogtext {
+      color: #fff;
+      text-align: center;
+      font-family: 'Lexend';
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 26px;
+      margin-top: -15%;
+    }
+    .blogtextright {
+      color: #fff;
+      text-align: center;
+      font-family: 'Lexend';
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 26px;
+      margin-top: -20%;
+    }
+    .blogsection {
+      color: #fff;
+      text-align: center;
+      font-family: Lexend;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 26px;
+      margin-top: -24%;
+    }
+    .blogsectionright {
+      color: #fff;
+      text-align: center;
+      font-family: Lexend;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 26px;
+      margin-top: -24%;
+    }
+    .balistitle {
+      color: #242222;
+      font-family: Lexend;
+      font-size: 34px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 45px;
+      letter-spacing: -0.5px;
+      margin-left: 2%;
+    }
+    
+    .balistext {
+      color: #9d9d9d;
+      font-family: Lexend;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px;
+      margin-left: 2%;
+    }
+    
+    div#mb-5-row {
+      margin-left: 10px;
+    }
+    
+    .carousel-inner {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      height: 400px;
+      
+    }
+
+    .carousel-inner .carousel-item img {
+        height: 400px;
+        object-fit: cover;
+        width: 100%;
+    }
+    img.img-info {
+      height: 22px;
+    }
+     div#carouselExampleControls
+     {
+      border: 1px solid white;
+      box-shadow: 0px 4px 79.3px 0px rgba(0, 0, 0, 0.15);
+      border-radius: 23px;
+      padding: 11px;
+    }  
+    
+    .img-link{
+      margin-left:-3%;
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .text-projet,.icon-projet {
+        font-size: 10px !important;  
+      }
+      .information-projet{
+        margin-top:0px !important;
+        margin-bottom:10px;
+      }
+      .img-link{
+        margin-left:-10% !important;
+      }
+      .col-2.border-cols{
+          display:none !important;
+      }
+      .col-6.border-cols-mobile{
+            display:block !important;
+             background: #F3F3F3;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 4px;
+            color: #8A8A8A;
+            font-weight: 300;
+            font-size: 12px;
+            max-width: 49% !important;
+        }
+        .grey-cols .col-1{
+            display:none !important;
+        }
+        .first-header{
+            font-size:23px;
+        }
+        .header-h5{
+            text-align: left;
+            font-size: 17px;
+            font-weight: 900;
+        }
+        .last-cards .col-1{
+            display:none !important;
+        }
+        .card img{
+            border-radius:20px !important;
+        }
+        .first-container{
+            margin-top:-100% !important;
+        }
+        .img-for-mobile{
+            height: auto !important;
+            width: 100% !important;
+        }
+    }
+  </style>
+{% endblock %}
+
+{% block body %}
+
+  <div class="first-backround" style="background-image:url(/front/img/espace.png); background-size: cover;">
+    <div class="container">
+      <div class="row row-first-backround align-center">
+        <div class="col-xl-12">
+          <div class="content">
+            <div class="row">
+              {# <div class="col-1"></div> #}
+              <div class="col-12">
+                <center id="text-mobil">
+                  <span style="text-align:center;font-family: 'Lexend';font-size: 11px;font-style: normal;font-weight: 400;line-height: 23.6px;color:white;"></span>
+                </center>
+              </div>
+              {# <div class="col-1"></div> #}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+ 
+  <div class="container first-container text-center" style="background:white; color:black; margin-top: -30%; height: auto;border-radius: 20px; max-width: 95% !important;box-shadow: 2px 5px 10px 0px gray;
+    margin-bottom: 40px;    padding-bottom: 60px;">
+    <div class="d-flex align-items-center justify-content-center mt-3">
+      <img src="/front/img/Link.png" alt="">
+      <br>
+      
+    </div>
+    <div class="text-center">
+        <h1 class="first-header" style="font-family: 'Lexend'; color: black;font-weight: 800;">L'Éclairage : Un Élément Clé pour des Espaces Fonctionnels et Esthétiques </h1>
+        <span class="text-muted"> 13.03.2024 14:30 </span>
+    </div>
+    <div class="row text-center mt-5 text-black grey-cols">
+       <div class="col-1"></div>
+        <div class="col-2 border-cols" style="text-transform:capitalize">éclairage</div>
+        <div class="col-1"></div>
+        <div class="col-2 border-cols" style="text-transform:capitalize">design d'éclairage</div>
+        <div class="col-1"></div>
+        <div class="col-2 border-cols" style="text-transform:capitalize">ambiance lumineuse</div>
+        <div class="col-1"></div>
+        <div class="col-2 border-cols">Productivité</div>
+        <div class="col-1"></div>
+        <div class="col-6 border-cols-mobile mb-3" style="margin-right: 6px;text-transform:capitalize" >éclairage</div>
+        <div class="col-6 border-cols-mobile mb-3"  style="text-transform:capitalize">Design d'éclairage</div>
+        <div class="col-6 border-cols-mobile" style="margin-right: 6px;text-transform:capitalize" >ambiance lumineuse</div>
+        <div class="col-6 border-cols-mobile" style="text-transform:capitalize">productivité</div>
+        
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        
+        <div class="col-10">
+            
+            <img src="/front/img/eclirage.jpeg" class="mt-5 img-for-mobile" style="    border-radius: 30px;
+    height: 380px;
+    width: 80%;
+" alt="" class="mt-5">
+            
+        </div>
+        
+        <div class="col-1"></div>
+    </div>
+    
+    <div class="row mt-5">
+        <div class="col-1"></div>
+         <div class="col-10"  style="text-align: justify; ">
+        <span class="text-muted">L’éclairage est bien plus qu’un simple moyen d’éclairer un espace. Dans les environnements professionnels, il joue un rôle essentiel, influençant l’ambiance, la productivité des employés, et même l’image de l’entreprise. Pourtant, il est souvent négligé lors de la conception des espaces. Un éclairage bien pensé peut transformer un lieu de travail en un environnement agréable et stimulant. Cet article explore comment un éclairage optimisé peut faire toute la différence, les problèmes courants liés à une mauvaise gestion de la lumière, et les dernières innovations en matière d’éclairage. </span>
+        <br>
+        <h5 style="margin-top:30px;" class="header-h5">Pourquoi l’Éclairage Est-Il si Important ? </h5>
+        <span class="text-muted">
+            
+           L’éclairage dans un espace professionnel doit répondre à plusieurs objectifs : il doit non seulement permettre une bonne visibilité, mais aussi favoriser le bien-être, la concentration et créer une ambiance en accord avec l’image de l’entreprise. <br><br>
+
+            <span style="font-weight:700">Productivité des employés</span> : Un bon éclairage aide à maintenir une concentration optimale. Par exemple, un éclairage naturel ou une lumière qui imite le cycle naturel du jour stimule la vigilance et réduit la fatigue. Inversement, un mauvais éclairage peut entraîner des baisses de productivité et de motivation. 
+            <br><br>
+            <span style="font-weight:700">Expérience client et image de marque </span> : Un éclairage adapté permet de mettre en valeur un espace et ses produits. Par exemple, dans un magasin ou un showroom, il attire l’œil sur les éléments importants. Dans un bureau, il contribue à refléter la culture et l’ambiance de l’entreprise.
+            <br><br>
+            <span style="font-weight:700">Confort visuel et bien-être</span> : Un espace bien éclairé améliore le confort visuel des employés. Un éclairage trop intense ou trop faible peut entraîner des maux de tête, de la fatigue oculaire et une sensation de malaise général
+            <br><br>
+            <span style="font-weight:700">Réduction des coûts énergétiques</span> :Un éclairage bien conçu peut également réduire la consommation d’énergie, notamment grâce à des systèmes automatisés ou à des solutions plus efficientes comme les LED.
+                        
+            
+        </span>
+        
+        <h5 style="margin-top:30px;" class="header-h5">Problèmes Courants Liés à l’Éclairage </h5>
+        <span class="text-muted">
+        Malgré son importance, il n’est pas rare de rencontrer des problèmes liés à un éclairage mal conçu dans les espaces professionnels. Voici quelques-uns des plus fréquents :
+        </br></br>
+        <span style="font-weight:700">Lumière insuffisante</span> : Une lumière trop faible peut rendre les tâches visuelles difficiles, fatiguant rapidement les employés et nuisant à la productivité. Les espaces mal éclairés peuvent aussi donner une impression d’insécurité ou d’inconfort. 
+        </br></br>
+        <span style="font-weight:700">Éblouissement </span>: Un éclairage trop intense ou mal orienté, comme une lumière directe sur un poste de travail, peut provoquer des éblouissements, perturbant la concentration et provoquant de l’inconfort.
+        </br></br>
+        <span style="font-weight:700"> Mauvaise gestion de la lumière naturelle  </span>: Bien que la lumière naturelle soit essentielle, elle peut parfois causer des problèmes si elle n’est pas bien contrôlée. Par exemple, un espace trop exposé au soleil sans protection adéquate peut devenir inconfortable à cause de la chaleur et des reflets.
+        </br></br>
+        <span style="font-weight:700">Uniformité excessive </span> : Un éclairage uniforme sans variation d’intensité ou de couleur peut rendre l’espace monotone et peu dynamique. Une variation subtile permet de créer une ambiance plus accueillante et fonctionnelle.
+        </span>
+        
+        <h5 style="margin-top:30px;" class="header-h5">Solutions pour Améliorer l’Éclairage</h5>
+        <span class="text-muted">
+        La bonne nouvelle est qu’il existe plusieurs moyens d’améliorer l’éclairage dans un espace professionnel, que ce soit dès la conception ou pour réajuster un projet existant.
+        </br></br>
+        <span style="font-weight:700">Maximisation de la lumière naturelle </span> :Profiter de la lumière naturelle est essentiel. Les fenêtres, verrières et espaces ouverts permettent de diffuser cette lumière de manière optimale. Toutefois, il est important de gérer l’apport lumineux avec des stores ou des rideaux pour éviter les éblouissements. 
+
+        </br></br>
+        <span style="font-weight:700">Éclairage d’appoint </span>: Utiliser des sources lumineuses secondaires, comme des lampes de bureau ou des luminaires suspendus, permet de compléter l'éclairage général et d’ajuster l’intensité en fonction des besoins spécifiques de chaque poste de travail.
+        </br></br>
+        <span style="font-weight:700">Éclairage à intensité variable  </span>:  Installer des variateurs de lumière permet de moduler l’éclairage en fonction des tâches et des moments de la journée. Cela améliore le confort et la flexibilité des espaces de travail. 
+
+        </br></br>
+        <span style="font-weight:700">Température de couleur </span>: La couleur de la lumière joue un rôle important. Une lumière chaude (2700-3000K) crée une atmosphère relaxante, idéale pour les espaces d’accueil ou de repos, tandis qu’une lumière froide (5000K et plus) stimule la concentration dans les zones de travail. 
+        </span>
+        
+        
+        
+         <h5 style="margin-top:30px;" class="header-h5">Innovations Récentes dans l'Éclairage </h5>
+        <span class="text-muted">
+        Le domaine de l’éclairage évolue rapidement, et plusieurs innovations permettent de concevoir des espaces plus intelligents et plus efficaces sur le plan énergétique. 
+        </br></br>
+        <span style="font-weight:700">Éclairage LED intelligen </span> :Les systèmes LED offrent un éclairage performant tout en réduisant la consommation d’énergie. Aujourd’hui, des luminaires LED intelligents peuvent être contrôlés via des applications ou des capteurs, ajustant automatiquement l’intensité et la couleur de la lumière en fonction des conditions. 
+
+        </br></br>
+        <span style="font-weight:700">Systèmes d’éclairage circadiens </span>:  Ces systèmes ajustent la lumière au fil de la journée pour imiter le cycle naturel du soleil. Cela permet de respecter le rythme circadien des employés, favorisant leur bien-être et leur productivité. 
+        </br></br>
+        <span style="font-weight:700">Capteurs de présence et de lumière  </span>:  Ces capteurs permettent de gérer l’éclairage de manière plus efficace, en allumant ou en éteignant les lumières en fonction de l’occupation des espaces. Cela permet de réaliser des économies d’énergie substantielles. 
+
+        </br></br>
+        <span style="font-weight:700">Solutions d’éclairage hybride </span>:  Des luminaires qui intègrent des solutions solaires permettent d’utiliser une énergie renouvelable pour éclairer les espaces, réduisant ainsi l’empreinte carbone de l’entreprise. 
+        </span>
+        
+        
+        
+        <h5 style="margin-top:30px;" class="header-h5">Conclusion</h5><br>
+        <span class="text-muted"> Un éclairage bien pensé est un véritable atout pour les espaces professionnels. Il influence directement la productivité, le bien-être des occupants et l’expérience des clients. Grâce aux dernières innovations en matière d’éclairage intelligent et à une gestion optimale de la lumière naturelle et artificielle, il est possible de créer des environnements fonctionnels, esthétiques et énergétiquement efficients. Ne négligez pas cet aspect essentiel lors de la conception ou de l’amélioration de vos espaces professionnels. 
+        </span>
+        
+        <h3 class="mt-5" style="font-weight:700">Articles connexes</h3>
+        </div>
+        
+        
+        <div class="col-1"></div>
+    </div>
+     <div class="row mt-3 last-cards" style="justify-content: space-between;text-align: left;">
+         <div class="col-1"></div>
+            <div class="col-lg-3 mt-5 col-12 text-black" >
+                <div class="card" id="card-carossel1" style="width: 18rem;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+              <img class="card-img-top" src="/front/img/isolation.jpeg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Comment optimiser l'acoustique dans
+un espace professionnel ?</h5>
+                <p class="card-text" style="margin-bottom:36px !important; font-size:11px">Acoustique, Isolation sonore, Productivité, Bien-être au travail</p>
+                <div class="row">
+                  <div class="col">
+                    <span class="text-muted" style="font-size: 12px;">13.03.2024 14:30</span>
+                  </div>
+                  <div class="col">
+                    <b id="boldid"><a href="https://fer7.gebanalysis.cloud/espace-professionel">Lire plus</a></b>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+            <div class="col-lg-3 mt-5 col-12 text-black">
+                
+                <div class="card" id="card-carossel2" style="width: 18rem;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+              <img class="card-img-top" src="/front/img/eclirage.jpeg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">L'Éclairage : Un Élément Clé pour des Espaces Fonctionnels et Esthétiques</h5>
+                <p class="card-text" style="margin-bottom:18px !important"><span style="text-transform:capitalize; font-size:11px">éclairage,
+</span><span style="text-transform:capitalize; font-size:11px">design d'éclairage,
+</span><span style="text-transform:capitalize; font-size:11px">ambiance lumineuse,
+</span><span style="text-transform:capitalize; font-size:11px">productivité</span></p>
+                <div class="row">
+                  <div class="col">
+                    <span class="text-muted" style="font-size: 12px;">13.03.2024 14:30</span>
+                  </div>
+                  <div class="col">
+                    <b id="boldid"><a href="https://fer7.gebanalysis.cloud/espace-fonctionnel">Lire plus</a></b>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="col-lg-3 mt-5 col-12 text-black">
+                
+                
+                <div class="card" id="card-carossel3" style="width: 18rem;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+              <img class="card-img-top" src="/front/img/gestion.jpeg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Gestion Optimale des Coûts et Délais dans les Projets d'Aménagement : Bonnes Pratiques</h5>
+                <p class="card-text" style="margin-bottom:0px !important"><span style="text-transform:capitalize; font-size:11px">gestion de projet,
+</span><span style="text-transform:capitalize; font-size:11px">coûts,
+</span><span style="text-transform:capitalize; font-size:11px">délais,
+</span><span style="text-transform:capitalize; font-size:11px">aménagement d'intérieur</span></p>
+                <div class="row">
+                  <div class="col">
+                    <span class="text-muted" style="font-size: 12px;">13.03.2024 14:30</span>
+                  </div>
+                  <div class="col">
+                    <b id="boldid"><a href="https://fer7.gebanalysis.cloud/gestion-projet">Lire plus</a></b>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+        <div class="col-1"></div>    
+        </div>
+    
+    
+  </div>
+
+
+
+{% endblock %}

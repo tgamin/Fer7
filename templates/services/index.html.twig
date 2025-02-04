@@ -1,0 +1,127 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos services{% endblock %}
+
+{% block body %}
+{{parent()}}
+<div class="green-screen"></div>
+<div class="laptop-version">
+    <div class="container-service">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 text-center header-service">
+                    <h1 class="headers py-4 text-black"> Services </h1>
+                    <span class="green-divider"></span>
+                    <span class="text-muted service-description">
+                        Notre entreprise vous accompagne pour transformer, donner vie et maintenir vos espaces. De la
+                        conception du projet d'aménagement à la réalisation des travaux, en passant par la fourniture de
+                        mobilier et les travaux de maintenance, nous avons la capacité et l’expertise pour vous
+                        accompagner durant l’ensemble du cycle de vie de vos bâtiments. Nous garantissons un service
+                        complet et personnalisé, assurant la réussite de votre projet jusqu'à l'après livraison.
+                        Dépendamment de votre besoin nous pouvons intervenir sur un ou plusieurs des lots
+                        présentés.<br />
+                        Faites confiance à notre expertise pour des espaces qui reflètent l’image et la vision de votre
+                        entreprise.
+                    </span>
+                </div>
+            </div>
+
+            {# tarik #}
+            <div class="service mt-3 px-3 py-4 mt-5">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4 class="service-title mb-4 d-md-none text-center"> Conception &amp; Etudes</h4>
+                        <img src="{{asset('front/img/e-t-realisation.png')}}" class="service-img">
+                    </div>
+                    <div class="col-md-8 d-flex flex-column align-items-center align-items-md-start">
+                        <h3 class="service-title mt-4 d-none d-md-block text-leftt">Conception & Etudes</h3>
+                        <p class="service-text text-center text-md-left my-3">
+                            Notre mot d’ordre : optimiser chaque coin de vos espaces, où chaque aspect architectural ou
+                            technique revêt une importance particulière. Notre objectif premier étant de garantir que
+                            votre
+                            environnement réponde pleinement aux exigences de vos clients et de vos collaborateurs.
+                        </p>
+                        <a class="btn btn-success explore-btn" href="{{path('serviceConception')}}">
+                            Découvrir
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service mt-3 px-3 py-4 mt-5">
+                <div class="row">
+                    <div class="col-md-8 order-2 order-md-1 d-flex flex-column align-items-center align-items-md-start">
+                        <h3 class="service-title mt-4 d-none d-md-block text-leftt">Travaux d’aménagement Tous Corps
+                            D’Etat </h3>
+                        <p class="service-text text-center text-md-left my-3">
+                            Nous aménageons annuellement jusqu’à 10 000m² de surface à usage professionnel : plateaux de
+                            bureaux, sièges sociaux, administrations, showroom, usines, établissements médicaux,
+                            magasins grand public, hôtels, etc. Nous disposons d’équipes mobiles pouvant intervenir sur
+                            l’ensemble du territoire marocain
+                        </p>
+                        <a class="btn btn-success explore-btn" href="{{path('serviceTce')}}">
+                            Découvrir
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                    <div class="col-md-4 order-1">
+                        <h4 class="service-title mb-4 d-md-none text-center"> Conception &amp; Etudes</h4>
+                        <img src="{{asset('front/img/t-m-realisation.png')}}" class="service-img">
+                    </div>
+                </div>
+            </div>
+
+            <div class="service mt-3 px-3 py-4 mt-5">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4 class="service-title mb-4 d-md-none text-center">Mobilier de bureau &amp; espaces
+                            commerciaux</h4>
+                        <img src="{{asset('front/img/mobilier.png')}}" class="service-img">
+                    </div>
+                    <div class="col-md-8 d-flex flex-column align-items-center align-items-md-start">
+                        <h3 class="service-title mt-4 d-none d-md-block text-leftt">Mobilier de bureau &amp; espaces
+                            commerciaux</h3>
+                        <p class="service-text text-center text-md-left my-3">
+                            Un mobilier bien adapté sert de reflet de votre identité et de votre culture d'entreprise,
+                            renforçant ainsi votre image de marque. Un mobilier qui allie esthétique, fonctionnalité et
+                            ergonomie, crée un environnement propice à la collaboration, à la créativité et à la
+                            réussite globale de votre entreprise, à travers la satisfaction de vos clients et de vos
+                            collaborateurs.
+                        </p>
+                        <a class="btn btn-success explore-btn" href="{{path('espacesCommerciaux')}}">
+                            Découvrir
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service mt-3 px-3 py-4 mt-5">
+                <div class="row">
+                    <div class="col-md-8 order-2 order-md-1 d-flex flex-column align-items-center align-items-md-start">
+                        <h3 class="service-title mt-4 d-none d-md-block text-leftt">Petits travaux & Maintenance</h3>
+                        <p class="service-text text-center text-md-left my-3">
+                            Notre engagement pour garantir votre satisfaction et celle de vos collaborateurs et clients
+                            ne s’arrête pas à la remise des clefs. Après avoir pensé, conçu et réalisé vos espaces, il
+                            est tout aussi important de les maintenir. Nous croyons en la mise en place de partenariats
+                            long termes nous permettant de répondre à vos besoins durant toute la durée de vie de vos
+                            bâtiments et installation
+                        </p>
+                        <a class="btn btn-success explore-btn" href="{{path('serviceMaintenance')}}">
+                            Découvrir
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                    <div class="col-md-4 order-1">
+                        <h4 class="service-title mb-4 d-md-none text-center">Petits travaux &amp; Maintenance</h4>
+                        <img src="{{asset('front/img/m-realisation.png')}}" class="service-img">
+                    </div>
+                </div>
+            </div>
+            {# end tarik #}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

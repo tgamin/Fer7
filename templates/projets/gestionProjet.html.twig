@@ -1,0 +1,507 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+  Gestion Optimale
+{% endblock %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  <style>
+    .col-2.border-cols {
+        background: #F3F3F3;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 4px;
+        color: #8A8A8A;
+        font-weight: 300;
+        max-width: 14%;
+    }
+    .col-6.border-cols-mobile{
+        display:none !important;
+    }
+    .first-slide-laptop {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      top: -100px;
+      z-index: -1;
+      /* background: transparent !important; */
+      font-family: 'Lexend', sans-serif;
+      font-weight: 400;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .center-projet {
+      color: #fff;
+      font-family: Lexend;
+      font-size: 44px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 80px;
+      letter-spacing: -0.5px;
+    }
+    p.text-center {
+      color: #fff;
+      font-family: Lexend;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px;
+      width: 100%;
+      height: 240px;
+    }
+    
+    #backround-section {
+      border-radius: 40px;
+      background: linear-gradient(0deg, #fff 0%, #fff 100%), linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+      box-shadow: 0px 4px 79.3px 0px rgba(0, 0, 0, 0.15);
+      margin-top: -12%;
+    }
+    
+    .title-projet {
+      color: #242222;
+      font-family: Lexend;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 45px;
+      letter-spacing: -0.5px;
+    }
+    
+    .text-projet {
+      color: #6a6a6a;
+      font-family: Lexend;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px; /* 162.5% */
+    }
+    .icon-projet {
+      color: #000;
+      font-family: Lexend;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 30.6px;
+      margin-left: 5%;
+    }
+    
+    .blog-img {
+      width: 540px;
+      height: 320px;
+      border-radius:11px;
+    }
+    .blog-imgright {
+      width: 100%;
+      border-radius:10px;
+      
+    }
+    #backroundblog {
+      border-radius: 20px;
+      height: 343px;
+      max-width: 580px !important;
+      box-shadow: 0px 4px 47.5px 0px rgba(0, 0, 0, 0.25);
+      padding: 11px;
+    }
+    #backroundblogright {
+      border-radius: 20px;
+      /* border: 3px solid #fff; */
+      box-shadow: 0px 4px 47.5px 0px rgba(0, 0, 0, 0.25);
+      padding: 11px;
+      height: 327px;
+
+    }
+    #backroundbright {
+      padding: 11px;
+      border-radius: 20px;
+      /*border: 16px solid #fff;*/
+      box-shadow: 0px 4px 47.5px 0px rgba(0, 0, 0, 0.25);
+      height: 328px;
+   
+     
+    }
+    
+    #backroundblogleft {
+      border-radius: 20px;
+      /*border: 16px solid #fff;*/
+      box-shadow: 0px 4px 47.5px 0px rgba(0, 0, 0, 0.25);
+      padding: 11px;
+      height: auto;
+      
+    }
+    .blog-imgleft {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+    .blogtext {
+      color: #fff;
+      text-align: center;
+      font-family: 'Lexend';
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 26px;
+      margin-top: -15%;
+    }
+    .blogtextright {
+      color: #fff;
+      text-align: center;
+      font-family: 'Lexend';
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 26px;
+      margin-top: -20%;
+    }
+    .blogsection {
+      color: #fff;
+      text-align: center;
+      font-family: Lexend;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 26px;
+      margin-top: -24%;
+    }
+    .blogsectionright {
+      color: #fff;
+      text-align: center;
+      font-family: Lexend;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 26px;
+      margin-top: -24%;
+    }
+    .balistitle {
+      color: #242222;
+      font-family: Lexend;
+      font-size: 34px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 45px;
+      letter-spacing: -0.5px;
+      margin-left: 2%;
+    }
+    
+    .balistext {
+      color: #9d9d9d;
+      font-family: Lexend;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px;
+      margin-left: 2%;
+    }
+    
+    div#mb-5-row {
+      margin-left: 10px;
+    }
+    
+    .carousel-inner {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      height: 400px;
+      
+    }
+
+    .carousel-inner .carousel-item img {
+        height: 400px;
+        object-fit: cover;
+        width: 100%;
+    }
+    img.img-info {
+      height: 22px;
+    }
+     div#carouselExampleControls
+     {
+      border: 1px solid white;
+      box-shadow: 0px 4px 79.3px 0px rgba(0, 0, 0, 0.15);
+      border-radius: 23px;
+      padding: 11px;
+    }  
+    
+    .img-link{
+      margin-left:-3%;
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .text-projet,.icon-projet {
+        font-size: 10px !important;  
+      }
+      .information-projet{
+        margin-top:0px !important;
+        margin-bottom:10px;
+      }
+      .img-link{
+        margin-left:-10% !important;
+      }
+      .col-2.border-cols{
+          display:none !important;
+      }
+      .col-6.border-cols-mobile{
+            display:block !important;
+             background: #F3F3F3;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 4px;
+            color: #8A8A8A;
+            font-weight: 300;
+            max-width: 49% !important;
+            font-size: 10px;
+        }
+        .grey-cols .col-1{
+            display:none !important;
+        }
+        .first-header{
+            font-size:23px;
+        }
+        .header-h5{
+            text-align: left;
+            font-size: 17px;
+            font-weight: 900;
+        }
+        .last-cards .col-1{
+            display:none !important;
+        }
+        .card img{
+            border-radius:20px !important;
+        }
+        .first-container{
+            margin-top:-100% !important;
+        }
+        .img-for-mobile{
+            height: auto !important;
+            width: 100% !important;
+        }
+    }
+  </style>
+{% endblock %}
+
+{% block body %}
+
+  <div class="first-backround" style="background-image:url(/front/img/espace.png); background-size: cover;">
+    <div class="container">
+      <div class="row row-first-backround align-center">
+        <div class="col-xl-12">
+          <div class="content">
+            <div class="row">
+              {# <div class="col-1"></div> #}
+              <div class="col-12">
+                <center id="text-mobil">
+                  <span style="text-align:center;font-family: 'Lexend';font-size: 11px;font-style: normal;font-weight: 400;line-height: 23.6px;color:white;"></span>
+                </center>
+              </div>
+              {# <div class="col-1"></div> #}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+ 
+  <div class="container first-container text-center" style="background:white; color:black; margin-top: -30%; height: auto;border-radius: 20px; max-width: 95% !important;box-shadow: 2px 5px 10px 0px gray;
+    margin-bottom: 40px;    padding-bottom: 60px;">
+    <div class="d-flex align-items-center justify-content-center mt-3">
+      <img src="/front/img/Link.png" alt="">
+      <br>
+      
+    </div>
+    <div class="text-center">
+        <h1 class="first-header" style="font-family: 'Lexend'; color: black;font-weight: 800;">Gestion Optimale des Coûts et Délais dans les Projets d'Aménagement : Bonnes Pratiques </h1>
+        <span class="text-muted"> 13.03.2024 14:30 </span>
+    </div>
+    <div class="row text-center mt-5 text-black grey-cols">
+       <div class="col-1"></div>
+        <div class="col-2 border-cols">Gestion de Projet</div>
+        <div class="col-1"></div>
+        <div class="col-2 border-cols">Coûts</div>
+        <div class="col-1"></div>
+        <div class="col-2 border-cols">Délais</div>
+        <div class="col-1"></div>
+        <div class="col-2 border-cols">Aménagement D'intérieur</div>
+        <div class="col-1"></div>
+        <div class="col-6 border-cols-mobile mb-3" style="margin-right: 6px;">Gestion de Projet</div>
+        <div class="col-6 border-cols-mobile mb-3">Coûts</div>
+        <div class="col-6 border-cols-mobile" style="margin-right: 6px;">Délais</div>
+        <div class="col-6 border-cols-mobile">Aménagement D'intérieur</div>
+        
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        
+        <div class="col-10">
+            
+            <img src="/front/img/gestion.jpeg" width="100%" alt="" class="img-for-mobile mt-5"style="    border-radius: 30px;
+    height: 380px;
+    width: 80%;
+">
+            
+        </div>
+        
+        <div class="col-1"></div>
+    </div>
+    
+    <div class="row mt-5">
+        <div class="col-1"></div>
+         <div class="col-10"  style="text-align: justify; ">
+        <span class="text-muted">La gestion des coûts et des délais est un enjeu majeur dans les projets d'aménagement, notamment dans les secteurs du second œuvre pour les espaces professionnels. Un projet bien géré, respectant les contraintes budgétaires et temporelles, permet non seulement de satisfaire le client, mais aussi de garantir la rentabilité et la réputation de l'entreprise. Dans cet article, nous aborderons les bonnes pratiques indispensables à la maîtrise des coûts et des délais, en mettant l’accent sur les points clés à chaque phase du projet.  </span>
+        <br>
+        <h5 style="margin-top:30px;" class="header-h5">Une Planification Rigoureuse : la Base de Tout Projet Réussi </h5>
+        <span class="text-muted">
+            
+           La première étape cruciale pour maîtriser coûts et délais est la planification. Il s'agit de définir un calendrier précis et un budget réaliste, basés sur une compréhension approfondie des besoins du client et des contraintes du projet.  <br><br>
+
+            <span style="font-weight:700">Analyse des besoins et définition des objectifs</span> :  Comprendre en détail les exigences du client, les fonctionnalités attendues et les contraintes techniques permet d'éviter des ajustements coûteux en cours de projet. Une analyse détaillée permet également de détecter les risques. 
+            <br><br>
+            <span style="font-weight:700">Élaboration d’un planning réaliste </span> : Il est crucial de tenir compte des délais de livraison des matériaux, de la disponibilité des ressources humaines, et des éventuels aléas qui peuvent impacter le projet (intempéries, retards de fournisseurs, etc.). Utiliser un diagramme de Gantt ou un logiciel de gestion de projet pour visualiser les tâches et leurs interdépendances peut être d'une grande aide.
+            <br><br>
+            <span style="font-weight:700">Estimation des coûts</span> : Un chiffrage précis des coûts dès le départ permet de définir un budget réaliste. Il est conseillé d’inclure une marge pour les imprévus (environ 10 à 15 %) afin de pouvoir absorber les augmentations de coûts sans déborder. 
+            </span>
+            <br><br>
+            
+        
+        <h5 style="margin-top:30px;" class="header-h5">Gestion Efficace des Ressources : Optimiser les Équipes et les Fournisseurs </h5>
+        
+        <span class="text-muted">
+        Une bonne gestion des ressources humaines et matérielles est indispensable pour éviter les surcoûts et les retards. Cela inclut aussi bien la coordination des équipes que la gestion des relations avec les fournisseurs et sous-traitants. 
+        </br></br>
+        <span style="font-weight:700">Coordination des équipes</span> : Chaque équipe, qu’il s’agisse des électriciens, des plombiers, ou des peintres, doit savoir quand intervenir et pour combien de temps. Une mauvaise coordination entre les corps de métier peut entraîner des retards qui affecteront tout le calendrier du projet. Pour éviter cela, il est essentiel de bien planifier les séquences de travail et de maintenir une communication fluide entre les équipes.
+        </br></br>
+        <span style="font-weight:700">Gestion des fournisseurs </span>: La sélection des fournisseurs est critique pour la maîtrise des coûts et délais. Il est recommandé de travailler avec des fournisseurs fiables et d’établir des contrats clairs incluant des clauses sur les délais de livraison. Anticiper la commande des matériaux, surtout pour ceux qui ont des délais de livraison longs, est une autre pratique essentielle. 
+        </br></br>
+        <span style="font-weight:700">Utilisation d'outils de gestion  </span>: Des outils tels que des logiciels de gestion de projet ou des plateformes de collaboration peuvent aider à centraliser les informations, à suivre l’avancement des tâches en temps réel et à ajuster le calendrier en fonction des besoins. Ils permettent également de visualiser les indicateurs clés comme le coût estimé par rapport au coût réel.</span>
+        </br></br>
+        
+        
+        <h5 style="margin-top:30px;" class="header-h5">Maîtrise des Changements en Cours de Projet : Éviter les Dérives</h5>
+        <span class="text-muted">
+        Les modifications en cours de projet sont fréquentes dans les projets d’aménagement. Cependant, si elles ne sont pas bien maîtrisées, elles peuvent générer des surcoûts et des retards significatifs. 
+        </br></br>
+        <span style="font-weight:700">Gestion des demandes de changement </span> :Toute modification doit passer par un processus formel. Cela implique de documenter chaque demande, d'évaluer son impact sur les coûts et les délais, et d'obtenir l'accord du client avant toute mise en œuvre. 
+
+        </br></br>
+        <span style="font-weight:700">Communication proactive avec le client </span>:  Maintenir un dialogue constant avec le client permet d’éviter les incompréhensions. En expliquant les implications de chaque changement demandé, le client sera mieux informé pour prendre des décisions éclairées. 
+        </br></br>
+        <span style="font-weight:700">Contrôle des dérives de coût  </span>:   En cas de modification, il est essentiel de réajuster immédiatement le budget prévisionnel pour éviter les mauvaises surprises. Mettre en place un système de suivi des coûts en temps réel est une bonne pratique pour détecter les dérives avant qu’elles ne deviennent problématiques. </span>
+
+        </br></br>
+       
+        
+        
+        
+         <h5 style="margin-top:30px;" class="header-h5">Suivi et Contrôle : Garantir le Respect des Objectifs </h5>
+        <span class="text-muted">
+        Le suivi rigoureux des coûts et des délais tout au long du projet est fondamental pour s’assurer que les objectifs sont respectés.  
+        </br></br>
+        <span style="font-weight:700">Suivi budgétaire </span> :Il est conseillé de comparer régulièrement les coûts réels avec les coûts estimés et d’analyser les écarts. Des ajustements peuvent être faits en cours de projet pour compenser les éventuels dépassements. Les outils de gestion budgétaire intégrés dans les logiciels de gestion de projet facilitent ce suivi. 
+
+        </br></br>
+        <span style="font-weight:700">Suivi des délais </span>:  Il est important de suivre de près l'avancement de chaque tâche. En cas de retard, il faut réagir rapidement pour réajuster les priorités ou allouer des ressources supplémentaires. Des réunions hebdomadaires avec les équipes peuvent aider à identifier les obstacles avant qu’ils n’affectent gravement le calendrier global. 
+        </br></br>
+        <span style="font-weight:700">Évaluation des risques  </span>:  Tout au long du projet, il est essentiel d’anticiper les risques qui pourraient impacter le planning ou le budget (par exemple, des retards dans la livraison des matériaux ou des problèmes techniques imprévus). Un plan de gestion des risques doit être mis en place dès le départ, et des mesures correctives doivent être prévues en cas de besoin.</span>
+
+        </br></br>
+       
+       <h5 style="margin-top:30px;" class="header-h5"> Clôture du Projet : Évaluer et Capitaliser sur l'Expérience </h5>
+        <span class="text-muted">
+        Une fois le projet terminé, la phase de clôture est tout aussi importante que les autres étapes. Il s’agit de faire le bilan du projet pour en tirer des enseignements utiles pour les projets futurs.   
+        </br></br>
+        <span style="font-weight:700">Évaluation des performances </span> : Analyser les performances du projet par rapport aux objectifs initiaux permet de mesurer l’efficacité de la gestion des coûts et des délais. Cela inclut l’analyse des écarts entre le budget et les dépenses réelles, ainsi que des retards éventuels.
+
+        </br></br>
+        <span style="font-weight:700">Retour d'expérience </span>:  Les retours d’expérience des équipes, des fournisseurs et du client sont précieux. Ils permettent de détecter les points forts et les axes d’amélioration pour les projets à venir.
+        </br></br>
+        <span style="font-weight:700">Archivage et documentation  </span>:   Il est important de conserver une documentation complète du projet, incluant les budgets, plannings, et modifications apportées. Cette base de données sera utile pour les futurs projets, facilitant la planification et l’estimation des coûts.
+        </span>
+
+        </br></br>
+        
+        
+        
+        <h5 style="margin-top:30px;" class="header-h5">Conclusion</h5><br>
+        <span class="text-muted"> La gestion optimale des coûts et des délais dans les projets d’aménagement repose sur une planification rigoureuse, une coordination efficace des ressources, une maîtrise des changements, et un suivi constant. En appliquant ces bonnes pratiques, les entreprises peuvent non seulement livrer des projets conformes aux attentes du client, mais aussi améliorer leur rentabilité et leur efficacité opérationnelle. Un projet bien géré, où les délais et le budget sont respectés, est un gage de satisfaction client et de pérennité pour l’entreprise. 
+        </span>
+        
+        <h3 class="mt-5" style="font-weight:700">Articles connexes</h3>
+        </div>
+        
+        
+        <div class="col-1"></div>
+    </div>
+     <div class="row mt-3 last-cards" style="justify-content: space-between;text-align: left;">
+         <div class="col-1"></div>
+            <div class="col-lg-3 mt-5 col-12 text-black" >
+                <div class="card" id="card-carossel1" style="width: 18rem;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+              <img class="card-img-top" src="/front/img/isolation.jpeg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Comment optimiser l'acoustique dans
+un espace professionnel ?</h5>
+                <p class="card-text" style="margin-bottom:36px !important;     font-size: 11px;">Acoustique, Isolation sonore, Productivité, Bien-être au travail</p>
+                <div class="row">
+                  <div class="col">
+                    <span class="text-muted" style="font-size: 12px;">13.03.2024 14:30</span>
+                  </div>
+                  <div class="col">
+                    <b id="boldid"><a href="https://fer7.gebanalysis.cloud/espace-professionel">Lire plus</a></b>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+            <div class="col-lg-3 mt-5 col-12 text-black">
+                
+                <div class="card" id="card-carossel2" style="width: 18rem;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+              <img class="card-img-top" src="/front/img/eclirage.jpeg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">L'Éclairage : Un Élément Clé pour des Espaces Fonctionnels et Esthétiques</h5>
+                <p class="card-text" style="margin-bottom:18px !important"><span style="text-transform:capitalize;     font-size: 11px;">éclairage,
+</span><span style="text-transform:capitalize;     font-size: 11px;">design d'éclairage,
+</span><span style="text-transform:capitalize;     font-size: 11px;">ambiance lumineuse,
+</span><span style="text-transform:capitalize;     font-size: 11px;">productivité</span></p>
+                <div class="row">
+                  <div class="col">
+                    <span class="text-muted" style="font-size: 12px;">13.03.2024 14:30</span>
+                  </div>
+                  <div class="col">
+                    <b id="boldid"><a href="https://fer7.gebanalysis.cloud/espace-fonctionnel">Lire plus</a></b>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="col-lg-3 mt-5 col-12 text-black">
+                
+                
+                <div class="card" id="card-carossel3" style="width: 18rem;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+              <img class="card-img-top" src="/front/img/gestion.jpeg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Gestion Optimale des Coûts et Délais dans les Projets d'Aménagement : Bonnes Pratiques</h5>
+                <p class="card-text" style="margin-bottom:0px !important"><span style="text-transform:capitalize;     font-size: 11px;">gestion de projet,
+</span><span style="text-transform:capitalize;     font-size: 11px;">coûts,
+</span><span style="text-transform:capitalize  ;  font-size: 11px;">délais,
+</span><span style="text-transform:capitalize;     font-size: 11px;">aménagement d'intérieur</span></p>
+                <div class="row">
+                  <div class="col">
+                    <span class="text-muted" style="font-size: 12px;">13.03.2024 14:30</span>
+                  </div>
+                  <div class="col">
+                    <b id="boldid"><a href="https://fer7.gebanalysis.cloud/gestion-projet">Lire plus</a></b>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+        <div class="col-1"></div>    
+        </div>
+    
+    
+  </div>
+
+
+
+{% endblock %}

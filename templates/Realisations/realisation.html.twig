@@ -1,0 +1,365 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Réalisations
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<style>
+	.center-div {
+		color: #fff;
+		text-align: center;
+		font-family: Lexend;
+		font-size: 30px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 80px;
+		/* 125% */
+		letter-spacing: -0.5px;
+	}
+
+	.center-text {
+		color: #fff;
+		text-align: center;
+		font-family: Lexend;
+		font-size: 13px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 30.6px;
+		/* 191.25% */
+	}
+
+	#backround-section {
+		border-radius: 64px;
+		background: linear-gradient(0deg, #fff 0%, #fff 100%), linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+		box-shadow: 0 4px 79.3px 0 rgba(0, 0, 0, 0.15);
+		margin-top: -51%;
+		height: auto;
+		margin-bottom: 5%;
+	}
+
+	.title.ml-2 {
+		color: #242222;
+		font-family: Lexend;
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 45px;
+		/* 125% */
+		letter-spacing: -0.5px;
+		margin-top: 9%;
+	}
+
+	.btnTabs {
+		border-radius: 48px;
+		border: 1px solid var(--lin, #b0cb32);
+		background: #fff !important;
+		box-shadow: 0 4px 34px 0 rgba(255, 255, 255, 0.25);
+		display: inline-flex;
+		padding: 12px 5px;
+		justify-content: center;
+		align-items: center;
+		width: 30vh;
+		color: #819719;
+
+	}
+
+	.btnTabs:hover {
+
+		color: #819719 !important;
+		font-weight: 600 !important;
+	}
+
+	.btnTabsmobile {
+		border-radius: 48px;
+		border: 1px solid var(--lin, #b0cb32);
+		background: #fff !important;
+		box-shadow: 0 4px 34px 0 rgba(255, 255, 255, 0.25);
+		display: inline-flex;
+		padding: 12px 5px;
+		justify-content: center;
+		align-items: center;
+		width: 20vh;
+		color: #819719;
+		font-size: 11px;
+	}
+
+	#searchInput {
+		width: 50%;
+		border: 1px solid #000;
+		border-radius: 30px;
+		font-size: 16px;
+		background-color: white;
+		background-image: url('https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-24.png');
+		background-position: 10px 7px;
+		background-repeat: no-repeat;
+		padding: 8px 20px 8px 40px;
+		-webkit-transition: width 0.8s ease-in-out;
+		transition: width 0.8s ease-in-out;
+		outline: none;
+		opacity: 0.9;
+		margin-top: 15%;
+		float: right;
+	}
+
+	.sectionall img {
+		width: 100% !important;
+	}
+
+	.card-title.img-overlay {
+		font-size: 20px;
+	}
+
+	span#title-from {
+		font-size: 12px;
+	}
+
+	img#icon-Vector {
+		float: right;
+		margin-right: 44%;
+		width: 14%;
+		margin-top: 2%;
+	}
+
+	h5.card-title.img-overlay {
+		margin-top: 39%;
+		color: white;
+		font-weight: bold;
+	}
+
+	.col-2.tabs {
+		max-width: 19%;
+	}
+
+
+	.realisation-info {
+		background: white;
+		width: 50%;
+		margin: auto;
+
+		height: auto;
+		z-index: 2;
+		position: relative;
+		box-shadow: 4px -1px 9px 5px #00000026;
+		border-radius: 13px;
+		padding-bottom: 49px;
+	}
+
+	@media screen and(max-width: 768px) {
+
+		#backround-sectionmobil {
+			border-radius: 64px;
+			background: linear-gradient(0deg, #fff 0%, #fff 100%), linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+			box-shadow: 0 4px 79.3px 0 rgba(0, 0, 0, 0.15);
+			margin-top: -10%;
+			margin-bottom: 5%;
+			margin-top: -86% !important;
+
+		}
+
+		div#section_icon {
+			margin-top: -20% !important;
+			margin-left: 17px !important;
+		}
+
+		img#imagearound {
+			border-radius: 10px;
+
+		}
+
+		.btnTabsmobile {
+			width: 18vh !important;
+		}
+
+		.card-img-overlay {
+
+			margin-top: 32%;
+		}
+
+		;
+
+		h2.title {
+			width: 220px !important;
+		}
+
+		.first-slide-laptop-realisation {
+			position: relative;
+			/*background-image: url('/front/img/realisationFer7.png');*/
+			width: 100%;
+			height: auto !important;
+			top: -100px !important;
+			/*z-index: -1;/*/
+
+			/*background: transparent !important;*/
+			font-family: 'Lexend', sans-serif;
+			font-weight: 400;
+		}
+
+		#backround-section {
+			margin-top: -32% !important;
+		}
+
+		.carousel-image {
+			height: 500px;
+			object-fit: cover;
+			/* Ensures the image covers the entire height without distortion */
+		}
+	}
+</style>
+{% endblock %}
+{% block body %}
+
+<div id="realisationmobil">
+	<div class="first-slide-laptop-realisation"
+		style="background-image: url('/front/img/{{realisation.image}}'); background-size: cover;background-repeat: no-repeat; height: auto;">
+		<div class="container">
+			<div class="text-center row-first-slide align-center">
+				<h3 class="center-div">{{realisation.title}}</h3>
+				<div class="realisation-info pt-5">
+					<div class="row">
+
+						<div class="col-sm-12">
+
+							<div class="realistion-name" style="color:black;font-weight: 800;">
+								<h6 style="color:black;font-weight: 800;">{{realisation.title}}</h6>
+							</div>
+							<div class="realistion-description" style="padding: 10px;"><span class="text-muted"
+									style="font-size:12px">{{realisation.description|striptags|raw|slice(0,75)}}...</span>
+							</div>
+							<div class="realisation-information" style="text-align: start;padding-left: 73px;">
+								<div class="realistion-city"><i class="fa-solid fa-location-dot"
+										style="font-size:20px;    color: var(--lin, #b0cb32);margin-right: 10px;"></i><span
+										class="text-muted"
+										style="font-size:12px; font-weight: 400;">{{realisation.city}}</span></div>
+								<div class="realistion-superficie"><img src="/front/img/surface-area.png"
+										style="width: 22px;margin-right: 10px;margin-left: -4px;" /><span
+										class="text-muted"
+										style="font-size:12px; font-weight: 400;">{{realisation.superficie}}</span>
+								</div>
+								<div class="realistion-superficie" style="margin-top:4px"><i
+										class="fa-regular fa-calendar"
+										style="font-size:20px;    color: var(--lin, #b0cb32);margin-right: 10px;margin-left: -2px;"></i><span
+										class="text-muted" style="font-size:12px; font-weight: 400;">Mardi 01 Janvier
+										2024</span></div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div>
+
+
+
+<div id="realisationlaptop">
+	<div class="first-slide-laptop-realisation"
+		style="background-image: url('/front/img/{{realisation.image}}'); background-size: cover;background-repeat: no-repeat;">
+		<div class="container">
+			<div class="text-center row-first-slide align-center">
+				<h3 class="center-div">{{realisation.title}}</h3>
+				<div class="realisation-info pt-5">
+					<div class="row">
+						<div class="col-sm-7" style="text-align: left;padding-left: 60px;">
+							<div class="realistion-name" style="color:black;font-weight: 800;">
+								<h6 style="color:black;font-weight: 800;">{{realisation.title}}</h6>
+							</div>
+							<div class="realistion-description"><span class="text-muted"
+									style="font-size:12px">{{realisation.description|striptags|raw|slice(0,75)}}...</span>
+							</div>
+
+						</div>
+						<div class="col-sm-5" style="text-align: left">
+							<div class="realistion-city"><i class="fa-solid fa-location-dot"
+									style="font-size:20px;color: var(--lin, #b0cb32);margin-right: 10px;margin-left: 6px;"></i><span
+									class="text-muted"
+									style="font-size:12px; font-weight: 400;">{{realisation.city}}</span></div>
+							<div class="realistion-superficie" style="margin-bottom: 7px;"><img
+									src="/front/img/surface-area.png" style="width: 27px;margin-right: 6px;" /><span
+									class="text-muted"
+									style="font-size:12px; font-weight: 400;">{{realisation.superficie}}</span></div>
+							<div class="realistion-superficie"><i class="fa-regular fa-calendar"
+									style="font-size:20px;color: var(--lin, #b0cb32);margin-right: 10px;margin-left: 6px;"></i><span
+									class="text-muted" style="font-size:12px; font-weight: 400;">Mardi 01 Janvier
+									2024</span></div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container realisation-container" style="max-width: 1500px;z-index: 1;position: relative;"
+	id="backround-section">
+	<div class="section container">
+		<div class="row">
+			<div class="col-12">
+				<img src="{{ asset('front/img/Link.png') }}" alt="" style="margin-left: -34px;margin-top:60px"
+					class="img-link" />
+				<h2 class="title" style="margin-top: -32px; font-size: 23px; margin-bottom: 30px; font-weight: 700;">
+					{{ realisation.title }}
+				</h2>
+				<span class="text-muted" style="text-align:start">{{ realisation.description | raw }}</span>
+			</div>
+		</div>
+
+		<div class="realisation-img">
+			<div class="row">
+				{% for image in realisation.images %}
+				<div class="col-sm-6 mb-3">
+					<img src="{{ asset('front/img/' ~ image.upload) }}" alt="" class="img-fluid" />
+				</div>
+
+
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-6">
+				<img src="/front/img/link.png" alt="" style="margin-left: -34px;">
+				<h2 class="title" style="font-size: 23px; margin-bottom: 30px; font-weight: 700; margin-top: -32px;">
+					Galerie
+				</h2>
+
+			</div>
+		</div>
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				{% for image in realisation.images %}
+				<li data-target="#carouselExampleIndicators" data-slide-to="{{ loop.index0 }}"
+					class="{% if loop.first %}active{% endif %}"></li>
+				{% endfor %}
+			</ol>
+
+			<div class="carousel-inner">
+				{% for image in realisation.images %}
+				<div class="carousel-item {% if loop.first %}active{% endif %}">
+					<img class="d-block w-100 carousel-image" src="{{ asset('front/img/' ~ image.upload) }}"
+						alt="Slide {{ loop.index }}">
+				</div>
+				{% endfor %}
+			</div>
+
+			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+</div>
+
+
+
+{% endblock %}

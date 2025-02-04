@@ -1,0 +1,129 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Petits travaux & Maintenance
+{% endblock %}
+
+{% block body %}
+{{parent()}}
+<div class="green-screen"></div>
+<div class="laptop-version">
+	<div class="container-service traveau pb-5">
+		<div class="text-center pt-4">
+			<h1 class="header-services mb-3 mb-lg-5">Petits travaux & Maintenance</h1>
+			<span class="green-divider"></span>
+			<p class="header-p mt-5">Notre engagement pour garantir votre
+				satisfaction et celle de vos collaborateurs et clients ne s’arrête pas à la remise des clefs. Après
+				avoir pensé, conçu et réalisé vos espaces, il est tout aussi important de les maintenir. Nous croyons en
+				la mise en place de partenariats long termes nous permettant de répondre à vos besoins durant toute la
+				durée de vie de vos bâtiments et installation
+			</p>
+		</div>
+		<div class="container mt-5">
+			<div class="row">
+				<div class="col-sm-4">
+					<span class="green-divider d-md-none"></span>
+					<h3 class="d-md-none" style="font-family: 'Lexend';width: 100%;margin-bottom: 20px;">Petits travaux
+					</h3>
+					<img src="{{asset('front/img/Contractant.png')}}" width="100%" style="border-radius:20px">
+				</div>
+				<div class="col-sm-8">
+					<span class="green-divider d-none d-md-inline-block" style="margin-top: 40px;"></span>
+					<h3 class="d-none d-md-block" style="font-family: 'Lexend';">Petits travaux</h3>
+					<p class="pt-2">
+						Les petits travaux de mise à niveau dans les plateaux de bureaux et les espaces commerciaux sont
+						cruciaux pour maintenir un environnement professionnel fonctionnel et attrayant.<br />
+
+						De la réparation d’une porte cassée à la reprise de la peinture d’un mur défraichi à la suite
+						d’une fuite d’eau, nous répondons à l’ensemble de vos besoins ponctuels et ainsi favorisons la
+						productivité, le bien-être et la satisfaction générale.
+					</p>
+				</div>
+			</div>
+
+			<div class="row mt-5">
+				<div class="col-sm-4">
+					<span class="green-divider d-md-none"></span>
+					<h3 class="d-md-none" style="font-family: 'Lexend';width: 100%;margin-bottom: 20px;">Contrats de
+						maintenance</h3>
+					<img src="{{asset('front/img/contract-maintenance.png')}}" width="100%" style="border-radius:20px">
+				</div>
+				<div class="col-sm-8">
+					<div class="row">
+						<div class="col-sm-6">
+							<span class="green-divider" style="margin-top: 40px;"></span>
+							<h3 class="servicestylema d-none d-md-block style=" font-family: 'Lexend' ;"">Contrats de
+								maintenance</h3>
+
+							<div class="col-sm-6"></div>
+						</div>
+					</div>
+					<p>
+						Les contrats de maintenance sont essentiels pour assurer le bon fonctionnement et la longévité
+						des installations et du mobilier dans les espaces commerciaux et de bureau. En anticipant les
+						problèmes potentiels grâce à des inspections régulières et en intervenant rapidement pour
+						résoudre les dysfonctionnements, nous minimisons les interruptions d'activité et les potentiels
+						impacts sur vos bâtiments. <br />
+						Forts de notre expertise dans ce domaine, nous proposons des solutions sur mesure et des
+						interventions rapides, garantissant ainsi la tranquillité d'esprit de nos clients et la
+						pérennité de leurs investissements.
+					</p>
+
+					<div id="accordion" class="accordion">
+						<div class="mb-0" style="border: none;">
+							<div class="card-header collapsed" data-toggle="collapse" href="#collapseOne">
+								<a>
+									Contrat de maintenance préventive
+								</a>
+							</div>
+							<div id="collapseOne" class="card-body collapse" data-parent="#accordion">
+								<p>Implique des inspections régulières et des interventions préventives pour détecter et
+									résoudre les problèmes potentiels avant qu'ils ne deviennent des incidents majeurs
+								</p>
+							</div>
+							<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion"
+								href="#collapseTwo">
+								<a>
+									Contrat de maintenance corrective
+								</a>
+							</div>
+							<div id="collapseTwo" class="card-body collapse" data-parent="#accordion">
+								<p>Couvre les interventions nécessaires pour réparer les pannes et les
+									dysfonctionnements impactant les installations ou le mobilier.
+								</p>
+							</div>
+
+							{# <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion"
+								href="#collapseThree">
+								<a class="card-title">
+									Contrat de nettoyage et d'entretien
+								</a>
+							</div>
+							<div id="collapseThree" class="collapse" data-parent="#accordion">
+								<div class="card-body">
+									<p>inclut des services de nettoyage réguliers pour maintenir la propreté et
+										l'hygiène des espaces, y compris le nettoyage des surfaces, des sanitaires et
+										des espaces communs.</p>
+								</div>
+							</div>
+
+							<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion"
+								href="#collapseFour">
+								<a class="card-title">
+									Contrat de gestion des équipements
+								</a>
+							</div>
+							<div id="collapseFour" class="card-body collapse" data-parent="#accordion">
+								<p>concerne la maintenance et la gestion des équipements spécifiques présents dans
+									les espaces commerciaux, tels que les systèmes de climatisation, d'éclairage, de
+									sécurité, etc.
+								</p>
+							</div> #}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

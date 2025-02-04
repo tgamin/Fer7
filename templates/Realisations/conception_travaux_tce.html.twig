@@ -1,0 +1,956 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Réalisations
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+		.first-slide-laptop-realisation {
+			position: relative;
+			background-image: url('/front/img/green-screen.png');
+			width: 100%;
+			height: 500px;
+			top: -100px;
+			z-index: -1;
+			/*background: transparent !important;*/
+			font-family: 'Lexend', sans-serif;
+			font-weight: 400;
+		}
+		.center-div {
+			color: #fff;
+			text-align: center;
+			font-family: Lexend;
+			font-size: 40px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 80px; /* 125% */
+			letter-spacing: -0.5px;
+		}
+		.center-text {
+			color: #fff;
+			text-align: center;
+			font-family: Lexend;
+			font-size: 13px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 30.6px; /* 191.25% */
+		}
+
+		#backround-section {
+			border-radius: 64px;
+			background: linear-gradient(0deg, #fff 0%, #fff 100%), linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+			box-shadow: 0 4px 79.3px 0 rgba(0, 0, 0, 0.15);
+			margin-top: -10%;
+			height: auto;
+			margin-bottom: 5%;
+		}
+
+		.title.ml-2 {
+			color: #242222;
+			font-family: Lexend;
+			font-size: 24px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 45px; /* 125% */
+			letter-spacing: -0.5px;
+			margin-top: 9%;
+		}
+
+		.btnTabs, .btnTabsmobile {
+			border-radius: 48px;
+			border: 1px solid white;
+			background: white !important;
+			box-shadow: 0 4px 34px 0 rgba(255, 255, 255, 0.25);
+			display: inline-flex;
+			padding: 12px 5px;
+			justify-content: center;
+			align-items: center;
+			width: 35vh;
+			color: #819719 !important;
+            box-shadow: 5px 1px 14px 0px gray;
+		}
+		a.btn.btn-success.btnTabsmobile.active-tab{
+		    background-color: #819719  !important;
+		    color: white !important;
+		}
+		a.btn.btn-success.btnTabs.active-tab{
+		     background-color: #819719 !important;
+            color:white !important;
+             border-color: #7b8e21 !important;
+		}
+		.btnTabs:hover {
+			color: #819719 !important;
+			font-weight: 600 !important;
+		}
+
+		a#btn\ btn-success{
+			line-height: 1 !important;
+			background: #B0CB32;
+		}
+		.btnTabsmobile {
+			border-radius: 48px;
+			border: 1px solid white;
+			background: white !important;
+			box-shadow: 0 4px 34px 0 rgba(255, 255, 255, 0.25);
+			display: inline-flex;
+			padding: 12px 5px;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			color: #819719;
+            box-shadow: 5px 1px 14px 0px gray;
+		}
+
+		#searchInput {
+			width: 50%;
+			border: 1px solid #000;
+			border-radius: 30px;
+			font-size: 16px;
+			background-color: white;
+			background-image: url('https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-24.png');
+			background-position: 10px 7px;
+			background-repeat: no-repeat;
+			padding: 8px 20px 8px 40px;
+			-webkit-transition: width 0.8s ease-in-out;
+			transition: width 0.8s ease-in-out;
+			outline: none;
+			opacity: 0.9;
+			margin-top: 15%;
+			float: right;
+		}
+		.sectionall img {
+			width: 100% !important;
+		}
+
+		.card-title.img-overlay {
+			font-size: 20px;
+		}
+
+		span#title-from {
+			font-size: 12px;
+		}
+		img#icon-Vector {
+			float: right;
+			margin-right: 44%;
+			width: 14%;
+			margin-top: 2%;
+		}
+		h5.card-title.img-overlay {
+			margin-top: 24%;
+			color: white;
+			font-weight: bold;
+		}
+	
+
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 1050; /* Ensure it's above other elements */
+			padding-top: 35px;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto; /* Allow scrolling on smaller screens */
+			background-color: rgba(0, 0, 0, 0.8);
+		}
+		.mobile-modal {
+			display: none !important;
+		}
+		.modal-content {
+			margin: auto;
+			display: block;
+			max-width: 34%;
+			max-height: 60%;
+		}
+
+		.modal-info {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 10px;
+		}
+
+		@media screen and(max-width: 768px) {
+			.mobile-modal {
+				display: block !important;
+			}
+
+			#modalDetails b,
+			#modalTitle,
+			#modalCity,
+			#modalSuperficie,
+			#modalDescription {
+				font-size: 10px;
+			}
+			#backround-sectionmobil {
+				border-radius: 64px 64px 0 0;
+				padding-bottom: 39px;
+				background: linear-gradient(0deg, #fff 0%, #fff 100%), linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+				box-shadow: 0 4px 79.3px 0 rgba(0, 0, 0, 0.15);
+				margin-top: -10%;
+				margin-bottom: 5%;
+				margin-top: -86% !important;
+
+			}
+			div#modalDetails {
+				max-width: 80% !important;
+				margin-left: 36px;
+			}
+
+			.white-background {
+				background-color: white !important;
+			}
+			div#section_icon {
+				margin-top: -20% !important;
+				margin-left: 17px !important;
+			}
+			img#imagearound {
+				border-radius: 10px;
+				width: 94% !important;
+
+			}
+			.realisation-cols {
+				text-align: center;
+			}
+
+			.btnTabsmobile {
+				width: 100% !important;
+			}
+
+			.card-img-overlay {
+
+				margin-top: 32%;
+			}
+
+			.modal-content {
+				width: 80%;
+				max-width: none;
+				margin-top: 45%;
+			}
+
+			.modal-info {
+				display: block;
+				text-align: center;
+				margin-top: 20px;
+			}
+
+			.prev,
+			.next {
+				font-size: 30px;
+				position: absolute;
+				top: 50%;
+				cursor: pointer;
+				color: white !important;
+				user-select: none;
+			}
+
+			.prev {
+				left: 10px;
+			}
+
+			.next {
+				right: 10px;
+			}
+			.card .row {
+              display: flex; /* Flex layout for children */
+              flex-wrap: wrap; /* Prevent wrapping */
+              height: 100%; /* Full height of the card */
+            }
+            
+            a.btn.btn-success.btnTabsmobile {
+                color: #758615;
+            }
+
+
+            .active-tab {
+                color: #758615 !important;
+            }	
+			
+		}
+
+
+		/* Caption text */
+		#caption {
+			margin: auto;
+			display: block;
+			text-align: center;
+			color: #ccc;
+			padding: 10px 0;
+		}
+
+		.close {
+			position: absolute;
+			top: 15px;
+			right: 35px;
+			color: #fff;
+			font-size: 40px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: #bbb;
+			text-decoration: none;
+			cursor: pointer;
+		}
+		.prev,
+		.next {
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			width: auto;
+			padding: 16px;
+			margin-top: -22px;
+			color: white;
+			font-weight: bold;
+			font-size: 24px;
+			transition: 0.3s;
+			user-select: none;
+			color: white !important;
+		}
+
+		.prev {
+			left: 0;
+		}
+
+		.next {
+			right: 0;
+		}
+
+		.prev:hover,
+		.next:hover {
+			background-color: rgba(0, 0, 0, 0.8);
+		}
+		img#imagearound {
+			width: 100%;
+			border: 10px;
+			border-radius: 10px;
+			height: 190px !important;
+		}
+		.realisation-card{
+			transition: transform 0.3s ease !important;
+		}
+		.realisation-card:hover{
+			/*box-shadow: 2px 4px 8px 0px black !important;*/
+			 transform: scale(1.01); /* Scale the card */
+			z-index: 1;
+		}
+		.card .row {
+          display: flex; /* Flex layout for children */
+          flex-wrap: wrap; /* Prevent wrapping */
+          height: 100%; /* Full height of the card */
+        }
+        
+        .card .col-md-6 {
+          flex: 1; /* Equal size columns */
+          display: flex;
+          flex-direction: column; /* Ensure child elements stack vertically */
+        }
+        
+        .card-img {
+          flex: 1; /* Takes up all available height */
+          object-fit: cover; /* Ensures the image scales properly */
+          width: 100%; /* Full width */
+        }
+        
+        .card-body {
+          flex: 1; /* Takes up remaining space */
+          padding: 15px; /* Optional padding */
+          display: flex;
+          flex-direction: column;
+          /*text-align: center;*/
+          /*align-items: center;*/
+          /*justify-content: center; */ 
+        }
+		
+		@media screen and(max-width: 768px) {
+			.mobile-modal {
+				display: block !important;
+			}
+
+			#modalDetails b,
+			#modalTitle,
+			#modalCity,
+			#modalSuperficie,
+			#modalDescription {
+				font-size: 10px;
+			}
+			#backround-sectionmobil {
+				border-radius: 64px 64px 0 0;
+				padding-bottom: 39px;
+				background: linear-gradient(0deg, #fff 0%, #fff 100%), linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+				box-shadow: 0 4px 79.3px 0 rgba(0, 0, 0, 0.15);
+				margin-top: -10%;
+				margin-bottom: 5%;
+				margin-top: -86% !important;
+
+			}
+			div#modalDetails {
+				max-width: 80% !important;
+				margin-left: 36px;
+			}
+
+			.white-background {
+				background-color: white !important;
+			}
+			div#section_icon {
+				margin-top: -20% !important;
+				margin-left: 17px !important;
+			}
+			img#imagearound {
+				border-radius: 10px;
+				width: 94% !important;
+
+			}
+			.realisation-cols {
+				text-align: center;
+			}
+
+			.btnTabsmobile {
+				width: 100% !important;
+			}
+
+			.card-img-overlay {
+
+				margin-top: 32%;
+			}
+
+			.modal-content {
+				width: 80%;
+				max-width: none;
+				margin-top: 45%;
+			}
+
+			.modal-info {
+				display: block;
+				text-align: center;
+				margin-top: 20px;
+			}
+
+			.prev,
+			.next {
+				font-size: 30px;
+				position: absolute;
+				top: 50%;
+				cursor: pointer;
+				color: white !important;
+				user-select: none;
+			}
+
+			.prev {
+				left: 10px;
+			}
+
+			.next {
+				right: 10px;
+			}
+			.card .row {
+              display: flex; /* Flex layout for children */
+              flex-wrap: wrap !important; /* Prevent wrapping */
+              height: 100%; /* Full height of the card */
+            }
+			
+		}
+		.realisation-card{
+		    background:url('/front/img/part two_0016_4.png');
+            /* border: 1px solid black; */
+            height: 300px;
+            width: 100% !important;
+            background-size: cover !important;
+            border-radius: 20px;
+            background-attachment: unset;
+            position:relative;
+		}
+		.informations-realisation {
+            position: absolute;
+            width: 71%;
+            height: 59%;
+            /* border: 1px solid; */
+            top: 38%;
+            left: 4%;
+            background: linear-gradient(90deg, rgba(176, 203, 50, 1) 42%, rgba(123, 142, 33, 1) 99%);
+            border-radius: 13px;
+            padding: 20px;
+ 
+        }
+        .col-3 {
+            padding-left: 0px !important;
+            max-width: 100% !important;
+        }
+        @media (max-width: 768px) {
+            .realisation-card {
+                height: 300px !important; 
+                border-radius: 10px !important;
+            }
+        
+            .informations-realisation h5 {
+                font-size: 14px !important; /* Smaller font size for titles */
+            }
+        
+            .informations-realisation p {
+                font-size: 10px !important; /* Adjust description font size */
+                height: 72px;
+            }
+                .informations-realisation {
+                    position: absolute;
+                    width: 92%;
+                    height: 53%;
+                    /* border: 1px solid; */
+                    top: 43%;
+                    left: 4%;
+                    background: linear-gradient(90deg, rgba(176, 203, 50, 1) 42%, rgba(123, 142, 33, 1) 99%);
+                    border-radius: 13px;
+                    padding: 20px;
+            }
+            .first-slide-laptop-realisation {
+                top: -130px !important;
+            }
+        }
+		
+		
+		.first-slide-laptop-realisation {
+            width: 100% !important;
+            height: 460px !important;
+            top: -180px ;
+    
+		}
+		
+#backround-section {
+
+margin-top: -23% !important;
+padding-bottom: 15px !important;
+}
+
+
+a.btn.btn-success.btnTabs , a.btn.btn-success.btnTabs.active-tab {
+    width: 80%;
+}
+
+
+	</style>
+{% endblock %}
+{% block body %}
+	{#<div id="realisationlaptop">#}
+	{#	<div class="first-slide-laptop-realisation">#}
+	{#		<div class="container">#}
+	{#			<div class="text-center row-first-slide align-center">#}
+	{#				<h3 class="center-div">Réalisations</h3>#}
+					{#<p class="center-text">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia</p>#}
+	{#			</div>#}
+	{#		</div>#}
+	{#	</div>#}
+
+	{#	<div class="container" style="    max-width: 1165px;" id="backround-section">#}
+	{#		<div class="section container">#}
+	{#			<div class="row" >#}
+	{#				<div class="col-6">#}
+	{#					<img src="{{ asset('/front/img/Link.png') }}" alt=""/>#}
+	{#					<h2 class="title ml-4" style="font-size: 23px;#}
+	{#						    margin-bottom: 30px;    font-weight: 700;">Projets réalisés pour nos fidèles partenaires</h2>#}
+						{#<p class="text ml-4">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia</p>#}
+	{#				</div>#}
+	{#				<div class="col-6">#}
+						{# <input class="fa-solid fa-magnifying-glass" id="champ-search" type="text" placeholder="search" /> #}
+	{#					<input type="text" id="searchInput" placeholder="Recherche"/>#}
+	{#				</div>#}
+	{#			</div>#}
+				
+	{#			<div class="row mb-2" style="align-items: center;">#}
+	{#			    <div class="col-3" style="text-align: center;" >#}
+ {#   				    <div class="tabs">#}
+ {#   						<a href="{{ path('realisations') }}" class="btn btn-success btnTabs {{ app.request.get('_route') == 'realisations' ? 'active-tab' : '' }}">Tous les projets</a>#}
+ {#   					</div>#}
+ {#   					<div class="tabs mt-3">#}
+	{#					    <a href="{{ path('conception_travaux_tce') }}" class="btn btn-success btnTabs {{ app.request.get('_route') == 'conception_travaux_tce' ? 'active-tab' : '' }}">Conception & Travaux TCE</a>#}
+	{#				    </div>#}
+	{#				    <div class="tabs mt-3">#}
+ {#   						<a href="{{ path('travauxTce') }}" class="btn btn-success btnTabs {{ app.request.get('_route') == 'travauxTce' ? 'active-tab' : '' }}">Travaux TCE</a>#}
+ {#   					</div>#}
+ {#   					<div class="tabs mt-3">#}
+ {#   						<a href="{{ path('fournitureMobilier') }}" class="btn btn-success btnTabs {{ app.request.get('_route') == 'fournitureMobilier' ? 'active-tab' : '' }}">Fourniture de mobilier</a>#}
+	{#				    </div>#}
+				        
+	{#			    </div>#}
+	{#			    <div class="col-9">#}
+	{#			        <a href="{{path('realisation',{title:realisations[0].title})}}">#}
+ {#   				    <div class="realisation-card realisation-item mr-2 mb-3" data-title="{{ realisations[0].title|lower }}" data-city="{{ realisations[0].city|lower }}" style="background:url('/front/img/{{ realisations[0].image }}');" >#}
+ {#       		            <div class="informations-realisation">#}
+ {#       		                <h5 style="color:white;">{{realisations[0].title}}</h5>#}
+ {#       		                <p style="color:white;font-size: 10px;margin-bottom: 10px;height: 80px;">{{realisations[0].descriptionPrincipal|striptags|raw}}</p>#}
+ {#       		                <div class="row">#}
+ {#       		                    <div class="col-10" style="display: flex;align-items: center;">#}
+ {#       		                        <i class="fa-solid fa-location-dot" style="font-size:20px;    color: white;margin-right: 10px;"></i>#}
+ {#       		                        <span class="city" style="color:white; font-weight:300;">{{realisations[0].city}}</span>#}
+ {#       		                    </div>#}
+ {#       		                    <div class="col-2">#}
+ {#       		                        <i class="fa-solid fa-arrow-right" style="font-size:20px;    color: white;margin-right: 10px;"></i>#}
+ {#       		                    </div>#}
+ {#       		                </div>#}
+ {#       		            </div>#}
+ {#   		            </div>#}
+ {#   		            </a>#}
+    		            
+    		            {#{% if  realisations|length > 1 %}#}
+    		            {#<div class="realisation-card realisation-item mr-2 mb-3" data-title="{{ realisations[1].title|lower }}" data-city="{{ realisations[1].city|lower }}" style="background:url('/front/img/{{ realisations[1].image }}');" >#}
+        		        {#    <div class="informations-realisation">#}
+        		        {#        <h5 style="color:white;">{{realisations[1].title}}</h5>#}
+        		        {#        <p style="color:white;font-size: 10px;margin-bottom: 0px;">{{realisations[1].description|striptags|raw|slice(0,100)}}</p>#}
+        		        {#        <div class="row">#}
+        		        {#            <div class="col-10" style="display: flex;align-items: center;">#}
+        		        {#                <i class="fa-solid fa-location-dot" style="font-size:20px;    color: white;margin-right: 10px;"></i>#}
+        		        {#                <span class="city" style="color:white; font-weight:300;">{{realisations[1].city}}</span>#}
+        		        {#            </div>#}
+        		        {#            <div class="col-2">#}
+        		        {#                <i class="fa-solid fa-arrow-right" style="font-size:20px;    color: white;margin-right: 10px;"></i>#}
+        		        {#            </div>#}
+        		        {#        </div>#}
+        		        {#    </div>#}
+    		            {#</div>#}
+    		            
+	{#			    </div>#}
+				    {#<div class="col-4">#}
+				    {#    <div class="realisation-card realisation-item mb-3" data-title="{{ realisations[2].title|lower }}" data-city="{{ realisations[2].city|lower }}" style="background:url('/front/img/{{ realisations[2].image }}');" >#}
+        {#		            <div class="informations-realisation">#}
+        {#		                <h5 style="color:white;">{{realisations[2].title}}</h5>#}
+        {#		                <p style="color:white;font-size: 10px;margin-bottom: 0px;">{{realisations[2].description|striptags|raw|slice(0,70)}}</p>#}
+        {#		                <div class="row">#}
+        {#		                    <div class="col-10" style="display: flex;align-items: center;">#}
+        {#		                        <i class="fa-solid fa-location-dot" style="font-size:20px;    color: white;margin-right: 10px;"></i>#}
+        {#		                        <span class="city" style="color:white; font-weight:300;">{{realisations[2].city}}</span>#}
+        {#		                    </div>#}
+        {#		                    <div class="col-2">#}
+        {#		                        <i class="fa-solid fa-arrow-right" style="font-size:20px;    color: white;margin-right: 10px;"></i>#}
+        {#		                    </div>#}
+        {#		                </div>#}
+        {#		            </div>#}
+    		  {#          </div>#}
+				    {#</div>#}
+				     {#{% endif %}#}
+	{#			</div>#}
+				{#<div class="row" style="justify-content: space-around;">#}
+				{#	<div class="col-2 tabs">#}
+				{#		<a href="{{ path('realisations') }}" class="btn btn-success btnTabs {{ app.request.get('_route') == 'realisations' ? 'active-tab' : '' }}">Tous les projets</a>#}
+				{#	</div>#}
+				{#    <div class="col-1"></div>#}
+				{#	<div class="col-2 tabs">#}
+				{#		<a href="{{ path('conception_travaux_tce') }}" class="btn btn-success btnTabs {{ app.request.get('_route') == 'conception_travaux_tce' ? 'active-tab' : '' }}">Conception & Travaux TCE</a>#}
+				{#	</div>#}
+				{#	<div class="col-1"></div>#}
+				{#	<div class="col-2 tabs">#}
+				{#		<a href="{{ path('travauxTce') }}" class="btn btn-success btnTabs {{ app.request.get('_route') == 'travauxTce' ? 'active-tab' : '' }}">Travaux TCE</a>#}
+				{#	</div>#}
+				{#    <div class="col-1"></div>#}
+				{#	<div class="col-2 tabs">#}
+				{#		<a href="{{ path('fournitureMobilier') }}" class="btn btn-success btnTabs {{ app.request.get('_route') == 'fournitureMobilier' ? 'active-tab' : '' }}">Fourniture de mobilier</a>#}
+				{#	</div>#}
+				{#	<div class="col-1"></div>#}
+
+					{#<div class="col-2">#}
+				{#  <button type="button" href="#" class="btn btn-success" >Lorem ipsum</button>#}
+					{#</div>#}
+				{#</div>#}
+			{#</div>#}
+			{#<div class="row mt-5 padding-bottom" style="justify-content: center;">#}
+			{#	{% for realisation in realisations %}#}
+			{#		<div class="card mb-5 ml-2 col-sm-12 realisation-item" style="max-width: 87%;padding-left: 0px;box-shadow: 0px 1px 2px 0px black;" data-title="{{ realisation.title|lower }}" data-city="{{ realisation.city|lower }}">#}
+			{#			<div class="row no-gutters ">#}
+			{#				<div class="col-md-6">#}
+			{#				<img src="/front/img/{{ realisation.image }}" class="card-img" alt="..." style="    height:340px;" >#}
+			{#				</div>#}
+			{#				<div class="col-md-6">#}
+			{#				<div class="card-body">#}
+			{#					<div class="realistion-name" style="color:black;font-weight: 800;"><h5 style="color:black;font-weight: 800;">{{realisation.title}}</h5></div>#}
+			{#					<div class="realistion-description mb-4 mt-4" style=""><span class="text-muted" style="font-size:14px;text-align: start;">{{realisation.description|striptags|raw}}</span></div>#}
+			{#				<div class="realisation-information" style="text-align: start;">#}
+			{#					<div class="realistion-city mb-2"><i class="fa-solid fa-location-dot" style="font-size:20px;    color: var(--lin, #b0cb32);margin-right: 10px;"></i><span class="text-muted" style="font-size:12px; font-weight: 400;">{{realisation.city}}</span></div>#}
+			{#					<div class="realistion-superficie mb-2"><img src="/front/img/surface-area.png" style="width: 22px;margin-right: 10px;margin-left: -3px;"/><span class="text-muted" style="font-size:12px; font-weight: 400;">{{realisation.superficie}}</span></div>#}
+								{#<div class="realistion-superficie"><i class="fa-regular fa-calendar" style="font-size:20px;    color: var(--lin, #b0cb32);margin-right: 10px;"></i><span class="text-muted" style="font-size:12px; font-weight: 400;">Mardi 01 Janvier 2024</span></div>#}
+			{#				</div>#}
+								
+								
+			{#					<a style="margin-right: 3%;padding: 13px 38px 13px 38px;width: 30%;margin-top: auto;" href="{{path('realisation',{title:realisation.title})}}" class="btn btn-success" id="btn btn-success">Savoir plus</a>#}
+			{#				</div>#}
+			{#				</div>#}
+			{#			</div>#}
+			{#		</div>#}
+				
+			{#	{% endfor %}#}
+			{#</div>#}
+
+		    
+ {#                   {% set row_index = 0 %}#}
+ {#                   {% for row in realisations|slice(1)|batch(2) %}#}
+ {#                       <div class="row mb-4">#}
+ {#                           {% for item in row %}#}
+ {#                               <div class="{% if row_index is even %}#}
+ {#                                               {% if loop.index0 is even %}col-7{% else %}col-5{% endif %}#}
+ {#                                            {% else %}#}
+ {#                                               {% if loop.index0 is even %}col-5{% else %}col-7{% endif %}#}
+ {#                                            {% endif %}">#}
+ {#                                   <a href="{{path('realisation',{title:item.title})}}">#}
+ {#                                   <div class="realisation-card realisation-item" #}
+ {#                                        style="background:url('/front/img/{{ item.image }}'); background-size: cover; background-position: center;"  data-title="{{ item.title|lower }}" data-city="{{ item.city|lower }}">#}
+ {#                                       <div class="informations-realisation">#}
+ {#                                           <h5 style="color:white">{{ item.title }}</h5>#}
+ {#                                           <p style="color:white;font-size: 10px;margin-bottom: 10px;height: 80px;">{{ item.descriptionPrincipal|striptags|raw}}</p>#}
+ {#                                           <div class="row">#}
+ {#                                               <div class="col-10">#}
+ {#                                                   <i style="color:white" class="fa-solid fa-location-dot"></i>#}
+ {#                                                   <span style="color:white">{{ item.city }}</span>#}
+ {#                                               </div>#}
+ {#                                               <div class="col-2">#}
+ {#                                                   <i style="color:white" class="fa-solid fa-arrow-right"></i>#}
+ {#                                               </div>#}
+ {#                                           </div>#}
+ {#                                       </div>#}
+ {#                                   </div>#}
+ {#                                   </a>#}
+ {#                               </div>#}
+ {#                           {% endfor %}#}
+ {#                       </div>#}
+ {#                       {% set row_index = row_index + 1 %}#}
+ {#                   {% endfor %}#}
+                
+              
+
+
+	{#	</div>#}
+	{#</div>#}
+
+	{#</div>#}
+	
+	
+		<div id="realisationlaptop">
+		<div class="first-slide-laptop-realisation">
+			<div class="container">
+				<div class="text-center row-first-slide align-center">
+					<h3 class="center-div">Réalisations</h3>
+					{#<p class="center-text">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia</p>#}
+				</div>
+			</div>
+		</div>
+
+		<div class="container" style="max-width: 1165px;" id="backround-section">
+			<div class="section container">
+				<div class="row" >
+					<div class="col-6">
+						<img src="{{ asset('/front/img/Link.png') }}" alt=""/>
+						<h2 class="title ml-4" style="font-size: 23px;
+							    margin-bottom: 30px;    font-weight: 700;">Projets réalisés pour nos fidèles partenaires</h2>
+						{#<p class="text ml-4">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia</p>#}
+					</div>
+					<div class="col-6">
+						{# <input class="fa-solid fa-magnifying-glass" id="champ-search" type="text" placeholder="search" /> #}
+						<input type="text" id="searchInput" placeholder="Recherche"/>
+					</div>
+				</div>
+				
+				<div class="row mb-2" style="align-items: center;">
+				    <div class="col-12" style="text-align: center;" >
+				        <div class="row">
+    				    <div class="tabs mt-3 mb-4 col-3">
+    						<a href="{{ path('realisations') }}" class="btn btn-success btnTabs {{ app.request.get('_route') == 'realisations' ? 'active-tab' : '' }}">Tous les projets</a>
+    					</div>
+    					<div class="tabs mt-3 mb-4 col-3">
+						    <a href="{{ path('conception_travaux_tce') }}" class="btn btn-success btnTabs {{ app.request.get('_route') == 'conception_travaux_tce' ? 'active-tab' : '' }}">Conception & Travaux TCE</a>
+					    </div>
+					    <div class="tabs mt-3 mb-4 col-3">
+    						<a href="{{ path('travauxTce') }}" class="btn btn-success btnTabs {{ app.request.get('_route') == 'travauxTce' ? 'active-tab' : '' }}">Travaux TCE</a>
+    					</div>
+    					<div class="tabs mt-3 mb-4 col-3">
+    						<a href="{{ path('fournitureMobilier') }}" class="btn btn-success btnTabs {{ app.request.get('_route') == 'fournitureMobilier' ? 'active-tab' : '' }}">Fourniture de mobilier</a>
+					    </div>
+				        </div>
+				    </div>
+				    {% for realisation in realisations %}
+				    <div class="col-6">
+				        <a href="{{path('realisation',{title:realisation.title})}}">
+    				    <div class="realisation-card realisation-item mr-2 mb-3" data-title="{{ realisation.title|lower }}" data-city="{{ realisation.city|lower }}" style="background:url('/front/img/{{ realisation.image }}');" >
+        		            <div class="informations-realisation">
+        		                <h5 style="color:white;">{{realisation.title}}</h5>
+        		                <p style="color:white;font-size: 10px;margin-bottom: 10px;height: 80px;">{{realisation.descriptionPrincipal|striptags|raw}}</p>
+        		                <div class="row">
+        		                    <div class="col-10" style="display: flex;align-items: center;">
+        		                        <i class="fa-solid fa-location-dot" style="font-size:20px;    color: white;margin-right: 10px;"></i>
+        		                        <span class="city" style="color:white; font-weight:300;">{{realisation.city}}</span>
+        		                    </div>
+        		                    <div class="col-2">
+        		                        <i class="fa-solid fa-arrow-right" style="font-size:20px;    color: white;margin-right: 10px;"></i>
+        		                    </div>
+        		                </div>
+        		            </div>
+    		            </div>
+    		            </a>
+    		            
+    		            
+				    </div>
+				        {% endfor %}
+				    {#<div class="col-6">#}
+				    {#    <a href="{{path('realisation',{title:realisations[0].title})}}">#}
+    				{#    <div class="realisation-card realisation-item mr-2 mb-3" data-title="{{ realisations[0].title|lower }}" data-city="{{ realisations[0].city|lower }}" style="background:url('/front/img/{{ realisations[0].image }}');" >#}
+        {#		            <div class="informations-realisation">#}
+        {#		                <h5 style="color:white;">{{realisations[0].title}}</h5>#}
+        {#		                <p style="color:white;font-size: 10px;margin-bottom: 10px;height: 80px;">{{realisations[0].descriptionPrincipal|striptags|raw}}</p>#}
+        {#		                <div class="row">#}
+        {#		                    <div class="col-10" style="display: flex;align-items: center;">#}
+        {#		                        <i class="fa-solid fa-location-dot" style="font-size:20px;    color: white;margin-right: 10px;"></i>#}
+        {#		                        <span class="city" style="color:white; font-weight:300;">{{realisations[0].city}}</span>#}
+        {#		                    </div>#}
+        {#		                    <div class="col-2">#}
+        {#		                        <i class="fa-solid fa-arrow-right" style="font-size:20px;    color: white;margin-right: 10px;"></i>#}
+        {#		                    </div>#}
+        {#		                </div>#}
+        {#		            </div>#}
+    		  {#          </div>#}
+    		  {#          </a>#}
+    		            
+    		            
+				    {#</div>#}
+				</div>
+			
+		    
+                    {#{% set row_index = 0 %}#}
+                    {#{% for row in realisations|slice(1)|batch(2) %}#}
+                    {#    <div class="row mb-4">#}
+                    {#        {% for item in row %}#}
+                    {#            <div class="{% if row_index is even %}#}
+                    {#                            {% if loop.index0 is even %}col-7{% else %}col-5{% endif %}#}
+                    {#                         {% else %}#}
+                    {#                            {% if loop.index0 is even %}col-5{% else %}col-7{% endif %}#}
+                    {#                         {% endif %}">#}
+                    {#                <a href="{{path('realisation',{title:item.title})}}">#}
+                    {#                <div class="realisation-card realisation-item" #}
+                    {#                     style="background:url('/front/img/{{ item.image }}'); background-size: cover; background-position: center;"  data-title="{{ item.title|lower }}" data-city="{{ item.city|lower }}">#}
+                    {#                    <div class="informations-realisation">#}
+                    {#                        <h5 style="color:white">{{ item.title }}</h5>#}
+                    {#                        <p style="color:white;font-size: 10px;margin-bottom: 10px;height: 80px;">{{ item.descriptionPrincipal|striptags|raw}}</p>#}
+                    {#                        <div class="row">#}
+                    {#                            <div class="col-10">#}
+                    {#                                <i style="color:white" class="fa-solid fa-location-dot"></i>#}
+                    {#                                <span style="color:white">{{ item.city }}</span>#}
+                    {#                            </div>#}
+                    {#                            <div class="col-2">#}
+                    {#                                <i style="color:white" class="fa-solid fa-arrow-right"></i>#}
+                    {#                            </div>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+                    {#                </div>#}
+                    {#                </a>#}
+                    {#            </div>#}
+                    {#        {% endfor %}#}
+                    {#    </div>#}
+                    {#    {% set row_index = row_index + 1 %}#}
+                    {#{% endfor %}#}
+                
+              
+
+
+		</div>
+	</div>
+
+	</div>
+
+
+<div id="realisationmobil">
+	<div class="first-slide-laptop-realisation">
+		<div class="container">
+			<div class="text-center row-first-slide align-center">
+				<h3 class="center-div">Réalisations</h3>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" style="max-width: 1500px; margin-top: -100%; border-radius: 64px 64px 0px 0px;
+        padding-bottom: 39px;background: linear-gradient(0deg, #fff 0%, #fff 100%), linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);box-shadow: 0 4px 79.3px 0 rgba(0, 0, 0, 0.15);margin-top: -10%;margin-bottom: 5%;margin-top: -86% !important;" id="backround-sectionmobil">
+		<div class="section container">
+			<div class="row">
+				<div class="col-12">
+					<img src="/front/img/link.png" alt="">
+					<h2 class="title ml-2">Projets réalisés pour nos fidèles partenaires</h2>
+
+				</div>
+				<div class="col-12">
+					<input type="text" id="searchInput" placeholder="Recherche">
+				</div>
+			</div>
+			<div class="container">
+				<div class="row text-center">
+					<div class="col-sm-6 mt-4 tabs">
+					    <a href="{{ path('realisations') }}" class="btn btn-success btnTabsmobile {{ app.request.get('_route') == 'realisations' ? 'active-tab' : '' }}">Tous les projets</a>
+						
+					</div>
+					<div class="col-sm-6 mt-4 tabs">
+					    <a href="{{ path('conception_travaux_tce') }}" class="btn btn-success btnTabsmobile {{ app.request.get('_route') == 'conception_travaux_tce' ? 'active-tab' : '' }}">Conception & Travaux TCE</a>
+						
+					</div>
+					<div class="col-sm-6 mt-4 tabs">
+					    <a href="{{ path('travauxTce') }}" class="btn btn-success btnTabsmobile {{ app.request.get('_route') == 'travauxTce' ? 'active-tab' : '' }}">Travaux TCE</a>
+					
+					</div>
+                    <div class="col-sm-6 mt-4 tabs">
+                        <a href="{{ path('fournitureMobilier') }}" class="btn btn-success btnTabsmobile {{ app.request.get('_route') == 'fournitureMobilier' ? 'active-tab' : '' }}">Fourniture de mobilier</a>
+					 
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="row mt-5 padding-bottom" style="justify-content: center;">
+				{% for realisation in realisations %}
+					<a href="{{path('realisation',{title:realisation.title})}}" class="col-12 col-sm-6 col-md-4 mb-3">
+    				    <div class="realisation-card realisation-item mr-2 mb-3" data-title="{{ realisation.title|lower }}" data-city="{{ realisation.city|lower }}" style="background:url('/front/img/{{ realisation.image }}');" >
+        		            <div class="informations-realisation">
+        		                <h5 style="color:white;">{{realisation.title}}</h5>
+        		                <p style="color:white;font-size: 10px;margin-bottom: 10px;">{{realisation.descriptionPrincipal|striptags|raw}}</p>
+        		                <div class="row">
+        		                    <div class="col-10" style="display: flex;align-items: center;">
+        		                        <i class="fa-solid fa-location-dot" style="font-size:20px;    color: white;margin-right: 10px;"></i>
+        		                        <span class="city" style="color:white; font-weight:300;">{{realisation.city}}</span>
+        		                    </div>
+        		                    <div class="col-2">
+        		                        <i class="fa-solid fa-arrow-right" style="font-size:20px;    color: white;margin-right: 10px;"></i>
+        		                    </div>
+        		                </div>
+        		            </div>
+    		            </div>
+    		            </a>
+				
+				{% endfor %}
+		</div>
+	</div>
+</div>
+
+	<script>
+	   document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('searchInput');
+        
+        if (searchInput) { // Check if the element exists
+          searchInput.addEventListener('input', function() {
+            const searchQuery = this.value.toLowerCase();
+            console.log(searchQuery);
+            const realisationItems = Array.from(document.querySelectorAll('.realisation-item'));
+            
+            realisationItems.filter(item => {
+              const title = item.getAttribute('data-title');
+              const city = item.getAttribute('data-city');
+      
+              // Check if the search query matches the title or city
+              return title.includes(searchQuery) || city.includes(searchQuery);
+            }).forEach(item => item.style.display = '');
+            
+            realisationItems.filter(item => {
+              const title = item.getAttribute('data-title');
+              const city = item.getAttribute('data-city');
+      
+              // Check if the search query does not match the title or city
+              return !title.includes(searchQuery) && !city.includes(searchQuery);
+            }).forEach(item => item.style.display = 'none');
+          });
+        }
+      });
+	</script>
+{% endblock %}

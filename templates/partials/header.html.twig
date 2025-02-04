@@ -1,0 +1,84 @@
+<header class="page-header">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent" id="mainNavbar">
+    <a class="navbar-brand" href="{{ path('accueil') }}">
+      <img src="{{ asset('front/img/logo.png') }}" width="70%" alt="Fer7-logo"/>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item {% if app.request.attributes.get('_route') == 'accueil' %}active{% endif %}">
+          <a class="nav-link" href="{{ path('accueil') }}">Accueil</a>
+        </li>
+        <li class="nav-item dropdown {% if app.request.attributes.get('_route') == 'services' %}active{% endif %}">
+          <a class="nav-link dropdown-toggle" href="{{ path('services') }}" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Services
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ path('services') }}">Tous nos services</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item {% if app.request.attributes.get('_route') == 'serviceConception' %}active{% endif %}"
+              href="{{ path('serviceConception') }}">Conception & Etudes</a>
+            <a class="dropdown-item {% if app.request.attributes.get('_route') == 'serviceTce' %}active{% endif %}"
+              href="{{ path('serviceTce') }}">Travaux d'aménagements TCE</a>
+            <a class="dropdown-item {% if app.request.attributes.get('_route') == 'espacesCommerciaux' %}active{% endif %}"
+              href="{{ path('espacesCommerciaux') }}">Mobilier de bureau & espaces
+              commerciaux</a>
+            <a class="dropdown-item  {% if app.request.attributes.get('_route') == 'serviceMaintenance' %}active{% endif %}"
+              href="{{ path('serviceMaintenance') }}">Petits travaux & Maintenance</a>
+          </div>
+        </li>
+        <li class="nav-item {% if app.request.attributes.get('_route') == 'realisations' %}active{% endif %}">
+          <a class="nav-link" href="{{path('realisations')}}">Nos réalisations</a>
+        </li>
+        <li class="nav-item {% if app.request.attributes.get('_route') == 'quisommesnous' %}active{% endif %}">
+          <a class="nav-link" href="{{path('quisommesnous')}}">Qui Sommes nous?</a>
+        </li>
+        <li class="nav-item {% if app.request.attributes.get('_route') == 'contact' %}active{% endif %}">
+          <a class="nav-link" href="{{path('contact')}}">Contact</a>
+        </li>
+        <li class="nav-item {% if app.request.attributes.get('_route') == 'blog' %}active{% endif %}">
+          <a class="nav-link" href="{{path('blog')}}">Blog</a>
+        </li>
+      </ul>
+      <div class="align-items-center d-flex flex-column flex-md-row justify-content-center justify-content-lg-start">
+        <span class="follow-us mb-2 mb-md-0">Suivez-nous</span>
+        <span class="header-divider"></span>
+        <div class="social-media">
+          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-youtube"></i>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+{# {% block javascripts %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbar = document.getElementById('mainNavbar');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const followUs = document.querySelector('.follow-us');
+    const headerDivider = document.querySelector('span.header-divider');
+
+    navbarToggler.addEventListener('click', function () {
+
+      navbar.classList.toggle('navbar-dark');
+
+      if (!navbar.classList.contains('navbar-dark')) {
+        followUs.style.color = 'gray';
+        headerDivider.style.display = 'none'
+      } else {
+        followUs.style.color = 'white';
+        headerDivider.style.display = ''
+      }
+    });
+  });
+</script>
+{% endblock %} #}
